@@ -1,0 +1,534 @@
+Starting Sa Plays Roblox Streamer...
+Running as root, will switch to app user later
+Waiting for database...
+postgres:5432 - accepting connections
+Database is ready
+Running database migrations...
+Using existing TypeScript drizzle config
+Installing tsx for TypeScript execution...
+
+added 5 packages in 1s
+
+2 packages are looking for funding
+  run `npm fund` for details
+Installing drizzle-kit...
+npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+
+added 16 packages in 1s
+
+2 packages are looking for funding
+  run `npm fund` for details
+Running drizzle-kit push with config: ./drizzle.config.ts...
+Reading config file '/app/drizzle.config.ts'
+2025-07-19T08:04:05.743Z esbuild-register compiled /app/drizzle.config.ts
+2025-07-19T08:04:05.743Z esbuild-register const __esbuild_register_import_meta_url__ = require('url').pathToFileURL(__filename).href;
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var drizzle_config_exports = {};
+__export(drizzle_config_exports, {
+  default: () => drizzle_config_default
+});
+module.exports = __toCommonJS(drizzle_config_exports);
+var import_drizzle_kit = require("drizzle-kit");
+if (!process.env.DATABASE_URL) {
+  throw new Error("DATABASE_URL, ensure the database is provisioned");
+}
+var drizzle_config_default = (0, import_drizzle_kit.defineConfig)({
+  out: "./migrations",
+  schema: "./shared/schema.ts",
+  dialect: "postgresql",
+  dbCredentials: {
+    url: process.env.DATABASE_URL
+  }
+});
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiL2FwcC9kcml6emxlLmNvbmZpZy50cyJdLAogICJzb3VyY2VzQ29udGVudCI6IFsiaW1wb3J0IHsgZGVmaW5lQ29uZmlnIH0gZnJvbSBcImRyaXp6bGUta2l0XCI7XG5cbmlmICghcHJvY2Vzcy5lbnYuREFUQUJBU0VfVVJMKSB7XG4gIHRocm93IG5ldyBFcnJvcihcIkRBVEFCQVNFX1VSTCwgZW5zdXJlIHRoZSBkYXRhYmFzZSBpcyBwcm92aXNpb25lZFwiKTtcbn1cblxuZXhwb3J0IGRlZmF1bHQgZGVmaW5lQ29uZmlnKHtcbiAgb3V0OiBcIi4vbWlncmF0aW9uc1wiLFxuICBzY2hlbWE6IFwiLi9zaGFyZWQvc2NoZW1hLnRzXCIsXG4gIGRpYWxlY3Q6IFwicG9zdGdyZXNxbFwiLFxuICBkYkNyZWRlbnRpYWxzOiB7XG4gICAgdXJsOiBwcm9jZXNzLmVudi5EQVRBQkFTRV9VUkwsXG4gIH0sXG59KTtcbiJdLAogICJtYXBwaW5ncyI6ICI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEseUJBQTZCO0FBRTdCLElBQUksQ0FBQyxRQUFRLElBQUksY0FBYztBQUM3QixRQUFNLElBQUksTUFBTSxrREFBa0Q7QUFDcEU7QUFFQSxJQUFPLDZCQUFRLGlDQUFhO0FBQUEsRUFDMUIsS0FBSztBQUFBLEVBQ0wsUUFBUTtBQUFBLEVBQ1IsU0FBUztBQUFBLEVBQ1QsZUFBZTtBQUFBLElBQ2IsS0FBSyxRQUFRLElBQUk7QUFBQSxFQUNuQjtBQUNGLENBQUM7IiwKICAibmFtZXMiOiBbXQp9Cg==
+
+Cannot find module 'drizzle-kit'
+Require stack:
+- /app/drizzle.config.ts
+- /usr/local/lib/node_modules/drizzle-kit/bin.cjs
+Starting Sa Plays Roblox Streamer...
+Running as root, will switch to app user later
+Waiting for database...
+postgres:5432 - accepting connections
+Database is ready
+Running database migrations...
+Using existing TypeScript drizzle config
+Running drizzle-kit push with config: ./drizzle.config.ts...
+Reading config file '/app/drizzle.config.ts'
+2025-07-19T08:04:06.538Z esbuild-register compiled /app/drizzle.config.ts
+2025-07-19T08:04:06.538Z esbuild-register const __esbuild_register_import_meta_url__ = require('url').pathToFileURL(__filename).href;
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var drizzle_config_exports = {};
+__export(drizzle_config_exports, {
+  default: () => drizzle_config_default
+});
+module.exports = __toCommonJS(drizzle_config_exports);
+var import_drizzle_kit = require("drizzle-kit");
+if (!process.env.DATABASE_URL) {
+  throw new Error("DATABASE_URL, ensure the database is provisioned");
+}
+var drizzle_config_default = (0, import_drizzle_kit.defineConfig)({
+  out: "./migrations",
+  schema: "./shared/schema.ts",
+  dialect: "postgresql",
+  dbCredentials: {
+    url: process.env.DATABASE_URL
+  }
+});
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiL2FwcC9kcml6emxlLmNvbmZpZy50cyJdLAogICJzb3VyY2VzQ29udGVudCI6IFsiaW1wb3J0IHsgZGVmaW5lQ29uZmlnIH0gZnJvbSBcImRyaXp6bGUta2l0XCI7XG5cbmlmICghcHJvY2Vzcy5lbnYuREFUQUJBU0VfVVJMKSB7XG4gIHRocm93IG5ldyBFcnJvcihcIkRBVEFCQVNFX1VSTCwgZW5zdXJlIHRoZSBkYXRhYmFzZSBpcyBwcm92aXNpb25lZFwiKTtcbn1cblxuZXhwb3J0IGRlZmF1bHQgZGVmaW5lQ29uZmlnKHtcbiAgb3V0OiBcIi4vbWlncmF0aW9uc1wiLFxuICBzY2hlbWE6IFwiLi9zaGFyZWQvc2NoZW1hLnRzXCIsXG4gIGRpYWxlY3Q6IFwicG9zdGdyZXNxbFwiLFxuICBkYkNyZWRlbnRpYWxzOiB7XG4gICAgdXJsOiBwcm9jZXNzLmVudi5EQVRBQkFTRV9VUkwsXG4gIH0sXG59KTtcbiJdLAogICJtYXBwaW5ncyI6ICI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEseUJBQTZCO0FBRTdCLElBQUksQ0FBQyxRQUFRLElBQUksY0FBYztBQUM3QixRQUFNLElBQUksTUFBTSxrREFBa0Q7QUFDcEU7QUFFQSxJQUFPLDZCQUFRLGlDQUFhO0FBQUEsRUFDMUIsS0FBSztBQUFBLEVBQ0wsUUFBUTtBQUFBLEVBQ1IsU0FBUztBQUFBLEVBQ1QsZUFBZTtBQUFBLElBQ2IsS0FBSyxRQUFRLElBQUk7QUFBQSxFQUNuQjtBQUNGLENBQUM7IiwKICAibmFtZXMiOiBbXQp9Cg==
+
+Cannot find module 'drizzle-kit'
+Require stack:
+- /app/drizzle.config.ts
+- /usr/local/lib/node_modules/drizzle-kit/bin.cjs
+Starting Sa Plays Roblox Streamer...
+Running as root, will switch to app user later
+Waiting for database...
+postgres:5432 - accepting connections
+Database is ready
+Running database migrations...
+Using existing TypeScript drizzle config
+Running drizzle-kit push with config: ./drizzle.config.ts...
+Reading config file '/app/drizzle.config.ts'
+2025-07-19T08:04:07.389Z esbuild-register compiled /app/drizzle.config.ts
+2025-07-19T08:04:07.390Z esbuild-register const __esbuild_register_import_meta_url__ = require('url').pathToFileURL(__filename).href;
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var drizzle_config_exports = {};
+__export(drizzle_config_exports, {
+  default: () => drizzle_config_default
+});
+module.exports = __toCommonJS(drizzle_config_exports);
+var import_drizzle_kit = require("drizzle-kit");
+if (!process.env.DATABASE_URL) {
+  throw new Error("DATABASE_URL, ensure the database is provisioned");
+}
+var drizzle_config_default = (0, import_drizzle_kit.defineConfig)({
+  out: "./migrations",
+  schema: "./shared/schema.ts",
+  dialect: "postgresql",
+  dbCredentials: {
+    url: process.env.DATABASE_URL
+  }
+});
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiL2FwcC9kcml6emxlLmNvbmZpZy50cyJdLAogICJzb3VyY2VzQ29udGVudCI6IFsiaW1wb3J0IHsgZGVmaW5lQ29uZmlnIH0gZnJvbSBcImRyaXp6bGUta2l0XCI7XG5cbmlmICghcHJvY2Vzcy5lbnYuREFUQUJBU0VfVVJMKSB7XG4gIHRocm93IG5ldyBFcnJvcihcIkRBVEFCQVNFX1VSTCwgZW5zdXJlIHRoZSBkYXRhYmFzZSBpcyBwcm92aXNpb25lZFwiKTtcbn1cblxuZXhwb3J0IGRlZmF1bHQgZGVmaW5lQ29uZmlnKHtcbiAgb3V0OiBcIi4vbWlncmF0aW9uc1wiLFxuICBzY2hlbWE6IFwiLi9zaGFyZWQvc2NoZW1hLnRzXCIsXG4gIGRpYWxlY3Q6IFwicG9zdGdyZXNxbFwiLFxuICBkYkNyZWRlbnRpYWxzOiB7XG4gICAgdXJsOiBwcm9jZXNzLmVudi5EQVRBQkFTRV9VUkwsXG4gIH0sXG59KTtcbiJdLAogICJtYXBwaW5ncyI6ICI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEseUJBQTZCO0FBRTdCLElBQUksQ0FBQyxRQUFRLElBQUksY0FBYztBQUM3QixRQUFNLElBQUksTUFBTSxrREFBa0Q7QUFDcEU7QUFFQSxJQUFPLDZCQUFRLGlDQUFhO0FBQUEsRUFDMUIsS0FBSztBQUFBLEVBQ0wsUUFBUTtBQUFBLEVBQ1IsU0FBUztBQUFBLEVBQ1QsZUFBZTtBQUFBLElBQ2IsS0FBSyxRQUFRLElBQUk7QUFBQSxFQUNuQjtBQUNGLENBQUM7IiwKICAibmFtZXMiOiBbXQp9Cg==
+
+Cannot find module 'drizzle-kit'
+Require stack:
+- /app/drizzle.config.ts
+- /usr/local/lib/node_modules/drizzle-kit/bin.cjs
+Starting Sa Plays Roblox Streamer...
+Running as root, will switch to app user later
+Waiting for database...
+postgres:5432 - accepting connections
+Database is ready
+Running database migrations...
+Using existing TypeScript drizzle config
+Running drizzle-kit push with config: ./drizzle.config.ts...
+Reading config file '/app/drizzle.config.ts'
+2025-07-19T08:04:08.414Z esbuild-register compiled /app/drizzle.config.ts
+2025-07-19T08:04:08.414Z esbuild-register const __esbuild_register_import_meta_url__ = require('url').pathToFileURL(__filename).href;
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var drizzle_config_exports = {};
+__export(drizzle_config_exports, {
+  default: () => drizzle_config_default
+});
+module.exports = __toCommonJS(drizzle_config_exports);
+var import_drizzle_kit = require("drizzle-kit");
+if (!process.env.DATABASE_URL) {
+  throw new Error("DATABASE_URL, ensure the database is provisioned");
+}
+var drizzle_config_default = (0, import_drizzle_kit.defineConfig)({
+  out: "./migrations",
+  schema: "./shared/schema.ts",
+  dialect: "postgresql",
+  dbCredentials: {
+    url: process.env.DATABASE_URL
+  }
+});
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiL2FwcC9kcml6emxlLmNvbmZpZy50cyJdLAogICJzb3VyY2VzQ29udGVudCI6IFsiaW1wb3J0IHsgZGVmaW5lQ29uZmlnIH0gZnJvbSBcImRyaXp6bGUta2l0XCI7XG5cbmlmICghcHJvY2Vzcy5lbnYuREFUQUJBU0VfVVJMKSB7XG4gIHRocm93IG5ldyBFcnJvcihcIkRBVEFCQVNFX1VSTCwgZW5zdXJlIHRoZSBkYXRhYmFzZSBpcyBwcm92aXNpb25lZFwiKTtcbn1cblxuZXhwb3J0IGRlZmF1bHQgZGVmaW5lQ29uZmlnKHtcbiAgb3V0OiBcIi4vbWlncmF0aW9uc1wiLFxuICBzY2hlbWE6IFwiLi9zaGFyZWQvc2NoZW1hLnRzXCIsXG4gIGRpYWxlY3Q6IFwicG9zdGdyZXNxbFwiLFxuICBkYkNyZWRlbnRpYWxzOiB7XG4gICAgdXJsOiBwcm9jZXNzLmVudi5EQVRBQkFTRV9VUkwsXG4gIH0sXG59KTtcbiJdLAogICJtYXBwaW5ncyI6ICI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEseUJBQTZCO0FBRTdCLElBQUksQ0FBQyxRQUFRLElBQUksY0FBYztBQUM3QixRQUFNLElBQUksTUFBTSxrREFBa0Q7QUFDcEU7QUFFQSxJQUFPLDZCQUFRLGlDQUFhO0FBQUEsRUFDMUIsS0FBSztBQUFBLEVBQ0wsUUFBUTtBQUFBLEVBQ1IsU0FBUztBQUFBLEVBQ1QsZUFBZTtBQUFBLElBQ2IsS0FBSyxRQUFRLElBQUk7QUFBQSxFQUNuQjtBQUNGLENBQUM7IiwKICAibmFtZXMiOiBbXQp9Cg==
+
+Cannot find module 'drizzle-kit'
+Require stack:
+- /app/drizzle.config.ts
+- /usr/local/lib/node_modules/drizzle-kit/bin.cjs
+Starting Sa Plays Roblox Streamer...
+Running as root, will switch to app user later
+Waiting for database...
+postgres:5432 - accepting connections
+Database is ready
+Running database migrations...
+Using existing TypeScript drizzle config
+Running drizzle-kit push with config: ./drizzle.config.ts...
+Reading config file '/app/drizzle.config.ts'
+2025-07-19T08:04:09.865Z esbuild-register compiled /app/drizzle.config.ts
+2025-07-19T08:04:09.865Z esbuild-register const __esbuild_register_import_meta_url__ = require('url').pathToFileURL(__filename).href;
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var drizzle_config_exports = {};
+__export(drizzle_config_exports, {
+  default: () => drizzle_config_default
+});
+module.exports = __toCommonJS(drizzle_config_exports);
+var import_drizzle_kit = require("drizzle-kit");
+if (!process.env.DATABASE_URL) {
+  throw new Error("DATABASE_URL, ensure the database is provisioned");
+}
+var drizzle_config_default = (0, import_drizzle_kit.defineConfig)({
+  out: "./migrations",
+  schema: "./shared/schema.ts",
+  dialect: "postgresql",
+  dbCredentials: {
+    url: process.env.DATABASE_URL
+  }
+});
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiL2FwcC9kcml6emxlLmNvbmZpZy50cyJdLAogICJzb3VyY2VzQ29udGVudCI6IFsiaW1wb3J0IHsgZGVmaW5lQ29uZmlnIH0gZnJvbSBcImRyaXp6bGUta2l0XCI7XG5cbmlmICghcHJvY2Vzcy5lbnYuREFUQUJBU0VfVVJMKSB7XG4gIHRocm93IG5ldyBFcnJvcihcIkRBVEFCQVNFX1VSTCwgZW5zdXJlIHRoZSBkYXRhYmFzZSBpcyBwcm92aXNpb25lZFwiKTtcbn1cblxuZXhwb3J0IGRlZmF1bHQgZGVmaW5lQ29uZmlnKHtcbiAgb3V0OiBcIi4vbWlncmF0aW9uc1wiLFxuICBzY2hlbWE6IFwiLi9zaGFyZWQvc2NoZW1hLnRzXCIsXG4gIGRpYWxlY3Q6IFwicG9zdGdyZXNxbFwiLFxuICBkYkNyZWRlbnRpYWxzOiB7XG4gICAgdXJsOiBwcm9jZXNzLmVudi5EQVRBQkFTRV9VUkwsXG4gIH0sXG59KTtcbiJdLAogICJtYXBwaW5ncyI6ICI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEseUJBQTZCO0FBRTdCLElBQUksQ0FBQyxRQUFRLElBQUksY0FBYztBQUM3QixRQUFNLElBQUksTUFBTSxrREFBa0Q7QUFDcEU7QUFFQSxJQUFPLDZCQUFRLGlDQUFhO0FBQUEsRUFDMUIsS0FBSztBQUFBLEVBQ0wsUUFBUTtBQUFBLEVBQ1IsU0FBUztBQUFBLEVBQ1QsZUFBZTtBQUFBLElBQ2IsS0FBSyxRQUFRLElBQUk7QUFBQSxFQUNuQjtBQUNGLENBQUM7IiwKICAibmFtZXMiOiBbXQp9Cg==
+
+Cannot find module 'drizzle-kit'
+Require stack:
+- /app/drizzle.config.ts
+- /usr/local/lib/node_modules/drizzle-kit/bin.cjs
+Starting Sa Plays Roblox Streamer...
+Running as root, will switch to app user later
+Waiting for database...
+postgres:5432 - accepting connections
+Database is ready
+Running database migrations...
+Using existing TypeScript drizzle config
+Running drizzle-kit push with config: ./drizzle.config.ts...
+Reading config file '/app/drizzle.config.ts'
+2025-07-19T08:04:12.108Z esbuild-register compiled /app/drizzle.config.ts
+2025-07-19T08:04:12.108Z esbuild-register const __esbuild_register_import_meta_url__ = require('url').pathToFileURL(__filename).href;
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var drizzle_config_exports = {};
+__export(drizzle_config_exports, {
+  default: () => drizzle_config_default
+});
+module.exports = __toCommonJS(drizzle_config_exports);
+var import_drizzle_kit = require("drizzle-kit");
+if (!process.env.DATABASE_URL) {
+  throw new Error("DATABASE_URL, ensure the database is provisioned");
+}
+var drizzle_config_default = (0, import_drizzle_kit.defineConfig)({
+  out: "./migrations",
+  schema: "./shared/schema.ts",
+  dialect: "postgresql",
+  dbCredentials: {
+    url: process.env.DATABASE_URL
+  }
+});
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiL2FwcC9kcml6emxlLmNvbmZpZy50cyJdLAogICJzb3VyY2VzQ29udGVudCI6IFsiaW1wb3J0IHsgZGVmaW5lQ29uZmlnIH0gZnJvbSBcImRyaXp6bGUta2l0XCI7XG5cbmlmICghcHJvY2Vzcy5lbnYuREFUQUJBU0VfVVJMKSB7XG4gIHRocm93IG5ldyBFcnJvcihcIkRBVEFCQVNFX1VSTCwgZW5zdXJlIHRoZSBkYXRhYmFzZSBpcyBwcm92aXNpb25lZFwiKTtcbn1cblxuZXhwb3J0IGRlZmF1bHQgZGVmaW5lQ29uZmlnKHtcbiAgb3V0OiBcIi4vbWlncmF0aW9uc1wiLFxuICBzY2hlbWE6IFwiLi9zaGFyZWQvc2NoZW1hLnRzXCIsXG4gIGRpYWxlY3Q6IFwicG9zdGdyZXNxbFwiLFxuICBkYkNyZWRlbnRpYWxzOiB7XG4gICAgdXJsOiBwcm9jZXNzLmVudi5EQVRBQkFTRV9VUkwsXG4gIH0sXG59KTtcbiJdLAogICJtYXBwaW5ncyI6ICI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEseUJBQTZCO0FBRTdCLElBQUksQ0FBQyxRQUFRLElBQUksY0FBYztBQUM3QixRQUFNLElBQUksTUFBTSxrREFBa0Q7QUFDcEU7QUFFQSxJQUFPLDZCQUFRLGlDQUFhO0FBQUEsRUFDMUIsS0FBSztBQUFBLEVBQ0wsUUFBUTtBQUFBLEVBQ1IsU0FBUztBQUFBLEVBQ1QsZUFBZTtBQUFBLElBQ2IsS0FBSyxRQUFRLElBQUk7QUFBQSxFQUNuQjtBQUNGLENBQUM7IiwKICAibmFtZXMiOiBbXQp9Cg==
+
+Cannot find module 'drizzle-kit'
+Require stack:
+- /app/drizzle.config.ts
+- /usr/local/lib/node_modules/drizzle-kit/bin.cjs
+Starting Sa Plays Roblox Streamer...
+Running as root, will switch to app user later
+Waiting for database...
+postgres:5432 - accepting connections
+Database is ready
+Running database migrations...
+Using existing TypeScript drizzle config
+Running drizzle-kit push with config: ./drizzle.config.ts...
+Reading config file '/app/drizzle.config.ts'
+2025-07-19T08:04:15.962Z esbuild-register compiled /app/drizzle.config.ts
+2025-07-19T08:04:15.962Z esbuild-register const __esbuild_register_import_meta_url__ = require('url').pathToFileURL(__filename).href;
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var drizzle_config_exports = {};
+__export(drizzle_config_exports, {
+  default: () => drizzle_config_default
+});
+module.exports = __toCommonJS(drizzle_config_exports);
+var import_drizzle_kit = require("drizzle-kit");
+if (!process.env.DATABASE_URL) {
+  throw new Error("DATABASE_URL, ensure the database is provisioned");
+}
+var drizzle_config_default = (0, import_drizzle_kit.defineConfig)({
+  out: "./migrations",
+  schema: "./shared/schema.ts",
+  dialect: "postgresql",
+  dbCredentials: {
+    url: process.env.DATABASE_URL
+  }
+});
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiL2FwcC9kcml6emxlLmNvbmZpZy50cyJdLAogICJzb3VyY2VzQ29udGVudCI6IFsiaW1wb3J0IHsgZGVmaW5lQ29uZmlnIH0gZnJvbSBcImRyaXp6bGUta2l0XCI7XG5cbmlmICghcHJvY2Vzcy5lbnYuREFUQUJBU0VfVVJMKSB7XG4gIHRocm93IG5ldyBFcnJvcihcIkRBVEFCQVNFX1VSTCwgZW5zdXJlIHRoZSBkYXRhYmFzZSBpcyBwcm92aXNpb25lZFwiKTtcbn1cblxuZXhwb3J0IGRlZmF1bHQgZGVmaW5lQ29uZmlnKHtcbiAgb3V0OiBcIi4vbWlncmF0aW9uc1wiLFxuICBzY2hlbWE6IFwiLi9zaGFyZWQvc2NoZW1hLnRzXCIsXG4gIGRpYWxlY3Q6IFwicG9zdGdyZXNxbFwiLFxuICBkYkNyZWRlbnRpYWxzOiB7XG4gICAgdXJsOiBwcm9jZXNzLmVudi5EQVRBQkFTRV9VUkwsXG4gIH0sXG59KTtcbiJdLAogICJtYXBwaW5ncyI6ICI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEseUJBQTZCO0FBRTdCLElBQUksQ0FBQyxRQUFRLElBQUksY0FBYztBQUM3QixRQUFNLElBQUksTUFBTSxrREFBa0Q7QUFDcEU7QUFFQSxJQUFPLDZCQUFRLGlDQUFhO0FBQUEsRUFDMUIsS0FBSztBQUFBLEVBQ0wsUUFBUTtBQUFBLEVBQ1IsU0FBUztBQUFBLEVBQ1QsZUFBZTtBQUFBLElBQ2IsS0FBSyxRQUFRLElBQUk7QUFBQSxFQUNuQjtBQUNGLENBQUM7IiwKICAibmFtZXMiOiBbXQp9Cg==
+
+Cannot find module 'drizzle-kit'
+Require stack:
+- /app/drizzle.config.ts
+- /usr/local/lib/node_modules/drizzle-kit/bin.cjs
+Starting Sa Plays Roblox Streamer...
+Running as root, will switch to app user later
+Waiting for database...
+postgres:5432 - accepting connections
+Database is ready
+Running database migrations...
+Using existing TypeScript drizzle config
+Running drizzle-kit push with config: ./drizzle.config.ts...
+Reading config file '/app/drizzle.config.ts'
+2025-07-19T08:04:23.017Z esbuild-register compiled /app/drizzle.config.ts
+2025-07-19T08:04:23.017Z esbuild-register const __esbuild_register_import_meta_url__ = require('url').pathToFileURL(__filename).href;
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var drizzle_config_exports = {};
+__export(drizzle_config_exports, {
+  default: () => drizzle_config_default
+});
+module.exports = __toCommonJS(drizzle_config_exports);
+var import_drizzle_kit = require("drizzle-kit");
+if (!process.env.DATABASE_URL) {
+  throw new Error("DATABASE_URL, ensure the database is provisioned");
+}
+var drizzle_config_default = (0, import_drizzle_kit.defineConfig)({
+  out: "./migrations",
+  schema: "./shared/schema.ts",
+  dialect: "postgresql",
+  dbCredentials: {
+    url: process.env.DATABASE_URL
+  }
+});
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiL2FwcC9kcml6emxlLmNvbmZpZy50cyJdLAogICJzb3VyY2VzQ29udGVudCI6IFsiaW1wb3J0IHsgZGVmaW5lQ29uZmlnIH0gZnJvbSBcImRyaXp6bGUta2l0XCI7XG5cbmlmICghcHJvY2Vzcy5lbnYuREFUQUJBU0VfVVJMKSB7XG4gIHRocm93IG5ldyBFcnJvcihcIkRBVEFCQVNFX1VSTCwgZW5zdXJlIHRoZSBkYXRhYmFzZSBpcyBwcm92aXNpb25lZFwiKTtcbn1cblxuZXhwb3J0IGRlZmF1bHQgZGVmaW5lQ29uZmlnKHtcbiAgb3V0OiBcIi4vbWlncmF0aW9uc1wiLFxuICBzY2hlbWE6IFwiLi9zaGFyZWQvc2NoZW1hLnRzXCIsXG4gIGRpYWxlY3Q6IFwicG9zdGdyZXNxbFwiLFxuICBkYkNyZWRlbnRpYWxzOiB7XG4gICAgdXJsOiBwcm9jZXNzLmVudi5EQVRBQkFTRV9VUkwsXG4gIH0sXG59KTtcbiJdLAogICJtYXBwaW5ncyI6ICI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEseUJBQTZCO0FBRTdCLElBQUksQ0FBQyxRQUFRLElBQUksY0FBYztBQUM3QixRQUFNLElBQUksTUFBTSxrREFBa0Q7QUFDcEU7QUFFQSxJQUFPLDZCQUFRLGlDQUFhO0FBQUEsRUFDMUIsS0FBSztBQUFBLEVBQ0wsUUFBUTtBQUFBLEVBQ1IsU0FBUztBQUFBLEVBQ1QsZUFBZTtBQUFBLElBQ2IsS0FBSyxRQUFRLElBQUk7QUFBQSxFQUNuQjtBQUNGLENBQUM7IiwKICAibmFtZXMiOiBbXQp9Cg==
+
+Cannot find module 'drizzle-kit'
+Require stack:
+- /app/drizzle.config.ts
+- /usr/local/lib/node_modules/drizzle-kit/bin.cjs
+Starting Sa Plays Roblox Streamer...
+Running as root, will switch to app user later
+Waiting for database...
+postgres:5432 - accepting connections
+Database is ready
+Running database migrations...
+Using existing TypeScript drizzle config
+Running drizzle-kit push with config: ./drizzle.config.ts...
+Reading config file '/app/drizzle.config.ts'
+2025-07-19T08:04:36.481Z esbuild-register compiled /app/drizzle.config.ts
+2025-07-19T08:04:36.481Z esbuild-register const __esbuild_register_import_meta_url__ = require('url').pathToFileURL(__filename).href;
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var drizzle_config_exports = {};
+__export(drizzle_config_exports, {
+  default: () => drizzle_config_default
+});
+module.exports = __toCommonJS(drizzle_config_exports);
+var import_drizzle_kit = require("drizzle-kit");
+if (!process.env.DATABASE_URL) {
+  throw new Error("DATABASE_URL, ensure the database is provisioned");
+}
+var drizzle_config_default = (0, import_drizzle_kit.defineConfig)({
+  out: "./migrations",
+  schema: "./shared/schema.ts",
+  dialect: "postgresql",
+  dbCredentials: {
+    url: process.env.DATABASE_URL
+  }
+});
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiL2FwcC9kcml6emxlLmNvbmZpZy50cyJdLAogICJzb3VyY2VzQ29udGVudCI6IFsiaW1wb3J0IHsgZGVmaW5lQ29uZmlnIH0gZnJvbSBcImRyaXp6bGUta2l0XCI7XG5cbmlmICghcHJvY2Vzcy5lbnYuREFUQUJBU0VfVVJMKSB7XG4gIHRocm93IG5ldyBFcnJvcihcIkRBVEFCQVNFX1VSTCwgZW5zdXJlIHRoZSBkYXRhYmFzZSBpcyBwcm92aXNpb25lZFwiKTtcbn1cblxuZXhwb3J0IGRlZmF1bHQgZGVmaW5lQ29uZmlnKHtcbiAgb3V0OiBcIi4vbWlncmF0aW9uc1wiLFxuICBzY2hlbWE6IFwiLi9zaGFyZWQvc2NoZW1hLnRzXCIsXG4gIGRpYWxlY3Q6IFwicG9zdGdyZXNxbFwiLFxuICBkYkNyZWRlbnRpYWxzOiB7XG4gICAgdXJsOiBwcm9jZXNzLmVudi5EQVRBQkFTRV9VUkwsXG4gIH0sXG59KTtcbiJdLAogICJtYXBwaW5ncyI6ICI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEseUJBQTZCO0FBRTdCLElBQUksQ0FBQyxRQUFRLElBQUksY0FBYztBQUM3QixRQUFNLElBQUksTUFBTSxrREFBa0Q7QUFDcEU7QUFFQSxJQUFPLDZCQUFRLGlDQUFhO0FBQUEsRUFDMUIsS0FBSztBQUFBLEVBQ0wsUUFBUTtBQUFBLEVBQ1IsU0FBUztBQUFBLEVBQ1QsZUFBZTtBQUFBLElBQ2IsS0FBSyxRQUFRLElBQUk7QUFBQSxFQUNuQjtBQUNGLENBQUM7IiwKICAibmFtZXMiOiBbXQp9Cg==
+
+Cannot find module 'drizzle-kit'
+Require stack:
+- /app/drizzle.config.ts
+- /usr/local/lib/node_modules/drizzle-kit/bin.cjs
+Starting Sa Plays Roblox Streamer...
+Running as root, will switch to app user later
+Waiting for database...
+postgres:5432 - accepting connections
+Database is ready
+Running database migrations...
+Using existing TypeScript drizzle config
+Running drizzle-kit push with config: ./drizzle.config.ts...
+Reading config file '/app/drizzle.config.ts'
+2025-07-19T08:05:02.757Z esbuild-register compiled /app/drizzle.config.ts
+2025-07-19T08:05:02.757Z esbuild-register const __esbuild_register_import_meta_url__ = require('url').pathToFileURL(__filename).href;
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var drizzle_config_exports = {};
+__export(drizzle_config_exports, {
+  default: () => drizzle_config_default
+});
+module.exports = __toCommonJS(drizzle_config_exports);
+var import_drizzle_kit = require("drizzle-kit");
+if (!process.env.DATABASE_URL) {
+  throw new Error("DATABASE_URL, ensure the database is provisioned");
+}
+var drizzle_config_default = (0, import_drizzle_kit.defineConfig)({
+  out: "./migrations",
+  schema: "./shared/schema.ts",
+  dialect: "postgresql",
+  dbCredentials: {
+    url: process.env.DATABASE_URL
+  }
+});
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiL2FwcC9kcml6emxlLmNvbmZpZy50cyJdLAogICJzb3VyY2VzQ29udGVudCI6IFsiaW1wb3J0IHsgZGVmaW5lQ29uZmlnIH0gZnJvbSBcImRyaXp6bGUta2l0XCI7XG5cbmlmICghcHJvY2Vzcy5lbnYuREFUQUJBU0VfVVJMKSB7XG4gIHRocm93IG5ldyBFcnJvcihcIkRBVEFCQVNFX1VSTCwgZW5zdXJlIHRoZSBkYXRhYmFzZSBpcyBwcm92aXNpb25lZFwiKTtcbn1cblxuZXhwb3J0IGRlZmF1bHQgZGVmaW5lQ29uZmlnKHtcbiAgb3V0OiBcIi4vbWlncmF0aW9uc1wiLFxuICBzY2hlbWE6IFwiLi9zaGFyZWQvc2NoZW1hLnRzXCIsXG4gIGRpYWxlY3Q6IFwicG9zdGdyZXNxbFwiLFxuICBkYkNyZWRlbnRpYWxzOiB7XG4gICAgdXJsOiBwcm9jZXNzLmVudi5EQVRBQkFTRV9VUkwsXG4gIH0sXG59KTtcbiJdLAogICJtYXBwaW5ncyI6ICI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEseUJBQTZCO0FBRTdCLElBQUksQ0FBQyxRQUFRLElBQUksY0FBYztBQUM3QixRQUFNLElBQUksTUFBTSxrREFBa0Q7QUFDcEU7QUFFQSxJQUFPLDZCQUFRLGlDQUFhO0FBQUEsRUFDMUIsS0FBSztBQUFBLEVBQ0wsUUFBUTtBQUFBLEVBQ1IsU0FBUztBQUFBLEVBQ1QsZUFBZTtBQUFBLElBQ2IsS0FBSyxRQUFRLElBQUk7QUFBQSxFQUNuQjtBQUNGLENBQUM7IiwKICAibmFtZXMiOiBbXQp9Cg==
+
+Cannot find module 'drizzle-kit'
+Require stack:
+- /app/drizzle.config.ts
+- /usr/local/lib/node_modules/drizzle-kit/bin.cjs
