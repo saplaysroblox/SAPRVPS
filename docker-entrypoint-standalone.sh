@@ -42,7 +42,13 @@ chown -R streaming:streaming /app/uploads /app/backups 2>/dev/null || true
 # Start nginx in background (if available)
 if command -v nginx >/dev/null 2>&1; then
     echo "Starting nginx for RTMP support..."
-    nginx -t && nginx -g 'daemon on;' || echo "Nginx failed to start"
+    # Test nginx configuration
+    if nginx -t 2>/dev/null; then
+        nginx -g 'daemon on;'
+        echo "Nginx started successfully"
+    else
+        echo "Nginx configuration test failed, skipping nginx startup"
+    fi
 fi
 
 # Start the application

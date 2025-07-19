@@ -1,0 +1,192 @@
+Starting Sa Plays Roblox Streamer (Standalone Docker Version)...
+Waiting for database...
+Database is ready!
+Starting nginx for RTMP support...
+nginx: [alert] could not open error log file: open() "/var/lib/nginx/logs/error.log" failed (13: Permission denied)
+2025/07/19 09:20:12 [warn] 18#18: the "user" directive makes sense only if the master process runs with super-user privileges, ignored in /etc/nginx/nginx.conf:1
+2025/07/19 09:20:12 [emerg] 18#18: unknown directive "rtmp" in /etc/nginx/nginx.conf:10
+nginx: configuration file /etc/nginx/nginx.conf test failed
+Nginx failed to start
+Starting Sa Plays Roblox Streamer application...
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+
+Error: Cannot find module '/app/server-standalone.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v18.20.8
+Starting Sa Plays Roblox Streamer (Standalone Docker Version)...
+Waiting for database...
+Database is ready!
+Starting nginx for RTMP support...
+nginx: [alert] could not open error log file: open() "/var/lib/nginx/logs/error.log" failed (13: Permission denied)
+2025/07/19 09:20:12 [warn] 18#18: the "user" directive makes sense only if the master process runs with super-user privileges, ignored in /etc/nginx/nginx.conf:1
+2025/07/19 09:20:12 [emerg] 18#18: unknown directive "rtmp" in /etc/nginx/nginx.conf:10
+nginx: configuration file /etc/nginx/nginx.conf test failed
+Nginx failed to start
+Starting Sa Plays Roblox Streamer application...
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+
+Error: Cannot find module '/app/server-standalone.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v18.20.8
+Starting Sa Plays Roblox Streamer (Standalone Docker Version)...
+Waiting for database...
+Database is ready!
+Starting nginx for RTMP support...
+nginx: [alert] could not open error log file: open() "/var/lib/nginx/logs/error.log" failed (13: Permission denied)
+2025/07/19 09:20:12 [warn] 18#18: the "user" directive makes sense only if the master process runs with super-user privileges, ignored in /etc/nginx/nginx.conf:1
+2025/07/19 09:20:12 [emerg] 18#18: unknown directive "rtmp" in /etc/nginx/nginx.conf:10
+nginx: configuration file /etc/nginx/nginx.conf test failed
+Nginx failed to start
+Starting Sa Plays Roblox Streamer application...
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+
+Error: Cannot find module '/app/server-standalone.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v18.20.8
+Starting Sa Plays Roblox Streamer (Standalone Docker Version)...
+Waiting for database...
+Database is ready!
+Starting nginx for RTMP support...
+nginx: [alert] could not open error log file: open() "/var/lib/nginx/logs/error.log" failed (13: Permission denied)
+2025/07/19 09:20:13 [warn] 18#18: the "user" directive makes sense only if the master process runs with super-user privileges, ignored in /etc/nginx/nginx.conf:1
+2025/07/19 09:20:13 [emerg] 18#18: unknown directive "rtmp" in /etc/nginx/nginx.conf:10
+nginx: configuration file /etc/nginx/nginx.conf test failed
+Nginx failed to start
+Starting Sa Plays Roblox Streamer application...
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+
+Error: Cannot find module '/app/server-standalone.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v18.20.8
+Starting Sa Plays Roblox Streamer (Standalone Docker Version)...
+Waiting for database...
+Database is ready!
+Starting nginx for RTMP support...
+nginx: [alert] could not open error log file: open() "/var/lib/nginx/logs/error.log" failed (13: Permission denied)
+2025/07/19 09:20:14 [warn] 18#18: the "user" directive makes sense only if the master process runs with super-user privileges, ignored in /etc/nginx/nginx.conf:1
+2025/07/19 09:20:14 [emerg] 18#18: unknown directive "rtmp" in /etc/nginx/nginx.conf:10
+nginx: configuration file /etc/nginx/nginx.conf test failed
+Nginx failed to start
+Starting Sa Plays Roblox Streamer application...
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+
+Error: Cannot find module '/app/server-standalone.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v18.20.8
+Starting Sa Plays Roblox Streamer (Standalone Docker Version)...
+Waiting for database...
+Database is ready!
+Starting nginx for RTMP support...
+nginx: [alert] could not open error log file: open() "/var/lib/nginx/logs/error.log" failed (13: Permission denied)
+2025/07/19 09:20:16 [warn] 18#18: the "user" directive makes sense only if the master process runs with super-user privileges, ignored in /etc/nginx/nginx.conf:1
+2025/07/19 09:20:16 [emerg] 18#18: unknown directive "rtmp" in /etc/nginx/nginx.conf:10
+nginx: configuration file /etc/nginx/nginx.conf test failed
+Nginx failed to start
+Starting Sa Plays Roblox Streamer application...
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+
+Error: Cannot find module '/app/server-standalone.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v18.20.8
+Starting Sa Plays Roblox Streamer (Standalone Docker Version)...
+Waiting for database...
+Database is ready!
+Starting nginx for RTMP support...
+nginx: [alert] could not open error log file: open() "/var/lib/nginx/logs/error.log" failed (13: Permission denied)
+2025/07/19 09:20:19 [warn] 18#18: the "user" directive makes sense only if the master process runs with super-user privileges, ignored in /etc/nginx/nginx.conf:1
+2025/07/19 09:20:19 [emerg] 18#18: unknown directive "rtmp" in /etc/nginx/nginx.conf:10
+nginx: configuration file /etc/nginx/nginx.conf test failed
+Nginx failed to start
+Starting Sa Plays Roblox Streamer application...
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+
+Error: Cannot find module '/app/server-standalone.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v18.20.8
+Starting Sa Plays Roblox Streamer (Standalone Docker Version)...
+Waiting for database...
+Database is ready!
+Starting nginx for RTMP support...
+nginx: [alert] could not open error log file: open() "/var/lib/nginx/logs/error.log" failed (13: Permission denied)
+2025/07/19 09:20:25 [warn] 18#18: the "user" directive makes sense only if the master process runs with super-user privileges, ignored in /etc/nginx/nginx.conf:1
+2025/07/19 09:20:25 [emerg] 18#18: unknown directive "rtmp" in /etc/nginx/nginx.conf:10
+nginx: configuration file /etc/nginx/nginx.conf test failed
+Nginx failed to start
+Starting Sa Plays Roblox Streamer application...
+node:internal/modules/cjs/loader:1143
+  throw err;
+  ^
+
+Error: Cannot find module '/app/server-standalone.js'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1140:15)
+    at Module._load (node:internal/modules/cjs/loader:981:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:128:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v18.20.8

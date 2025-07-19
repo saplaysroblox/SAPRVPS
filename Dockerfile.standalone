@@ -3,30 +3,32 @@
 
 FROM node:18-alpine AS base
 
-# Install system dependencies
+# Install system dependencies including nginx with RTMP module
 RUN apk add --no-cache \
     ffmpeg \
     nginx \
+    nginx-mod-rtmp \
     postgresql-client \
     python3 \
     make \
     g++ \
-    git
+    git \
+    netcat-openbsd
 
 FROM base AS builder
 
 WORKDIR /app
 
-# Create minimal package.json for Docker compatibility
+# Copy package files
 COPY package.json package-lock.json ./
 
-# Install dependencies with specific versions that work in Docker
+# Install dependencies
 RUN npm install --include=dev
 
 # Copy source files
 COPY . .
 
-# Build the application (frontend + backend)
+# Build the frontend
 RUN npm run build
 
 # Verify build output
@@ -38,28 +40,23 @@ FROM base AS production
 RUN addgroup -g 1001 -S streaming && \
     adduser -S streaming -u 1001 -G streaming
 
-# Install only production dependencies without Replit-specific tools
 WORKDIR /app
-COPY package-standalone.json package.json
-RUN npm install --only=production
 
-# Copy application files
+# Copy built application files
 COPY --from=builder /app/dist/public ./public
-COPY --from=builder /app/server ./server
-COPY --from=builder /app/shared ./shared
+COPY --from=builder /app/server-standalone.js ./server-standalone.js
+COPY --from=builder /app/node_modules ./node_modules
 COPY docker-entrypoint-standalone.sh ./docker-entrypoint.sh
 
-# Create uploads directory (will be populated at runtime)
-RUN mkdir -p ./uploads
+# Create required directories with proper permissions
+RUN mkdir -p /app/uploads /app/backups /tmp/hls /tmp/nginx /var/log/nginx && \
+    chown -R streaming:streaming /app /tmp/hls /tmp/nginx && \
+    chmod +x ./docker-entrypoint.sh
 
-# Create required directories and set permissions
-RUN mkdir -p /app/backups /app/uploads /var/www/html/hls && \
-    chown -R streaming:streaming /app /var/www/html/hls
-
-# Configure nginx
+# Configure nginx with RTMP support
 COPY nginx-standalone.conf /etc/nginx/nginx.conf
 
-EXPOSE 5000 1935
+EXPOSE 5000 1935 8080
 
 USER streaming
 
