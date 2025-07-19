@@ -27,6 +27,13 @@
 - Updated Dockerfile to install production dependencies in container
 - Separated build dependencies from runtime dependencies
 
+### 5. nanoid ES Module Compatibility
+**Problem**: nanoid v5+ is ES-only and can't be required() in CommonJS
+**Solution**:
+- Downgraded nanoid to v3.3.7 which supports CommonJS
+- Added fallback ID generator in case nanoid fails to load
+- Maintained compatibility with existing file naming system
+
 ## Updated Files
 
 1. **Dockerfile.standalone**: 
@@ -43,6 +50,7 @@
 3. **package-standalone.json**:
    - Created minimal package.json for Docker container
    - Removed "type": "module" to allow CommonJS
+   - Downgraded nanoid to v3.3.7 for CommonJS compatibility
    - Included only essential production dependencies
 
 4. **nginx-standalone-simple.conf**:

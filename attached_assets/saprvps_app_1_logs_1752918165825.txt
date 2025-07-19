@@ -1,0 +1,239 @@
+Starting Sa Plays Roblox Streamer (Standalone Docker Version)...
+Waiting for database...
+Waiting for database... (1/30)
+Database is ready!
+Starting nginx for RTMP support...
+Nginx configuration test failed, skipping nginx startup
+Starting Sa Plays Roblox Streamer application...
+/app/server-standalone.js:10
+const { nanoid } = require('nanoid');
+                   ^
+
+Error [ERR_REQUIRE_ESM]: require() of ES Module /app/node_modules/nanoid/index.js from /app/server-standalone.js not supported.
+Instead change the require of index.js in /app/server-standalone.js to a dynamic import() which is available in all CommonJS modules.
+    at Object.<anonymous> (/app/server-standalone.js:10:20) {
+  code: 'ERR_REQUIRE_ESM'
+}
+
+Node.js v18.20.8
+Starting Sa Plays Roblox Streamer (Standalone Docker Version)...
+Waiting for database...
+Database is ready!
+Starting nginx for RTMP support...
+Nginx configuration test failed, skipping nginx startup
+Starting Sa Plays Roblox Streamer application...
+/app/server-standalone.js:10
+const { nanoid } = require('nanoid');
+                   ^
+
+Error [ERR_REQUIRE_ESM]: require() of ES Module /app/node_modules/nanoid/index.js from /app/server-standalone.js not supported.
+Instead change the require of index.js in /app/server-standalone.js to a dynamic import() which is available in all CommonJS modules.
+    at Object.<anonymous> (/app/server-standalone.js:10:20) {
+  code: 'ERR_REQUIRE_ESM'
+}
+
+Node.js v18.20.8
+Starting Sa Plays Roblox Streamer (Standalone Docker Version)...
+Waiting for database...
+Database is ready!
+Starting nginx for RTMP support...
+Nginx configuration test failed, skipping nginx startup
+Starting Sa Plays Roblox Streamer application...
+/app/server-standalone.js:10
+const { nanoid } = require('nanoid');
+                   ^
+
+Error [ERR_REQUIRE_ESM]: require() of ES Module /app/node_modules/nanoid/index.js from /app/server-standalone.js not supported.
+Instead change the require of index.js in /app/server-standalone.js to a dynamic import() which is available in all CommonJS modules.
+    at Object.<anonymous> (/app/server-standalone.js:10:20) {
+  code: 'ERR_REQUIRE_ESM'
+}
+
+Node.js v18.20.8
+Starting Sa Plays Roblox Streamer (Standalone Docker Version)...
+Waiting for database...
+Database is ready!
+Starting nginx for RTMP support...
+Nginx configuration test failed, skipping nginx startup
+Starting Sa Plays Roblox Streamer application...
+/app/server-standalone.js:10
+const { nanoid } = require('nanoid');
+                   ^
+
+Error [ERR_REQUIRE_ESM]: require() of ES Module /app/node_modules/nanoid/index.js from /app/server-standalone.js not supported.
+Instead change the require of index.js in /app/server-standalone.js to a dynamic import() which is available in all CommonJS modules.
+    at Object.<anonymous> (/app/server-standalone.js:10:20) {
+  code: 'ERR_REQUIRE_ESM'
+}
+
+Node.js v18.20.8
+Starting Sa Plays Roblox Streamer (Standalone Docker Version)...
+Waiting for database...
+Database is ready!
+Starting nginx for RTMP support...
+Nginx configuration test failed, skipping nginx startup
+Starting Sa Plays Roblox Streamer application...
+/app/server-standalone.js:10
+const { nanoid } = require('nanoid');
+                   ^
+
+Error [ERR_REQUIRE_ESM]: require() of ES Module /app/node_modules/nanoid/index.js from /app/server-standalone.js not supported.
+Instead change the require of index.js in /app/server-standalone.js to a dynamic import() which is available in all CommonJS modules.
+    at Object.<anonymous> (/app/server-standalone.js:10:20) {
+  code: 'ERR_REQUIRE_ESM'
+}
+
+Node.js v18.20.8
+Starting Sa Plays Roblox Streamer (Standalone Docker Version)...
+Waiting for database...
+Database is ready!
+Starting nginx for RTMP support...
+Nginx configuration test failed, skipping nginx startup
+Starting Sa Plays Roblox Streamer application...
+/app/server-standalone.js:10
+const { nanoid } = require('nanoid');
+                   ^
+
+Error [ERR_REQUIRE_ESM]: require() of ES Module /app/node_modules/nanoid/index.js from /app/server-standalone.js not supported.
+Instead change the require of index.js in /app/server-standalone.js to a dynamic import() which is available in all CommonJS modules.
+    at Object.<anonymous> (/app/server-standalone.js:10:20) {
+  code: 'ERR_REQUIRE_ESM'
+}
+
+Node.js v18.20.8
+Starting Sa Plays Roblox Streamer (Standalone Docker Version)...
+Waiting for database...
+Database is ready!
+Starting nginx for RTMP support...
+Nginx configuration test failed, skipping nginx startup
+Starting Sa Plays Roblox Streamer application...
+/app/server-standalone.js:10
+const { nanoid } = require('nanoid');
+                   ^
+
+Error [ERR_REQUIRE_ESM]: require() of ES Module /app/node_modules/nanoid/index.js from /app/server-standalone.js not supported.
+Instead change the require of index.js in /app/server-standalone.js to a dynamic import() which is available in all CommonJS modules.
+    at Object.<anonymous> (/app/server-standalone.js:10:20) {
+  code: 'ERR_REQUIRE_ESM'
+}
+
+Node.js v18.20.8
+Starting Sa Plays Roblox Streamer (Standalone Docker Version)...
+Waiting for database...
+Database is ready!
+Starting nginx for RTMP support...
+Nginx configuration test failed, skipping nginx startup
+Starting Sa Plays Roblox Streamer application...
+/app/server-standalone.js:10
+const { nanoid } = require('nanoid');
+                   ^
+
+Error [ERR_REQUIRE_ESM]: require() of ES Module /app/node_modules/nanoid/index.js from /app/server-standalone.js not supported.
+Instead change the require of index.js in /app/server-standalone.js to a dynamic import() which is available in all CommonJS modules.
+    at Object.<anonymous> (/app/server-standalone.js:10:20) {
+  code: 'ERR_REQUIRE_ESM'
+}
+
+Node.js v18.20.8
+Starting Sa Plays Roblox Streamer (Standalone Docker Version)...
+Waiting for database...
+Database is ready!
+Starting nginx for RTMP support...
+Nginx configuration test failed, skipping nginx startup
+Starting Sa Plays Roblox Streamer application...
+/app/server-standalone.js:10
+const { nanoid } = require('nanoid');
+                   ^
+
+Error [ERR_REQUIRE_ESM]: require() of ES Module /app/node_modules/nanoid/index.js from /app/server-standalone.js not supported.
+Instead change the require of index.js in /app/server-standalone.js to a dynamic import() which is available in all CommonJS modules.
+    at Object.<anonymous> (/app/server-standalone.js:10:20) {
+  code: 'ERR_REQUIRE_ESM'
+}
+
+Node.js v18.20.8
+Starting Sa Plays Roblox Streamer (Standalone Docker Version)...
+Waiting for database...
+Database is ready!
+Starting nginx for RTMP support...
+Nginx configuration test failed, skipping nginx startup
+Starting Sa Plays Roblox Streamer application...
+/app/server-standalone.js:10
+const { nanoid } = require('nanoid');
+                   ^
+
+Error [ERR_REQUIRE_ESM]: require() of ES Module /app/node_modules/nanoid/index.js from /app/server-standalone.js not supported.
+Instead change the require of index.js in /app/server-standalone.js to a dynamic import() which is available in all CommonJS modules.
+    at Object.<anonymous> (/app/server-standalone.js:10:20) {
+  code: 'ERR_REQUIRE_ESM'
+}
+
+Node.js v18.20.8
+Starting Sa Plays Roblox Streamer (Standalone Docker Version)...
+Waiting for database...
+Database is ready!
+Starting nginx for RTMP support...
+Nginx configuration test failed, skipping nginx startup
+Starting Sa Plays Roblox Streamer application...
+/app/server-standalone.js:10
+const { nanoid } = require('nanoid');
+                   ^
+
+Error [ERR_REQUIRE_ESM]: require() of ES Module /app/node_modules/nanoid/index.js from /app/server-standalone.js not supported.
+Instead change the require of index.js in /app/server-standalone.js to a dynamic import() which is available in all CommonJS modules.
+    at Object.<anonymous> (/app/server-standalone.js:10:20) {
+  code: 'ERR_REQUIRE_ESM'
+}
+
+Node.js v18.20.8
+Starting Sa Plays Roblox Streamer (Standalone Docker Version)...
+Waiting for database...
+Database is ready!
+Starting nginx for RTMP support...
+Nginx configuration test failed, skipping nginx startup
+Starting Sa Plays Roblox Streamer application...
+/app/server-standalone.js:10
+const { nanoid } = require('nanoid');
+                   ^
+
+Error [ERR_REQUIRE_ESM]: require() of ES Module /app/node_modules/nanoid/index.js from /app/server-standalone.js not supported.
+Instead change the require of index.js in /app/server-standalone.js to a dynamic import() which is available in all CommonJS modules.
+    at Object.<anonymous> (/app/server-standalone.js:10:20) {
+  code: 'ERR_REQUIRE_ESM'
+}
+
+Node.js v18.20.8
+Starting Sa Plays Roblox Streamer (Standalone Docker Version)...
+Waiting for database...
+Database is ready!
+Starting nginx for RTMP support...
+Nginx configuration test failed, skipping nginx startup
+Starting Sa Plays Roblox Streamer application...
+/app/server-standalone.js:10
+const { nanoid } = require('nanoid');
+                   ^
+
+Error [ERR_REQUIRE_ESM]: require() of ES Module /app/node_modules/nanoid/index.js from /app/server-standalone.js not supported.
+Instead change the require of index.js in /app/server-standalone.js to a dynamic import() which is available in all CommonJS modules.
+    at Object.<anonymous> (/app/server-standalone.js:10:20) {
+  code: 'ERR_REQUIRE_ESM'
+}
+
+Node.js v18.20.8
+Starting Sa Plays Roblox Streamer (Standalone Docker Version)...
+Waiting for database...
+Database is ready!
+Starting nginx for RTMP support...
+Nginx configuration test failed, skipping nginx startup
+Starting Sa Plays Roblox Streamer application...
+/app/server-standalone.js:10
+const { nanoid } = require('nanoid');
+                   ^
+
+Error [ERR_REQUIRE_ESM]: require() of ES Module /app/node_modules/nanoid/index.js from /app/server-standalone.js not supported.
+Instead change the require of index.js in /app/server-standalone.js to a dynamic import() which is available in all CommonJS modules.
+    at Object.<anonymous> (/app/server-standalone.js:10:20) {
+  code: 'ERR_REQUIRE_ESM'
+}
+
+Node.js v18.20.8

@@ -7,7 +7,19 @@ const path = require('path');
 const fs = require('fs');
 const pg = require('pg');
 const multer = require('multer');
-const { nanoid } = require('nanoid');
+
+// Simple ID generator (fallback if nanoid fails)
+function generateId() {
+  return Date.now().toString(36) + Math.random().toString(36).substr(2);
+}
+
+let nanoid;
+try {
+  nanoid = require('nanoid').nanoid;
+} catch (error) {
+  console.log('Using fallback ID generator');
+  nanoid = generateId;
+}
 
 const { Pool } = pg;
 // __dirname is available in CommonJS
