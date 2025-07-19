@@ -1,0 +1,61 @@
+# Standalone Docker build for Sa Plays Roblox Streamer
+# This version removes Replit-specific dependencies
+
+FROM node:18-alpine AS base
+
+# Install system dependencies
+RUN apk add --no-cache \
+    ffmpeg \
+    nginx \
+    postgresql-client \
+    python3 \
+    make \
+    g++ \
+    git
+
+FROM base AS builder
+
+WORKDIR /app
+
+# Create minimal package.json for Docker compatibility
+COPY package.json package-lock.json ./
+
+# Install dependencies with specific versions that work in Docker
+RUN npm install --include=dev
+
+# Copy source files
+COPY . .
+
+# Build the frontend only (skip server bundling to avoid Replit-specific issues)
+RUN npm run build:client
+
+FROM base AS production
+
+# Create app user
+RUN addgroup -g 1001 -S streaming && \
+    adduser -S streaming -u 1001 -G streaming
+
+# Install only production dependencies without Replit-specific tools
+WORKDIR /app
+COPY package-standalone.json package.json
+RUN npm install --only=production
+
+# Copy application files
+COPY --from=builder /app/dist/public ./public
+COPY --from=builder /app/server ./server
+COPY --from=builder /app/shared ./shared
+COPY --from=builder /app/uploads ./uploads
+COPY docker-entrypoint-standalone.sh ./docker-entrypoint.sh
+
+# Create required directories
+RUN mkdir -p /app/backups /var/www/html/hls && \
+    chown -R streaming:streaming /app
+
+# Configure nginx
+COPY nginx-standalone.conf /etc/nginx/nginx.conf
+
+EXPOSE 5000 1935
+
+USER streaming
+
+ENTRYPOINT ["./docker-entrypoint.sh"]

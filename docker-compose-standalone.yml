@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+  sa-plays-streamer:
+    build:
+      context: .
+      dockerfile: Dockerfile.standalone
+    container_name: sa-plays-streamer
+    restart: unless-stopped
+    ports:
+      - "5000:5000"   # Web application
+      - "1935:1935"   # RTMP streaming
+      - "8080:8080"   # HLS/nginx
+    environment:
+      - DATABASE_URL=postgresql://neondb_owner:npg_lt4QRoXDb8Pf@postgres:5432/neondb
+      - NODE_ENV=production
+      - PORT=5000
+    volumes:
+      - uploads_data:/app/uploads
+      - backups_data:/app/backups
+      - hls_data:/tmp/hls
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - sa-plays-network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: sa-plays-postgres
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: neondb
+      POSTGRES_USER: neondb_owner
+      POSTGRES_PASSWORD: npg_lt4QRoXDb8Pf
+      POSTGRES_INITDB_ARGS: "--encoding=UTF-8"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - sa-plays-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U neondb_owner -d neondb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+    driver: local
+  uploads_data:
+    driver: local
+  backups_data:
+    driver: local
+  hls_data:
+    driver: local
+
+networks:
+  sa-plays-network:
+    driver: bridge
