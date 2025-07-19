@@ -34,6 +34,13 @@
 - Added fallback ID generator in case nanoid fails to load
 - Maintained compatibility with existing file naming system
 
+### 6. PostgreSQL SSL Connection Error
+**Problem**: Docker PostgreSQL container rejects SSL connections causing initialization to fail
+**Solution**:
+- Updated database connection logic to disable SSL for Docker/local connections
+- Added ?sslmode=disable to DATABASE_URL in docker-compose
+- Enhanced connection detection for localhost, 127.0.0.1, and container hostnames
+
 ## Updated Files
 
 1. **Dockerfile.standalone**: 

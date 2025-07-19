@@ -35,10 +35,20 @@ app.use(express.urlencoded({ extended: true, limit: '500mb' }));
 // Database connection
 let db;
 try {
-  db = new Pool({
+  const connectionConfig = {
     connectionString: process.env.DATABASE_URL,
-    ssl: process.env.DATABASE_URL?.includes('localhost') ? false : { rejectUnauthorized: false }
-  });
+  };
+  
+  // Disable SSL for local/Docker connections
+  if (process.env.DATABASE_URL?.includes('localhost') || 
+      process.env.DATABASE_URL?.includes('127.0.0.1') ||
+      process.env.DATABASE_URL?.includes('db:')) {
+    connectionConfig.ssl = false;
+  } else {
+    connectionConfig.ssl = { rejectUnauthorized: false };
+  }
+  
+  db = new Pool(connectionConfig);
   console.log('Database connection established');
 } catch (error) {
   console.error('Database connection failed:', error);

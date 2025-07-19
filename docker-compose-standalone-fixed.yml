@@ -11,7 +11,7 @@ services:
       - "8080:8080"
     environment:
       - NODE_ENV=production
-      - DATABASE_URL=postgresql://streaming_user:streaming_pass@db:5432/streaming_db
+      - DATABASE_URL=postgresql://streaming_user:streaming_pass@db:5432/streaming_db?sslmode=disable
       - PORT=5000
     volumes:
       - uploads:/app/uploads
