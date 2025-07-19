@@ -27,67 +27,90 @@ export interface IStorage {
 
 export class DatabaseStorage implements IStorage {
   private initialized = false;
+  private initPromise: Promise<void>;
   
   constructor() {
-    // Initialize default stream status if it doesn't exist
-    this.initializeDefaultStreamStatus();
+    // Don't initialize in constructor, let it happen lazily
+    this.initPromise = this.lazyInitialize();
   }
 
-  private async initializeDefaultStreamStatus(): Promise<void> {
+  private async lazyInitialize(): Promise<void> {
+    // This just waits for DB and marks as ready
+    await dbInitPromise;
+    this.initialized = true;
+  }
+
+  async initializeDefaultData(): Promise<void> {
     try {
-      // Wait for database to be initialized
-      await dbInitPromise;
+      await this.ensureInitialized();
       
-      const existingStatus = await this.getStreamStatus();
-      if (!existingStatus) {
-        await this.createOrUpdateStreamStatus({
-          status: 'offline',
-          viewerCount: 0,
-          uptime: '00:00:00',
-          currentVideoId: null,
-          startedAt: null,
-          loopPlaylist: false,
-        });
+      if (!db) {
+        throw new Error('Database not available');
+      }
+      
+      // Check if we already have basic data
+      try {
+        const [status] = await db.select().from(streamStatus).limit(1);
+        if (!status) {
+          console.log('Creating default stream status');
+          await db.insert(streamStatus).values({
+            status: 'offline',
+            viewerCount: 0,
+            uptime: '00:00:00',
+            currentVideoId: null,
+            startedAt: null,
+            loopPlaylist: false,
+          });
+        }
+      } catch (error) {
+        console.warn('Could not initialize stream status:', error);
       }
       
       // Initialize default system config if it doesn't exist
-      const existingConfig = await this.getSystemConfig();
-      if (!existingConfig) {
-        await this.createOrUpdateSystemConfig({
-          rtmpPort: 1935,
-          webPort: 5000,
-          dbHost: "localhost",
-          dbPort: 5432,
-          dbName: "streaming_db",
-          dbUser: "",
-          dbPassword: "",
-          useExternalDb: false,
-        });
+      try {
+        const [config] = await db.select().from(systemConfigs).limit(1);
+        if (!config) {
+          console.log('Creating default system config');
+          await db.insert(systemConfigs).values({
+            rtmpPort: 1935,
+            webPort: 5000,
+            dbHost: "localhost",
+            dbPort: 5432,
+            dbName: "streaming_db",
+            dbUser: "",
+            dbPassword: "",
+            useExternalDb: false,
+            updatedAt: new Date(),
+          });
+        }
+      } catch (error) {
+        console.warn('Could not initialize system config:', error);
       }
       
-      this.initialized = true;
+      console.log("Default data initialization completed successfully");
     } catch (error) {
-      console.warn('Failed to initialize default configurations:', error);
+      console.error("Failed to initialize default data:", error);
     }
   }
 
   private async ensureInitialized(): Promise<void> {
-    if (!this.initialized) {
-      await dbInitPromise;
-    }
+    await this.initPromise;
   }
   async getVideos(): Promise<Video[]> {
     await this.ensureInitialized();
+    if (!db) throw new Error('Database not initialized');
     const result = await db.select().from(videos).orderBy(videos.playlistOrder);
     return result;
   }
 
   async getVideo(id: number): Promise<Video | undefined> {
+    await this.ensureInitialized();
     const [video] = await db.select().from(videos).where(eq(videos.id, id));
     return video || undefined;
   }
 
   async createVideo(insertVideo: InsertVideo): Promise<Video> {
+    await this.ensureInitialized();
     const [video] = await db
       .insert(videos)
       .values({
@@ -99,6 +122,7 @@ export class DatabaseStorage implements IStorage {
   }
 
   async updateVideo(id: number, updateVideo: Partial<InsertVideo>): Promise<Video | undefined> {
+    await this.ensureInitialized();
     const [video] = await db
       .update(videos)
       .set(updateVideo)
@@ -108,11 +132,13 @@ export class DatabaseStorage implements IStorage {
   }
 
   async deleteVideo(id: number): Promise<boolean> {
+    await this.ensureInitialized();
     const result = await db.delete(videos).where(eq(videos.id, id));
     return (result.rowCount || 0) > 0;
   }
 
   async reorderPlaylist(videoIds: number[]): Promise<void> {
+    await this.ensureInitialized();
     for (let i = 0; i < videoIds.length; i++) {
       await db
         .update(videos)
@@ -131,6 +157,7 @@ export class DatabaseStorage implements IStorage {
   }
 
   async createOrUpdateStreamConfig(config: InsertStreamConfig): Promise<StreamConfig> {
+    await this.ensureInitialized();
     const existingConfig = await this.getStreamConfig();
     
     if (existingConfig) {
@@ -158,11 +185,13 @@ export class DatabaseStorage implements IStorage {
 
   async getStreamStatus(): Promise<StreamStatus | undefined> {
     await this.ensureInitialized();
+    if (!db) throw new Error('Database not initialized');
     const [status] = await db.select().from(streamStatus).limit(1);
     return status || undefined;
   }
 
   async createOrUpdateStreamStatus(status: InsertStreamStatus): Promise<StreamStatus> {
+    await this.ensureInitialized();
     const existingStatus = await this.getStreamStatus();
     
     if (existingStatus) {
@@ -195,11 +224,13 @@ export class DatabaseStorage implements IStorage {
 
   async getSystemConfig(): Promise<SystemConfig | undefined> {
     await this.ensureInitialized();
+    if (!db) throw new Error('Database not initialized');
     const [config] = await db.select().from(systemConfigs).limit(1);
     return config || undefined;
   }
 
   async createOrUpdateSystemConfig(config: InsertSystemConfig): Promise<SystemConfig> {
+    await this.ensureInitialized();
     const existingConfig = await this.getSystemConfig();
     
     if (existingConfig) {
