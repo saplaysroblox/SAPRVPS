@@ -1,19 +1,16 @@
-// Standalone server for Docker deployment
+// Standalone server for Docker deployment  
 // Removes Replit-specific dependencies and uses standard Node.js patterns
 
-import express from 'express';
-import { createServer } from 'http';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-import fs from 'fs';
-import pg from 'pg';
-import multer from 'multer';
-import { nanoid } from 'nanoid';
+const express = require('express');
+const { createServer } = require('http');
+const path = require('path');
+const fs = require('fs');
+const pg = require('pg');
+const multer = require('multer');
+const { nanoid } = require('nanoid');
 
 const { Pool } = pg;
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+// __dirname is available in CommonJS
 
 const app = express();
 const server = createServer(app);

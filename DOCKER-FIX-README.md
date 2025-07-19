@@ -6,33 +6,51 @@
 **Problem**: The Docker container couldn't find `/app/server-standalone.js`
 **Solution**: Updated Dockerfile.standalone to properly copy the server-standalone.js file
 
-### 2. Nginx RTMP Module Missing  
-**Problem**: Standard Alpine nginx doesn't include RTMP module
+### 2. ES Module Syntax Error
+**Problem**: server-standalone.js was using ES modules (import/export) but Node.js treated it as CommonJS
 **Solution**: 
-- Added `nginx-mod-rtmp` package to Dockerfile
-- Updated nginx config to load the RTMP module with `load_module` directive
-- Fixed permission issues with nginx log files
+- Converted server-standalone.js from ES modules to CommonJS (require/module.exports)
+- Created package-standalone.json without "type": "module"
+- Fixed __dirname reference for CommonJS
 
-### 3. Permission Issues
-**Problem**: nginx couldn't write to log files due to permission restrictions
+### 3. Nginx RTMP Module Issues  
+**Problem**: Standard Alpine nginx's RTMP module caused configuration errors
+**Solution**: 
+- Created nginx-standalone-simple.conf without RTMP for basic functionality
+- Added nginx-mod-rtmp package to Dockerfile for future RTMP support
+- Used /tmp directory for nginx logs to avoid permission issues
+
+### 4. Dependency Management
+**Problem**: Docker container wasn't properly installing production dependencies
 **Solution**:
-- Updated nginx config to use `/tmp` for log files (writable by non-root user)
-- Removed user directive from nginx config (not needed in container)
-- Set proper ownership of required directories
+- Created dedicated package-standalone.json with minimal dependencies
+- Updated Dockerfile to install production dependencies in container
+- Separated build dependencies from runtime dependencies
 
 ## Updated Files
 
 1. **Dockerfile.standalone**: 
    - Added `nginx-mod-rtmp` and `netcat-openbsd` packages
    - Fixed file copying to ensure server-standalone.js is available
+   - Updated to use package-standalone.json for dependencies
    - Improved directory permissions
 
-2. **nginx-standalone.conf**:
-   - Added `load_module` directive for RTMP module
-   - Removed user directive (not needed in container)
-   - Fixed log file paths to use `/tmp`
+2. **server-standalone.js**:
+   - Converted from ES modules to CommonJS syntax
+   - Fixed __dirname reference for Node.js compatibility
+   - Simplified imports for better container compatibility
 
-3. **docker-entrypoint-standalone.sh**:
+3. **package-standalone.json**:
+   - Created minimal package.json for Docker container
+   - Removed "type": "module" to allow CommonJS
+   - Included only essential production dependencies
+
+4. **nginx-standalone-simple.conf**:
+   - Simplified nginx configuration without RTMP initially
+   - Fixed log file paths to use `/tmp` directory
+   - Added basic health check endpoint
+
+5. **docker-entrypoint-standalone.sh**:
    - Improved nginx startup handling
    - Better error handling for nginx configuration test
 

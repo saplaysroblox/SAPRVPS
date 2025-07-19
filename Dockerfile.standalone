@@ -42,10 +42,13 @@ RUN addgroup -g 1001 -S streaming && \
 
 WORKDIR /app
 
+# Install production dependencies first
+COPY package-standalone.json ./package.json
+RUN npm install --only=production
+
 # Copy built application files
 COPY --from=builder /app/dist/public ./public
 COPY --from=builder /app/server-standalone.js ./server-standalone.js
-COPY --from=builder /app/node_modules ./node_modules
 COPY docker-entrypoint-standalone.sh ./docker-entrypoint.sh
 
 # Create required directories with proper permissions
@@ -53,8 +56,8 @@ RUN mkdir -p /app/uploads /app/backups /tmp/hls /tmp/nginx /var/log/nginx && \
     chown -R streaming:streaming /app /tmp/hls /tmp/nginx && \
     chmod +x ./docker-entrypoint.sh
 
-# Configure nginx with RTMP support
-COPY nginx-standalone.conf /etc/nginx/nginx.conf
+# Configure nginx (simple version without RTMP for now)
+COPY nginx-standalone-simple.conf /etc/nginx/nginx.conf
 
 EXPOSE 5000 1935 8080
 
