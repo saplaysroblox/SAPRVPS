@@ -42,13 +42,17 @@ ports:
 - Creating required directories with proper ownership
 - Switching to non-root `streaming` user for the application
 
-### 5. Build Failures
-**Error**: Build process fails during Docker build
+### 5. Build Failures and Module Errors
+**Error**: Build process fails during Docker build, or `ERR_INVALID_ARG_TYPE` path resolution errors
+
+**Root Cause**: Node.js modules not properly installed or import.meta paths not working in bundled output
 
 **Solution**:
-1. Ensure all source files are properly copied in Dockerfile
-2. Check that shared/ directory is included in the production image
-3. Verify node_modules are properly installed and copied
+1. Ensure Node.js dependencies are installed in production stage: `npm ci --only=production`
+2. Use production server wrapper (server.mjs) that handles path resolution issues
+3. Verify all source files are properly copied in Dockerfile
+4. Check that shared/ directory is included in the production image
+5. The updated docker-entrypoint.sh now automatically handles dependency installation
 
 ## Quick Start Commands
 

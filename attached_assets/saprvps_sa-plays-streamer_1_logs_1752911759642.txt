@@ -1,0 +1,1000 @@
+  code: 'ERR_INVALID_ARG_TYPE'
+}
+
+Node.js v18.20.8
+Starting Sa Plays Roblox Streamer...
+Running as root, will switch to app user later
+Waiting for database...
+postgres:5432 - accepting connections
+Database is ready
+Running database migrations...
+Using existing TypeScript drizzle config
+Running drizzle-kit push with config: ./drizzle.config.ts...
+Reading config file '/app/drizzle.config.ts'
+2025-07-19T07:53:52.215Z esbuild-register compiled /app/drizzle.config.ts
+2025-07-19T07:53:52.215Z esbuild-register const __esbuild_register_import_meta_url__ = require('url').pathToFileURL(__filename).href;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var drizzle_config_exports = {};
+__export(drizzle_config_exports, {
+  default: () => drizzle_config_default
+});
+module.exports = __toCommonJS(drizzle_config_exports);
+var import_drizzle_kit = require("drizzle-kit");
+if (!process.env.DATABASE_URL) {
+  throw new Error("DATABASE_URL, ensure the database is provisioned");
+}
+var drizzle_config_default = (0, import_drizzle_kit.defineConfig)({
+  out: "./migrations",
+  schema: "./shared/schema.ts",
+  dialect: "postgresql",
+  dbCredentials: {
+    url: process.env.DATABASE_URL
+  }
+});
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiL2FwcC9kcml6emxlLmNvbmZpZy50cyJdLAogICJzb3VyY2VzQ29udGVudCI6IFsiaW1wb3J0IHsgZGVmaW5lQ29uZmlnIH0gZnJvbSBcImRyaXp6bGUta2l0XCI7XG5cbmlmICghcHJvY2Vzcy5lbnYuREFUQUJBU0VfVVJMKSB7XG4gIHRocm93IG5ldyBFcnJvcihcIkRBVEFCQVNFX1VSTCwgZW5zdXJlIHRoZSBkYXRhYmFzZSBpcyBwcm92aXNpb25lZFwiKTtcbn1cblxuZXhwb3J0IGRlZmF1bHQgZGVmaW5lQ29uZmlnKHtcbiAgb3V0OiBcIi4vbWlncmF0aW9uc1wiLFxuICBzY2hlbWE6IFwiLi9zaGFyZWQvc2NoZW1hLnRzXCIsXG4gIGRpYWxlY3Q6IFwicG9zdGdyZXNxbFwiLFxuICBkYkNyZWRlbnRpYWxzOiB7XG4gICAgdXJsOiBwcm9jZXNzLmVudi5EQVRBQkFTRV9VUkwsXG4gIH0sXG59KTtcbiJdLAogICJtYXBwaW5ncyI6ICI7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSx5QkFBNkI7QUFFN0IsSUFBSSxDQUFDLFFBQVEsSUFBSSxjQUFjO0FBQzdCLFFBQU0sSUFBSSxNQUFNLGtEQUFrRDtBQUNwRTtBQUVBLElBQU8sNkJBQVEsaUNBQWE7QUFBQSxFQUMxQixLQUFLO0FBQUEsRUFDTCxRQUFRO0FBQUEsRUFDUixTQUFTO0FBQUEsRUFDVCxlQUFlO0FBQUEsSUFDYixLQUFLLFFBQVEsSUFBSTtBQUFBLEVBQ25CO0FBQ0YsQ0FBQzsiLAogICJuYW1lcyI6IFtdCn0K
+
+Using 'pg' driver for database querying
+2025-07-19T07:53:52.397Z esbuild-register compiled /app/shared/schema.ts
+2025-07-19T07:53:52.397Z esbuild-register const __esbuild_register_import_meta_url__ = require('url').pathToFileURL(__filename).href;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var schema_exports = {};
+__export(schema_exports, {
+  insertStreamConfigSchema: () => insertStreamConfigSchema,
+  insertStreamStatusSchema: () => insertStreamStatusSchema,
+  insertSystemConfigSchema: () => insertSystemConfigSchema,
+  insertVideoSchema: () => insertVideoSchema,
+  streamConfigs: () => streamConfigs,
+  streamStatus: () => streamStatus,
+  systemConfigs: () => systemConfigs,
+  videos: () => videos
+});
+module.exports = __toCommonJS(schema_exports);
+var import_pg_core = require("drizzle-orm/pg-core");
+var import_drizzle_zod = require("drizzle-zod");
+const videos = (0, import_pg_core.pgTable)("videos", {
+  id: (0, import_pg_core.serial)("id").primaryKey(),
+  title: (0, import_pg_core.text)("title").notNull(),
+  filename: (0, import_pg_core.text)("filename").notNull(),
+  fileSize: (0, import_pg_core.integer)("file_size").notNull(),
+  duration: (0, import_pg_core.text)("duration").notNull(),
+  thumbnailUrl: (0, import_pg_core.text)("thumbnail_url"),
+  playlistOrder: (0, import_pg_core.integer)("playlist_order").notNull(),
+  uploadedAt: (0, import_pg_core.timestamp)("uploaded_at").defaultNow()
+});
+const streamConfigs = (0, import_pg_core.pgTable)("stream_configs", {
+  id: (0, import_pg_core.serial)("id").primaryKey(),
+  platform: (0, import_pg_core.text)("platform").notNull(),
+  streamKey: (0, import_pg_core.text)("stream_key").notNull(),
+  rtmpUrl: (0, import_pg_core.text)("rtmp_url"),
+  resolution: (0, import_pg_core.text)("resolution").notNull(),
+  framerate: (0, import_pg_core.integer)("framerate").notNull(),
+  bitrate: (0, import_pg_core.integer)("bitrate").notNull(),
+  audioQuality: (0, import_pg_core.integer)("audio_quality").notNull(),
+  isActive: (0, import_pg_core.boolean)("is_active").default(false)
+});
+const streamStatus = (0, import_pg_core.pgTable)("stream_status", {
+  id: (0, import_pg_core.serial)("id").primaryKey(),
+  status: (0, import_pg_core.text)("status").notNull(),
+  // 'live', 'offline', 'starting', 'error'
+  viewerCount: (0, import_pg_core.integer)("viewer_count").default(0),
+  uptime: (0, import_pg_core.text)("uptime").default("00:00:00"),
+  currentVideoId: (0, import_pg_core.integer)("current_video_id"),
+  startedAt: (0, import_pg_core.timestamp)("started_at"),
+  loopPlaylist: (0, import_pg_core.boolean)("loop_playlist").default(false)
+});
+const systemConfigs = (0, import_pg_core.pgTable)("system_configs", {
+  id: (0, import_pg_core.serial)("id").primaryKey(),
+  rtmpPort: (0, import_pg_core.integer)("rtmp_port").default(1935),
+  webPort: (0, import_pg_core.integer)("web_port").default(5e3),
+  dbHost: (0, import_pg_core.text)("db_host").default("localhost"),
+  dbPort: (0, import_pg_core.integer)("db_port").default(5432),
+  dbName: (0, import_pg_core.text)("db_name").default("streaming_db"),
+  dbUser: (0, import_pg_core.text)("db_user").default(""),
+  dbPassword: (0, import_pg_core.text)("db_password").default(""),
+  useExternalDb: (0, import_pg_core.boolean)("use_external_db").default(false),
+  updatedAt: (0, import_pg_core.timestamp)("updated_at").defaultNow()
+});
+const insertVideoSchema = (0, import_drizzle_zod.createInsertSchema)(videos).omit({
+  id: true,
+  uploadedAt: true
+});
+const insertStreamConfigSchema = (0, import_drizzle_zod.createInsertSchema)(streamConfigs).omit({
+  id: true
+});
+const insertStreamStatusSchema = (0, import_drizzle_zod.createInsertSchema)(streamStatus).omit({
+  id: true
+});
+const insertSystemConfigSchema = (0, import_drizzle_zod.createInsertSchema)(systemConfigs).omit({
+  id: true,
+  updatedAt: true
+});
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiL2FwcC9zaGFyZWQvc2NoZW1hLnRzIl0sCiAgInNvdXJjZXNDb250ZW50IjogWyJpbXBvcnQgeyBwZ1RhYmxlLCB0ZXh0LCBzZXJpYWwsIGludGVnZXIsIGJvb2xlYW4sIHRpbWVzdGFtcCB9IGZyb20gXCJkcml6emxlLW9ybS9wZy1jb3JlXCI7XG5pbXBvcnQgeyBjcmVhdGVJbnNlcnRTY2hlbWEgfSBmcm9tIFwiZHJpenpsZS16b2RcIjtcbmltcG9ydCB7IHogfSBmcm9tIFwiem9kXCI7XG5cbmV4cG9ydCBjb25zdCB2aWRlb3MgPSBwZ1RhYmxlKFwidmlkZW9zXCIsIHtcbiAgaWQ6IHNlcmlhbChcImlkXCIpLnByaW1hcnlLZXkoKSxcbiAgdGl0bGU6IHRleHQoXCJ0aXRsZVwiKS5ub3ROdWxsKCksXG4gIGZpbGVuYW1lOiB0ZXh0KFwiZmlsZW5hbWVcIikubm90TnVsbCgpLFxuICBmaWxlU2l6ZTogaW50ZWdlcihcImZpbGVfc2l6ZVwiKS5ub3ROdWxsKCksXG4gIGR1cmF0aW9uOiB0ZXh0KFwiZHVyYXRpb25cIikubm90TnVsbCgpLFxuICB0aHVtYm5haWxVcmw6IHRleHQoXCJ0aHVtYm5haWxfdXJsXCIpLFxuICBwbGF5bGlzdE9yZGVyOiBpbnRlZ2VyKFwicGxheWxpc3Rfb3JkZXJcIikubm90TnVsbCgpLFxuICB1cGxvYWRlZEF0OiB0aW1lc3RhbXAoXCJ1cGxvYWRlZF9hdFwiKS5kZWZhdWx0Tm93KCksXG59KTtcblxuZXhwb3J0IGNvbnN0IHN0cmVhbUNvbmZpZ3MgPSBwZ1RhYmxlKFwic3RyZWFtX2NvbmZpZ3NcIiwge1xuICBpZDogc2VyaWFsKFwiaWRcIikucHJpbWFyeUtleSgpLFxuICBwbGF0Zm9ybTogdGV4dChcInBsYXRmb3JtXCIpLm5vdE51bGwoKSxcbiAgc3RyZWFtS2V5OiB0ZXh0KFwic3RyZWFtX2tleVwiKS5ub3ROdWxsKCksXG4gIHJ0bXBVcmw6IHRleHQoXCJydG1wX3VybFwiKSxcbiAgcmVzb2x1dGlvbjogdGV4dChcInJlc29sdXRpb25cIikubm90TnVsbCgpLFxuICBmcmFtZXJhdGU6IGludGVnZXIoXCJmcmFtZXJhdGVcIikubm90TnVsbCgpLFxuICBiaXRyYXRlOiBpbnRlZ2VyKFwiYml0cmF0ZVwiKS5ub3ROdWxsKCksXG4gIGF1ZGlvUXVhbGl0eTogaW50ZWdlcihcImF1ZGlvX3F1YWxpdHlcIikubm90TnVsbCgpLFxuICBpc0FjdGl2ZTogYm9vbGVhbihcImlzX2FjdGl2ZVwiKS5kZWZhdWx0KGZhbHNlKSxcbn0pO1xuXG5leHBvcnQgY29uc3Qgc3RyZWFtU3RhdHVzID0gcGdUYWJsZShcInN0cmVhbV9zdGF0dXNcIiwge1xuICBpZDogc2VyaWFsKFwiaWRcIikucHJpbWFyeUtleSgpLFxuICBzdGF0dXM6IHRleHQoXCJzdGF0dXNcIikubm90TnVsbCgpLCAvLyAnbGl2ZScsICdvZmZsaW5lJywgJ3N0YXJ0aW5nJywgJ2Vycm9yJ1xuICB2aWV3ZXJDb3VudDogaW50ZWdlcihcInZpZXdlcl9jb3VudFwiKS5kZWZhdWx0KDApLFxuICB1cHRpbWU6IHRleHQoXCJ1cHRpbWVcIikuZGVmYXVsdChcIjAwOjAwOjAwXCIpLFxuICBjdXJyZW50VmlkZW9JZDogaW50ZWdlcihcImN1cnJlbnRfdmlkZW9faWRcIiksXG4gIHN0YXJ0ZWRBdDogdGltZXN0YW1wKFwic3RhcnRlZF9hdFwiKSxcbiAgbG9vcFBsYXlsaXN0OiBib29sZWFuKFwibG9vcF9wbGF5bGlzdFwiKS5kZWZhdWx0KGZhbHNlKSxcbn0pO1xuXG5leHBvcnQgY29uc3Qgc3lzdGVtQ29uZmlncyA9IHBnVGFibGUoXCJzeXN0ZW1fY29uZmlnc1wiLCB7XG4gIGlkOiBzZXJpYWwoXCJpZFwiKS5wcmltYXJ5S2V5KCksXG4gIHJ0bXBQb3J0OiBpbnRlZ2VyKFwicnRtcF9wb3J0XCIpLmRlZmF1bHQoMTkzNSksXG4gIHdlYlBvcnQ6IGludGVnZXIoXCJ3ZWJfcG9ydFwiKS5kZWZhdWx0KDUwMDApLFxuICBkYkhvc3Q6IHRleHQoXCJkYl9ob3N0XCIpLmRlZmF1bHQoXCJsb2NhbGhvc3RcIiksXG4gIGRiUG9ydDogaW50ZWdlcihcImRiX3BvcnRcIikuZGVmYXVsdCg1NDMyKSxcbiAgZGJOYW1lOiB0ZXh0KFwiZGJfbmFtZVwiKS5kZWZhdWx0KFwic3RyZWFtaW5nX2RiXCIpLFxuICBkYlVzZXI6IHRleHQoXCJkYl91c2VyXCIpLmRlZmF1bHQoXCJcIiksXG4gIGRiUGFzc3dvcmQ6IHRleHQoXCJkYl9wYXNzd29yZFwiKS5kZWZhdWx0KFwiXCIpLFxuICB1c2VFeHRlcm5hbERiOiBib29sZWFuKFwidXNlX2V4dGVybmFsX2RiXCIpLmRlZmF1bHQoZmFsc2UpLFxuICB1cGRhdGVkQXQ6IHRpbWVzdGFtcChcInVwZGF0ZWRfYXRcIikuZGVmYXVsdE5vdygpLFxufSk7XG5cbmV4cG9ydCBjb25zdCBpbnNlcnRWaWRlb1NjaGVtYSA9IGNyZWF0ZUluc2VydFNjaGVtYSh2aWRlb3MpLm9taXQoe1xuICBpZDogdHJ1ZSxcbiAgdXBsb2FkZWRBdDogdHJ1ZSxcbn0pO1xuXG5leHBvcnQgY29uc3QgaW5zZXJ0U3RyZWFtQ29uZmlnU2NoZW1hID0gY3JlYXRlSW5zZXJ0U2NoZW1hKHN0cmVhbUNvbmZpZ3MpLm9taXQoe1xuICBpZDogdHJ1ZSxcbn0pO1xuXG5leHBvcnQgY29uc3QgaW5zZXJ0U3RyZWFtU3RhdHVzU2NoZW1hID0gY3JlYXRlSW5zZXJ0U2NoZW1hKHN0cmVhbVN0YXR1cykub21pdCh7XG4gIGlkOiB0cnVlLFxufSk7XG5cbmV4cG9ydCBjb25zdCBpbnNlcnRTeXN0ZW1Db25maWdTY2hlbWEgPSBjcmVhdGVJbnNlcnRTY2hlbWEoc3lzdGVtQ29uZmlncykub21pdCh7XG4gIGlkOiB0cnVlLFxuICB1cGRhdGVkQXQ6IHRydWUsXG59KTtcblxuZXhwb3J0IHR5cGUgSW5zZXJ0VmlkZW8gPSB6LmluZmVyPHR5cGVvZiBpbnNlcnRWaWRlb1NjaGVtYT47XG5leHBvcnQgdHlwZSBWaWRlbyA9IHR5cGVvZiB2aWRlb3MuJGluZmVyU2VsZWN0O1xuZXhwb3J0IHR5cGUgSW5zZXJ0U3RyZWFtQ29uZmlnID0gei5pbmZlcjx0eXBlb2YgaW5zZXJ0U3RyZWFtQ29uZmlnU2NoZW1hPjtcbmV4cG9ydCB0eXBlIFN0cmVhbUNvbmZpZyA9IHR5cGVvZiBzdHJlYW1Db25maWdzLiRpbmZlclNlbGVjdDtcbmV4cG9ydCB0eXBlIEluc2VydFN0cmVhbVN0YXR1cyA9IHouaW5mZXI8dHlwZW9mIGluc2VydFN0cmVhbVN0YXR1c1NjaGVtYT47XG5leHBvcnQgdHlwZSBTdHJlYW1TdGF0dXMgPSB0eXBlb2Ygc3RyZWFtU3RhdHVzLiRpbmZlclNlbGVjdDtcbmV4cG9ydCB0eXBlIEluc2VydFN5c3RlbUNvbmZpZyA9IHouaW5mZXI8dHlwZW9mIGluc2VydFN5c3RlbUNvbmZpZ1NjaGVtYT47XG5leHBvcnQgdHlwZSBTeXN0ZW1Db25maWcgPSB0eXBlb2Ygc3lzdGVtQ29uZmlncy4kaW5mZXJTZWxlY3Q7XG4iXSwKICAibWFwcGluZ3MiOiAiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxxQkFBbUU7QUFDbkUseUJBQW1DO0FBRzVCLE1BQU0sYUFBUyx3QkFBUSxVQUFVO0FBQUEsRUFDdEMsUUFBSSx1QkFBTyxJQUFJLEVBQUUsV0FBVztBQUFBLEVBQzVCLFdBQU8scUJBQUssT0FBTyxFQUFFLFFBQVE7QUFBQSxFQUM3QixjQUFVLHFCQUFLLFVBQVUsRUFBRSxRQUFRO0FBQUEsRUFDbkMsY0FBVSx3QkFBUSxXQUFXLEVBQUUsUUFBUTtBQUFBLEVBQ3ZDLGNBQVUscUJBQUssVUFBVSxFQUFFLFFBQVE7QUFBQSxFQUNuQyxrQkFBYyxxQkFBSyxlQUFlO0FBQUEsRUFDbEMsbUJBQWUsd0JBQVEsZ0JBQWdCLEVBQUUsUUFBUTtBQUFBLEVBQ2pELGdCQUFZLDBCQUFVLGFBQWEsRUFBRSxXQUFXO0FBQ2xELENBQUM7QUFFTSxNQUFNLG9CQUFnQix3QkFBUSxrQkFBa0I7QUFBQSxFQUNyRCxRQUFJLHVCQUFPLElBQUksRUFBRSxXQUFXO0FBQUEsRUFDNUIsY0FBVSxxQkFBSyxVQUFVLEVBQUUsUUFBUTtBQUFBLEVBQ25DLGVBQVcscUJBQUssWUFBWSxFQUFFLFFBQVE7QUFBQSxFQUN0QyxhQUFTLHFCQUFLLFVBQVU7QUFBQSxFQUN4QixnQkFBWSxxQkFBSyxZQUFZLEVBQUUsUUFBUTtBQUFBLEVBQ3ZDLGVBQVcsd0JBQVEsV0FBVyxFQUFFLFFBQVE7QUFBQSxFQUN4QyxhQUFTLHdCQUFRLFNBQVMsRUFBRSxRQUFRO0FBQUEsRUFDcEMsa0JBQWMsd0JBQVEsZUFBZSxFQUFFLFFBQVE7QUFBQSxFQUMvQyxjQUFVLHdCQUFRLFdBQVcsRUFBRSxRQUFRLEtBQUs7QUFDOUMsQ0FBQztBQUVNLE1BQU0sbUJBQWUsd0JBQVEsaUJBQWlCO0FBQUEsRUFDbkQsUUFBSSx1QkFBTyxJQUFJLEVBQUUsV0FBVztBQUFBLEVBQzVCLFlBQVEscUJBQUssUUFBUSxFQUFFLFFBQVE7QUFBQTtBQUFBLEVBQy9CLGlCQUFhLHdCQUFRLGNBQWMsRUFBRSxRQUFRLENBQUM7QUFBQSxFQUM5QyxZQUFRLHFCQUFLLFFBQVEsRUFBRSxRQUFRLFVBQVU7QUFBQSxFQUN6QyxvQkFBZ0Isd0JBQVEsa0JBQWtCO0FBQUEsRUFDMUMsZUFBVywwQkFBVSxZQUFZO0FBQUEsRUFDakMsa0JBQWMsd0JBQVEsZUFBZSxFQUFFLFFBQVEsS0FBSztBQUN0RCxDQUFDO0FBRU0sTUFBTSxvQkFBZ0Isd0JBQVEsa0JBQWtCO0FBQUEsRUFDckQsUUFBSSx1QkFBTyxJQUFJLEVBQUUsV0FBVztBQUFBLEVBQzVCLGNBQVUsd0JBQVEsV0FBVyxFQUFFLFFBQVEsSUFBSTtBQUFBLEVBQzNDLGFBQVMsd0JBQVEsVUFBVSxFQUFFLFFBQVEsR0FBSTtBQUFBLEVBQ3pDLFlBQVEscUJBQUssU0FBUyxFQUFFLFFBQVEsV0FBVztBQUFBLEVBQzNDLFlBQVEsd0JBQVEsU0FBUyxFQUFFLFFBQVEsSUFBSTtBQUFBLEVBQ3ZDLFlBQVEscUJBQUssU0FBUyxFQUFFLFFBQVEsY0FBYztBQUFBLEVBQzlDLFlBQVEscUJBQUssU0FBUyxFQUFFLFFBQVEsRUFBRTtBQUFBLEVBQ2xDLGdCQUFZLHFCQUFLLGFBQWEsRUFBRSxRQUFRLEVBQUU7QUFBQSxFQUMxQyxtQkFBZSx3QkFBUSxpQkFBaUIsRUFBRSxRQUFRLEtBQUs7QUFBQSxFQUN2RCxlQUFXLDBCQUFVLFlBQVksRUFBRSxXQUFXO0FBQ2hELENBQUM7QUFFTSxNQUFNLHdCQUFvQix1Q0FBbUIsTUFBTSxFQUFFLEtBQUs7QUFBQSxFQUMvRCxJQUFJO0FBQUEsRUFDSixZQUFZO0FBQ2QsQ0FBQztBQUVNLE1BQU0sK0JBQTJCLHVDQUFtQixhQUFhLEVBQUUsS0FBSztBQUFBLEVBQzdFLElBQUk7QUFDTixDQUFDO0FBRU0sTUFBTSwrQkFBMkIsdUNBQW1CLFlBQVksRUFBRSxLQUFLO0FBQUEsRUFDNUUsSUFBSTtBQUNOLENBQUM7QUFFTSxNQUFNLCtCQUEyQix1Q0FBbUIsYUFBYSxFQUFFLEtBQUs7QUFBQSxFQUM3RSxJQUFJO0FBQUEsRUFDSixXQUFXO0FBQ2IsQ0FBQzsiLAogICJuYW1lcyI6IFtdCn0K
+
+[⣷] Pulling schema from database...
+[✓] Pulling schema from database...
+[i] No changes detected
+Setting up directories...
+Starting nginx...
+Nginx configuration test failed, skipping nginx startup
+Starting Sa Plays Roblox Streamer application...
+Found application at dist/index.js
+Switching to streaming user...
+node:internal/errors:496
+    ErrorCaptureStackTrace(err);
+    ^
+
+TypeError [ERR_INVALID_ARG_TYPE]: The "paths[0]" argument must be of type string. Received undefined
+    at new NodeError (node:internal/errors:405:5)
+    at validateString (node:internal/validators:162:11)
+    at Object.resolve (node:path:1115:7)
+    at file:///app/dist/index.js:354:17
+    at ModuleJob.run (node:internal/modules/esm/module_job:195:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:337:24)
+    at async loadESM (node:internal/process/esm_loader:34:7)
+    at async handleMainPromise (node:internal/modules/run_main:106:12) {
+  code: 'ERR_INVALID_ARG_TYPE'
+}
+
+Node.js v18.20.8
+Starting Sa Plays Roblox Streamer...
+Running as root, will switch to app user later
+Waiting for database...
+postgres:5432 - accepting connections
+Database is ready
+Running database migrations...
+Using existing TypeScript drizzle config
+Running drizzle-kit push with config: ./drizzle.config.ts...
+Reading config file '/app/drizzle.config.ts'
+2025-07-19T07:53:56.342Z esbuild-register compiled /app/drizzle.config.ts
+2025-07-19T07:53:56.342Z esbuild-register const __esbuild_register_import_meta_url__ = require('url').pathToFileURL(__filename).href;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var drizzle_config_exports = {};
+__export(drizzle_config_exports, {
+  default: () => drizzle_config_default
+});
+module.exports = __toCommonJS(drizzle_config_exports);
+var import_drizzle_kit = require("drizzle-kit");
+if (!process.env.DATABASE_URL) {
+  throw new Error("DATABASE_URL, ensure the database is provisioned");
+}
+var drizzle_config_default = (0, import_drizzle_kit.defineConfig)({
+  out: "./migrations",
+  schema: "./shared/schema.ts",
+  dialect: "postgresql",
+  dbCredentials: {
+    url: process.env.DATABASE_URL
+  }
+});
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiL2FwcC9kcml6emxlLmNvbmZpZy50cyJdLAogICJzb3VyY2VzQ29udGVudCI6IFsiaW1wb3J0IHsgZGVmaW5lQ29uZmlnIH0gZnJvbSBcImRyaXp6bGUta2l0XCI7XG5cbmlmICghcHJvY2Vzcy5lbnYuREFUQUJBU0VfVVJMKSB7XG4gIHRocm93IG5ldyBFcnJvcihcIkRBVEFCQVNFX1VSTCwgZW5zdXJlIHRoZSBkYXRhYmFzZSBpcyBwcm92aXNpb25lZFwiKTtcbn1cblxuZXhwb3J0IGRlZmF1bHQgZGVmaW5lQ29uZmlnKHtcbiAgb3V0OiBcIi4vbWlncmF0aW9uc1wiLFxuICBzY2hlbWE6IFwiLi9zaGFyZWQvc2NoZW1hLnRzXCIsXG4gIGRpYWxlY3Q6IFwicG9zdGdyZXNxbFwiLFxuICBkYkNyZWRlbnRpYWxzOiB7XG4gICAgdXJsOiBwcm9jZXNzLmVudi5EQVRBQkFTRV9VUkwsXG4gIH0sXG59KTtcbiJdLAogICJtYXBwaW5ncyI6ICI7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSx5QkFBNkI7QUFFN0IsSUFBSSxDQUFDLFFBQVEsSUFBSSxjQUFjO0FBQzdCLFFBQU0sSUFBSSxNQUFNLGtEQUFrRDtBQUNwRTtBQUVBLElBQU8sNkJBQVEsaUNBQWE7QUFBQSxFQUMxQixLQUFLO0FBQUEsRUFDTCxRQUFRO0FBQUEsRUFDUixTQUFTO0FBQUEsRUFDVCxlQUFlO0FBQUEsSUFDYixLQUFLLFFBQVEsSUFBSTtBQUFBLEVBQ25CO0FBQ0YsQ0FBQzsiLAogICJuYW1lcyI6IFtdCn0K
+
+Using 'pg' driver for database querying
+2025-07-19T07:53:56.507Z esbuild-register compiled /app/shared/schema.ts
+2025-07-19T07:53:56.507Z esbuild-register const __esbuild_register_import_meta_url__ = require('url').pathToFileURL(__filename).href;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var schema_exports = {};
+__export(schema_exports, {
+  insertStreamConfigSchema: () => insertStreamConfigSchema,
+  insertStreamStatusSchema: () => insertStreamStatusSchema,
+  insertSystemConfigSchema: () => insertSystemConfigSchema,
+  insertVideoSchema: () => insertVideoSchema,
+  streamConfigs: () => streamConfigs,
+  streamStatus: () => streamStatus,
+  systemConfigs: () => systemConfigs,
+  videos: () => videos
+});
+module.exports = __toCommonJS(schema_exports);
+var import_pg_core = require("drizzle-orm/pg-core");
+var import_drizzle_zod = require("drizzle-zod");
+const videos = (0, import_pg_core.pgTable)("videos", {
+  id: (0, import_pg_core.serial)("id").primaryKey(),
+  title: (0, import_pg_core.text)("title").notNull(),
+  filename: (0, import_pg_core.text)("filename").notNull(),
+  fileSize: (0, import_pg_core.integer)("file_size").notNull(),
+  duration: (0, import_pg_core.text)("duration").notNull(),
+  thumbnailUrl: (0, import_pg_core.text)("thumbnail_url"),
+  playlistOrder: (0, import_pg_core.integer)("playlist_order").notNull(),
+  uploadedAt: (0, import_pg_core.timestamp)("uploaded_at").defaultNow()
+});
+const streamConfigs = (0, import_pg_core.pgTable)("stream_configs", {
+  id: (0, import_pg_core.serial)("id").primaryKey(),
+  platform: (0, import_pg_core.text)("platform").notNull(),
+  streamKey: (0, import_pg_core.text)("stream_key").notNull(),
+  rtmpUrl: (0, import_pg_core.text)("rtmp_url"),
+  resolution: (0, import_pg_core.text)("resolution").notNull(),
+  framerate: (0, import_pg_core.integer)("framerate").notNull(),
+  bitrate: (0, import_pg_core.integer)("bitrate").notNull(),
+  audioQuality: (0, import_pg_core.integer)("audio_quality").notNull(),
+  isActive: (0, import_pg_core.boolean)("is_active").default(false)
+});
+const streamStatus = (0, import_pg_core.pgTable)("stream_status", {
+  id: (0, import_pg_core.serial)("id").primaryKey(),
+  status: (0, import_pg_core.text)("status").notNull(),
+  // 'live', 'offline', 'starting', 'error'
+  viewerCount: (0, import_pg_core.integer)("viewer_count").default(0),
+  uptime: (0, import_pg_core.text)("uptime").default("00:00:00"),
+  currentVideoId: (0, import_pg_core.integer)("current_video_id"),
+  startedAt: (0, import_pg_core.timestamp)("started_at"),
+  loopPlaylist: (0, import_pg_core.boolean)("loop_playlist").default(false)
+});
+const systemConfigs = (0, import_pg_core.pgTable)("system_configs", {
+  id: (0, import_pg_core.serial)("id").primaryKey(),
+  rtmpPort: (0, import_pg_core.integer)("rtmp_port").default(1935),
+  webPort: (0, import_pg_core.integer)("web_port").default(5e3),
+  dbHost: (0, import_pg_core.text)("db_host").default("localhost"),
+  dbPort: (0, import_pg_core.integer)("db_port").default(5432),
+  dbName: (0, import_pg_core.text)("db_name").default("streaming_db"),
+  dbUser: (0, import_pg_core.text)("db_user").default(""),
+  dbPassword: (0, import_pg_core.text)("db_password").default(""),
+  useExternalDb: (0, import_pg_core.boolean)("use_external_db").default(false),
+  updatedAt: (0, import_pg_core.timestamp)("updated_at").defaultNow()
+});
+const insertVideoSchema = (0, import_drizzle_zod.createInsertSchema)(videos).omit({
+  id: true,
+  uploadedAt: true
+});
+const insertStreamConfigSchema = (0, import_drizzle_zod.createInsertSchema)(streamConfigs).omit({
+  id: true
+});
+const insertStreamStatusSchema = (0, import_drizzle_zod.createInsertSchema)(streamStatus).omit({
+  id: true
+});
+const insertSystemConfigSchema = (0, import_drizzle_zod.createInsertSchema)(systemConfigs).omit({
+  id: true,
+  updatedAt: true
+});
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiL2FwcC9zaGFyZWQvc2NoZW1hLnRzIl0sCiAgInNvdXJjZXNDb250ZW50IjogWyJpbXBvcnQgeyBwZ1RhYmxlLCB0ZXh0LCBzZXJpYWwsIGludGVnZXIsIGJvb2xlYW4sIHRpbWVzdGFtcCB9IGZyb20gXCJkcml6emxlLW9ybS9wZy1jb3JlXCI7XG5pbXBvcnQgeyBjcmVhdGVJbnNlcnRTY2hlbWEgfSBmcm9tIFwiZHJpenpsZS16b2RcIjtcbmltcG9ydCB7IHogfSBmcm9tIFwiem9kXCI7XG5cbmV4cG9ydCBjb25zdCB2aWRlb3MgPSBwZ1RhYmxlKFwidmlkZW9zXCIsIHtcbiAgaWQ6IHNlcmlhbChcImlkXCIpLnByaW1hcnlLZXkoKSxcbiAgdGl0bGU6IHRleHQoXCJ0aXRsZVwiKS5ub3ROdWxsKCksXG4gIGZpbGVuYW1lOiB0ZXh0KFwiZmlsZW5hbWVcIikubm90TnVsbCgpLFxuICBmaWxlU2l6ZTogaW50ZWdlcihcImZpbGVfc2l6ZVwiKS5ub3ROdWxsKCksXG4gIGR1cmF0aW9uOiB0ZXh0KFwiZHVyYXRpb25cIikubm90TnVsbCgpLFxuICB0aHVtYm5haWxVcmw6IHRleHQoXCJ0aHVtYm5haWxfdXJsXCIpLFxuICBwbGF5bGlzdE9yZGVyOiBpbnRlZ2VyKFwicGxheWxpc3Rfb3JkZXJcIikubm90TnVsbCgpLFxuICB1cGxvYWRlZEF0OiB0aW1lc3RhbXAoXCJ1cGxvYWRlZF9hdFwiKS5kZWZhdWx0Tm93KCksXG59KTtcblxuZXhwb3J0IGNvbnN0IHN0cmVhbUNvbmZpZ3MgPSBwZ1RhYmxlKFwic3RyZWFtX2NvbmZpZ3NcIiwge1xuICBpZDogc2VyaWFsKFwiaWRcIikucHJpbWFyeUtleSgpLFxuICBwbGF0Zm9ybTogdGV4dChcInBsYXRmb3JtXCIpLm5vdE51bGwoKSxcbiAgc3RyZWFtS2V5OiB0ZXh0KFwic3RyZWFtX2tleVwiKS5ub3ROdWxsKCksXG4gIHJ0bXBVcmw6IHRleHQoXCJydG1wX3VybFwiKSxcbiAgcmVzb2x1dGlvbjogdGV4dChcInJlc29sdXRpb25cIikubm90TnVsbCgpLFxuICBmcmFtZXJhdGU6IGludGVnZXIoXCJmcmFtZXJhdGVcIikubm90TnVsbCgpLFxuICBiaXRyYXRlOiBpbnRlZ2VyKFwiYml0cmF0ZVwiKS5ub3ROdWxsKCksXG4gIGF1ZGlvUXVhbGl0eTogaW50ZWdlcihcImF1ZGlvX3F1YWxpdHlcIikubm90TnVsbCgpLFxuICBpc0FjdGl2ZTogYm9vbGVhbihcImlzX2FjdGl2ZVwiKS5kZWZhdWx0KGZhbHNlKSxcbn0pO1xuXG5leHBvcnQgY29uc3Qgc3RyZWFtU3RhdHVzID0gcGdUYWJsZShcInN0cmVhbV9zdGF0dXNcIiwge1xuICBpZDogc2VyaWFsKFwiaWRcIikucHJpbWFyeUtleSgpLFxuICBzdGF0dXM6IHRleHQoXCJzdGF0dXNcIikubm90TnVsbCgpLCAvLyAnbGl2ZScsICdvZmZsaW5lJywgJ3N0YXJ0aW5nJywgJ2Vycm9yJ1xuICB2aWV3ZXJDb3VudDogaW50ZWdlcihcInZpZXdlcl9jb3VudFwiKS5kZWZhdWx0KDApLFxuICB1cHRpbWU6IHRleHQoXCJ1cHRpbWVcIikuZGVmYXVsdChcIjAwOjAwOjAwXCIpLFxuICBjdXJyZW50VmlkZW9JZDogaW50ZWdlcihcImN1cnJlbnRfdmlkZW9faWRcIiksXG4gIHN0YXJ0ZWRBdDogdGltZXN0YW1wKFwic3RhcnRlZF9hdFwiKSxcbiAgbG9vcFBsYXlsaXN0OiBib29sZWFuKFwibG9vcF9wbGF5bGlzdFwiKS5kZWZhdWx0KGZhbHNlKSxcbn0pO1xuXG5leHBvcnQgY29uc3Qgc3lzdGVtQ29uZmlncyA9IHBnVGFibGUoXCJzeXN0ZW1fY29uZmlnc1wiLCB7XG4gIGlkOiBzZXJpYWwoXCJpZFwiKS5wcmltYXJ5S2V5KCksXG4gIHJ0bXBQb3J0OiBpbnRlZ2VyKFwicnRtcF9wb3J0XCIpLmRlZmF1bHQoMTkzNSksXG4gIHdlYlBvcnQ6IGludGVnZXIoXCJ3ZWJfcG9ydFwiKS5kZWZhdWx0KDUwMDApLFxuICBkYkhvc3Q6IHRleHQoXCJkYl9ob3N0XCIpLmRlZmF1bHQoXCJsb2NhbGhvc3RcIiksXG4gIGRiUG9ydDogaW50ZWdlcihcImRiX3BvcnRcIikuZGVmYXVsdCg1NDMyKSxcbiAgZGJOYW1lOiB0ZXh0KFwiZGJfbmFtZVwiKS5kZWZhdWx0KFwic3RyZWFtaW5nX2RiXCIpLFxuICBkYlVzZXI6IHRleHQoXCJkYl91c2VyXCIpLmRlZmF1bHQoXCJcIiksXG4gIGRiUGFzc3dvcmQ6IHRleHQoXCJkYl9wYXNzd29yZFwiKS5kZWZhdWx0KFwiXCIpLFxuICB1c2VFeHRlcm5hbERiOiBib29sZWFuKFwidXNlX2V4dGVybmFsX2RiXCIpLmRlZmF1bHQoZmFsc2UpLFxuICB1cGRhdGVkQXQ6IHRpbWVzdGFtcChcInVwZGF0ZWRfYXRcIikuZGVmYXVsdE5vdygpLFxufSk7XG5cbmV4cG9ydCBjb25zdCBpbnNlcnRWaWRlb1NjaGVtYSA9IGNyZWF0ZUluc2VydFNjaGVtYSh2aWRlb3MpLm9taXQoe1xuICBpZDogdHJ1ZSxcbiAgdXBsb2FkZWRBdDogdHJ1ZSxcbn0pO1xuXG5leHBvcnQgY29uc3QgaW5zZXJ0U3RyZWFtQ29uZmlnU2NoZW1hID0gY3JlYXRlSW5zZXJ0U2NoZW1hKHN0cmVhbUNvbmZpZ3MpLm9taXQoe1xuICBpZDogdHJ1ZSxcbn0pO1xuXG5leHBvcnQgY29uc3QgaW5zZXJ0U3RyZWFtU3RhdHVzU2NoZW1hID0gY3JlYXRlSW5zZXJ0U2NoZW1hKHN0cmVhbVN0YXR1cykub21pdCh7XG4gIGlkOiB0cnVlLFxufSk7XG5cbmV4cG9ydCBjb25zdCBpbnNlcnRTeXN0ZW1Db25maWdTY2hlbWEgPSBjcmVhdGVJbnNlcnRTY2hlbWEoc3lzdGVtQ29uZmlncykub21pdCh7XG4gIGlkOiB0cnVlLFxuICB1cGRhdGVkQXQ6IHRydWUsXG59KTtcblxuZXhwb3J0IHR5cGUgSW5zZXJ0VmlkZW8gPSB6LmluZmVyPHR5cGVvZiBpbnNlcnRWaWRlb1NjaGVtYT47XG5leHBvcnQgdHlwZSBWaWRlbyA9IHR5cGVvZiB2aWRlb3MuJGluZmVyU2VsZWN0O1xuZXhwb3J0IHR5cGUgSW5zZXJ0U3RyZWFtQ29uZmlnID0gei5pbmZlcjx0eXBlb2YgaW5zZXJ0U3RyZWFtQ29uZmlnU2NoZW1hPjtcbmV4cG9ydCB0eXBlIFN0cmVhbUNvbmZpZyA9IHR5cGVvZiBzdHJlYW1Db25maWdzLiRpbmZlclNlbGVjdDtcbmV4cG9ydCB0eXBlIEluc2VydFN0cmVhbVN0YXR1cyA9IHouaW5mZXI8dHlwZW9mIGluc2VydFN0cmVhbVN0YXR1c1NjaGVtYT47XG5leHBvcnQgdHlwZSBTdHJlYW1TdGF0dXMgPSB0eXBlb2Ygc3RyZWFtU3RhdHVzLiRpbmZlclNlbGVjdDtcbmV4cG9ydCB0eXBlIEluc2VydFN5c3RlbUNvbmZpZyA9IHouaW5mZXI8dHlwZW9mIGluc2VydFN5c3RlbUNvbmZpZ1NjaGVtYT47XG5leHBvcnQgdHlwZSBTeXN0ZW1Db25maWcgPSB0eXBlb2Ygc3lzdGVtQ29uZmlncy4kaW5mZXJTZWxlY3Q7XG4iXSwKICAibWFwcGluZ3MiOiAiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxxQkFBbUU7QUFDbkUseUJBQW1DO0FBRzVCLE1BQU0sYUFBUyx3QkFBUSxVQUFVO0FBQUEsRUFDdEMsUUFBSSx1QkFBTyxJQUFJLEVBQUUsV0FBVztBQUFBLEVBQzVCLFdBQU8scUJBQUssT0FBTyxFQUFFLFFBQVE7QUFBQSxFQUM3QixjQUFVLHFCQUFLLFVBQVUsRUFBRSxRQUFRO0FBQUEsRUFDbkMsY0FBVSx3QkFBUSxXQUFXLEVBQUUsUUFBUTtBQUFBLEVBQ3ZDLGNBQVUscUJBQUssVUFBVSxFQUFFLFFBQVE7QUFBQSxFQUNuQyxrQkFBYyxxQkFBSyxlQUFlO0FBQUEsRUFDbEMsbUJBQWUsd0JBQVEsZ0JBQWdCLEVBQUUsUUFBUTtBQUFBLEVBQ2pELGdCQUFZLDBCQUFVLGFBQWEsRUFBRSxXQUFXO0FBQ2xELENBQUM7QUFFTSxNQUFNLG9CQUFnQix3QkFBUSxrQkFBa0I7QUFBQSxFQUNyRCxRQUFJLHVCQUFPLElBQUksRUFBRSxXQUFXO0FBQUEsRUFDNUIsY0FBVSxxQkFBSyxVQUFVLEVBQUUsUUFBUTtBQUFBLEVBQ25DLGVBQVcscUJBQUssWUFBWSxFQUFFLFFBQVE7QUFBQSxFQUN0QyxhQUFTLHFCQUFLLFVBQVU7QUFBQSxFQUN4QixnQkFBWSxxQkFBSyxZQUFZLEVBQUUsUUFBUTtBQUFBLEVBQ3ZDLGVBQVcsd0JBQVEsV0FBVyxFQUFFLFFBQVE7QUFBQSxFQUN4QyxhQUFTLHdCQUFRLFNBQVMsRUFBRSxRQUFRO0FBQUEsRUFDcEMsa0JBQWMsd0JBQVEsZUFBZSxFQUFFLFFBQVE7QUFBQSxFQUMvQyxjQUFVLHdCQUFRLFdBQVcsRUFBRSxRQUFRLEtBQUs7QUFDOUMsQ0FBQztBQUVNLE1BQU0sbUJBQWUsd0JBQVEsaUJBQWlCO0FBQUEsRUFDbkQsUUFBSSx1QkFBTyxJQUFJLEVBQUUsV0FBVztBQUFBLEVBQzVCLFlBQVEscUJBQUssUUFBUSxFQUFFLFFBQVE7QUFBQTtBQUFBLEVBQy9CLGlCQUFhLHdCQUFRLGNBQWMsRUFBRSxRQUFRLENBQUM7QUFBQSxFQUM5QyxZQUFRLHFCQUFLLFFBQVEsRUFBRSxRQUFRLFVBQVU7QUFBQSxFQUN6QyxvQkFBZ0Isd0JBQVEsa0JBQWtCO0FBQUEsRUFDMUMsZUFBVywwQkFBVSxZQUFZO0FBQUEsRUFDakMsa0JBQWMsd0JBQVEsZUFBZSxFQUFFLFFBQVEsS0FBSztBQUN0RCxDQUFDO0FBRU0sTUFBTSxvQkFBZ0Isd0JBQVEsa0JBQWtCO0FBQUEsRUFDckQsUUFBSSx1QkFBTyxJQUFJLEVBQUUsV0FBVztBQUFBLEVBQzVCLGNBQVUsd0JBQVEsV0FBVyxFQUFFLFFBQVEsSUFBSTtBQUFBLEVBQzNDLGFBQVMsd0JBQVEsVUFBVSxFQUFFLFFBQVEsR0FBSTtBQUFBLEVBQ3pDLFlBQVEscUJBQUssU0FBUyxFQUFFLFFBQVEsV0FBVztBQUFBLEVBQzNDLFlBQVEsd0JBQVEsU0FBUyxFQUFFLFFBQVEsSUFBSTtBQUFBLEVBQ3ZDLFlBQVEscUJBQUssU0FBUyxFQUFFLFFBQVEsY0FBYztBQUFBLEVBQzlDLFlBQVEscUJBQUssU0FBUyxFQUFFLFFBQVEsRUFBRTtBQUFBLEVBQ2xDLGdCQUFZLHFCQUFLLGFBQWEsRUFBRSxRQUFRLEVBQUU7QUFBQSxFQUMxQyxtQkFBZSx3QkFBUSxpQkFBaUIsRUFBRSxRQUFRLEtBQUs7QUFBQSxFQUN2RCxlQUFXLDBCQUFVLFlBQVksRUFBRSxXQUFXO0FBQ2hELENBQUM7QUFFTSxNQUFNLHdCQUFvQix1Q0FBbUIsTUFBTSxFQUFFLEtBQUs7QUFBQSxFQUMvRCxJQUFJO0FBQUEsRUFDSixZQUFZO0FBQ2QsQ0FBQztBQUVNLE1BQU0sK0JBQTJCLHVDQUFtQixhQUFhLEVBQUUsS0FBSztBQUFBLEVBQzdFLElBQUk7QUFDTixDQUFDO0FBRU0sTUFBTSwrQkFBMkIsdUNBQW1CLFlBQVksRUFBRSxLQUFLO0FBQUEsRUFDNUUsSUFBSTtBQUNOLENBQUM7QUFFTSxNQUFNLCtCQUEyQix1Q0FBbUIsYUFBYSxFQUFFLEtBQUs7QUFBQSxFQUM3RSxJQUFJO0FBQUEsRUFDSixXQUFXO0FBQ2IsQ0FBQzsiLAogICJuYW1lcyI6IFtdCn0K
+
+[⣷] Pulling schema from database...
+[✓] Pulling schema from database...
+[i] No changes detected
+Setting up directories...
+Starting nginx...
+Nginx configuration test failed, skipping nginx startup
+Starting Sa Plays Roblox Streamer application...
+Found application at dist/index.js
+Switching to streaming user...
+node:internal/errors:496
+    ErrorCaptureStackTrace(err);
+    ^
+
+TypeError [ERR_INVALID_ARG_TYPE]: The "paths[0]" argument must be of type string. Received undefined
+    at new NodeError (node:internal/errors:405:5)
+    at validateString (node:internal/validators:162:11)
+    at Object.resolve (node:path:1115:7)
+    at file:///app/dist/index.js:354:17
+    at ModuleJob.run (node:internal/modules/esm/module_job:195:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:337:24)
+    at async loadESM (node:internal/process/esm_loader:34:7)
+    at async handleMainPromise (node:internal/modules/run_main:106:12) {
+  code: 'ERR_INVALID_ARG_TYPE'
+}
+
+Node.js v18.20.8
+Starting Sa Plays Roblox Streamer...
+Running as root, will switch to app user later
+Waiting for database...
+postgres:5432 - accepting connections
+Database is ready
+Running database migrations...
+Using existing TypeScript drizzle config
+Running drizzle-kit push with config: ./drizzle.config.ts...
+Reading config file '/app/drizzle.config.ts'
+2025-07-19T07:54:01.220Z esbuild-register compiled /app/drizzle.config.ts
+2025-07-19T07:54:01.220Z esbuild-register const __esbuild_register_import_meta_url__ = require('url').pathToFileURL(__filename).href;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var drizzle_config_exports = {};
+__export(drizzle_config_exports, {
+  default: () => drizzle_config_default
+});
+module.exports = __toCommonJS(drizzle_config_exports);
+var import_drizzle_kit = require("drizzle-kit");
+if (!process.env.DATABASE_URL) {
+  throw new Error("DATABASE_URL, ensure the database is provisioned");
+}
+var drizzle_config_default = (0, import_drizzle_kit.defineConfig)({
+  out: "./migrations",
+  schema: "./shared/schema.ts",
+  dialect: "postgresql",
+  dbCredentials: {
+    url: process.env.DATABASE_URL
+  }
+});
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiL2FwcC9kcml6emxlLmNvbmZpZy50cyJdLAogICJzb3VyY2VzQ29udGVudCI6IFsiaW1wb3J0IHsgZGVmaW5lQ29uZmlnIH0gZnJvbSBcImRyaXp6bGUta2l0XCI7XG5cbmlmICghcHJvY2Vzcy5lbnYuREFUQUJBU0VfVVJMKSB7XG4gIHRocm93IG5ldyBFcnJvcihcIkRBVEFCQVNFX1VSTCwgZW5zdXJlIHRoZSBkYXRhYmFzZSBpcyBwcm92aXNpb25lZFwiKTtcbn1cblxuZXhwb3J0IGRlZmF1bHQgZGVmaW5lQ29uZmlnKHtcbiAgb3V0OiBcIi4vbWlncmF0aW9uc1wiLFxuICBzY2hlbWE6IFwiLi9zaGFyZWQvc2NoZW1hLnRzXCIsXG4gIGRpYWxlY3Q6IFwicG9zdGdyZXNxbFwiLFxuICBkYkNyZWRlbnRpYWxzOiB7XG4gICAgdXJsOiBwcm9jZXNzLmVudi5EQVRBQkFTRV9VUkwsXG4gIH0sXG59KTtcbiJdLAogICJtYXBwaW5ncyI6ICI7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSx5QkFBNkI7QUFFN0IsSUFBSSxDQUFDLFFBQVEsSUFBSSxjQUFjO0FBQzdCLFFBQU0sSUFBSSxNQUFNLGtEQUFrRDtBQUNwRTtBQUVBLElBQU8sNkJBQVEsaUNBQWE7QUFBQSxFQUMxQixLQUFLO0FBQUEsRUFDTCxRQUFRO0FBQUEsRUFDUixTQUFTO0FBQUEsRUFDVCxlQUFlO0FBQUEsSUFDYixLQUFLLFFBQVEsSUFBSTtBQUFBLEVBQ25CO0FBQ0YsQ0FBQzsiLAogICJuYW1lcyI6IFtdCn0K
+
+Using 'pg' driver for database querying
+2025-07-19T07:54:01.395Z esbuild-register compiled /app/shared/schema.ts
+2025-07-19T07:54:01.395Z esbuild-register const __esbuild_register_import_meta_url__ = require('url').pathToFileURL(__filename).href;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var schema_exports = {};
+__export(schema_exports, {
+  insertStreamConfigSchema: () => insertStreamConfigSchema,
+  insertStreamStatusSchema: () => insertStreamStatusSchema,
+  insertSystemConfigSchema: () => insertSystemConfigSchema,
+  insertVideoSchema: () => insertVideoSchema,
+  streamConfigs: () => streamConfigs,
+  streamStatus: () => streamStatus,
+  systemConfigs: () => systemConfigs,
+  videos: () => videos
+});
+module.exports = __toCommonJS(schema_exports);
+var import_pg_core = require("drizzle-orm/pg-core");
+var import_drizzle_zod = require("drizzle-zod");
+const videos = (0, import_pg_core.pgTable)("videos", {
+  id: (0, import_pg_core.serial)("id").primaryKey(),
+  title: (0, import_pg_core.text)("title").notNull(),
+  filename: (0, import_pg_core.text)("filename").notNull(),
+  fileSize: (0, import_pg_core.integer)("file_size").notNull(),
+  duration: (0, import_pg_core.text)("duration").notNull(),
+  thumbnailUrl: (0, import_pg_core.text)("thumbnail_url"),
+  playlistOrder: (0, import_pg_core.integer)("playlist_order").notNull(),
+  uploadedAt: (0, import_pg_core.timestamp)("uploaded_at").defaultNow()
+});
+const streamConfigs = (0, import_pg_core.pgTable)("stream_configs", {
+  id: (0, import_pg_core.serial)("id").primaryKey(),
+  platform: (0, import_pg_core.text)("platform").notNull(),
+  streamKey: (0, import_pg_core.text)("stream_key").notNull(),
+  rtmpUrl: (0, import_pg_core.text)("rtmp_url"),
+  resolution: (0, import_pg_core.text)("resolution").notNull(),
+  framerate: (0, import_pg_core.integer)("framerate").notNull(),
+  bitrate: (0, import_pg_core.integer)("bitrate").notNull(),
+  audioQuality: (0, import_pg_core.integer)("audio_quality").notNull(),
+  isActive: (0, import_pg_core.boolean)("is_active").default(false)
+});
+const streamStatus = (0, import_pg_core.pgTable)("stream_status", {
+  id: (0, import_pg_core.serial)("id").primaryKey(),
+  status: (0, import_pg_core.text)("status").notNull(),
+  // 'live', 'offline', 'starting', 'error'
+  viewerCount: (0, import_pg_core.integer)("viewer_count").default(0),
+  uptime: (0, import_pg_core.text)("uptime").default("00:00:00"),
+  currentVideoId: (0, import_pg_core.integer)("current_video_id"),
+  startedAt: (0, import_pg_core.timestamp)("started_at"),
+  loopPlaylist: (0, import_pg_core.boolean)("loop_playlist").default(false)
+});
+const systemConfigs = (0, import_pg_core.pgTable)("system_configs", {
+  id: (0, import_pg_core.serial)("id").primaryKey(),
+  rtmpPort: (0, import_pg_core.integer)("rtmp_port").default(1935),
+  webPort: (0, import_pg_core.integer)("web_port").default(5e3),
+  dbHost: (0, import_pg_core.text)("db_host").default("localhost"),
+  dbPort: (0, import_pg_core.integer)("db_port").default(5432),
+  dbName: (0, import_pg_core.text)("db_name").default("streaming_db"),
+  dbUser: (0, import_pg_core.text)("db_user").default(""),
+  dbPassword: (0, import_pg_core.text)("db_password").default(""),
+  useExternalDb: (0, import_pg_core.boolean)("use_external_db").default(false),
+  updatedAt: (0, import_pg_core.timestamp)("updated_at").defaultNow()
+});
+const insertVideoSchema = (0, import_drizzle_zod.createInsertSchema)(videos).omit({
+  id: true,
+  uploadedAt: true
+});
+const insertStreamConfigSchema = (0, import_drizzle_zod.createInsertSchema)(streamConfigs).omit({
+  id: true
+});
+const insertStreamStatusSchema = (0, import_drizzle_zod.createInsertSchema)(streamStatus).omit({
+  id: true
+});
+const insertSystemConfigSchema = (0, import_drizzle_zod.createInsertSchema)(systemConfigs).omit({
+  id: true,
+  updatedAt: true
+});
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiL2FwcC9zaGFyZWQvc2NoZW1hLnRzIl0sCiAgInNvdXJjZXNDb250ZW50IjogWyJpbXBvcnQgeyBwZ1RhYmxlLCB0ZXh0LCBzZXJpYWwsIGludGVnZXIsIGJvb2xlYW4sIHRpbWVzdGFtcCB9IGZyb20gXCJkcml6emxlLW9ybS9wZy1jb3JlXCI7XG5pbXBvcnQgeyBjcmVhdGVJbnNlcnRTY2hlbWEgfSBmcm9tIFwiZHJpenpsZS16b2RcIjtcbmltcG9ydCB7IHogfSBmcm9tIFwiem9kXCI7XG5cbmV4cG9ydCBjb25zdCB2aWRlb3MgPSBwZ1RhYmxlKFwidmlkZW9zXCIsIHtcbiAgaWQ6IHNlcmlhbChcImlkXCIpLnByaW1hcnlLZXkoKSxcbiAgdGl0bGU6IHRleHQoXCJ0aXRsZVwiKS5ub3ROdWxsKCksXG4gIGZpbGVuYW1lOiB0ZXh0KFwiZmlsZW5hbWVcIikubm90TnVsbCgpLFxuICBmaWxlU2l6ZTogaW50ZWdlcihcImZpbGVfc2l6ZVwiKS5ub3ROdWxsKCksXG4gIGR1cmF0aW9uOiB0ZXh0KFwiZHVyYXRpb25cIikubm90TnVsbCgpLFxuICB0aHVtYm5haWxVcmw6IHRleHQoXCJ0aHVtYm5haWxfdXJsXCIpLFxuICBwbGF5bGlzdE9yZGVyOiBpbnRlZ2VyKFwicGxheWxpc3Rfb3JkZXJcIikubm90TnVsbCgpLFxuICB1cGxvYWRlZEF0OiB0aW1lc3RhbXAoXCJ1cGxvYWRlZF9hdFwiKS5kZWZhdWx0Tm93KCksXG59KTtcblxuZXhwb3J0IGNvbnN0IHN0cmVhbUNvbmZpZ3MgPSBwZ1RhYmxlKFwic3RyZWFtX2NvbmZpZ3NcIiwge1xuICBpZDogc2VyaWFsKFwiaWRcIikucHJpbWFyeUtleSgpLFxuICBwbGF0Zm9ybTogdGV4dChcInBsYXRmb3JtXCIpLm5vdE51bGwoKSxcbiAgc3RyZWFtS2V5OiB0ZXh0KFwic3RyZWFtX2tleVwiKS5ub3ROdWxsKCksXG4gIHJ0bXBVcmw6IHRleHQoXCJydG1wX3VybFwiKSxcbiAgcmVzb2x1dGlvbjogdGV4dChcInJlc29sdXRpb25cIikubm90TnVsbCgpLFxuICBmcmFtZXJhdGU6IGludGVnZXIoXCJmcmFtZXJhdGVcIikubm90TnVsbCgpLFxuICBiaXRyYXRlOiBpbnRlZ2VyKFwiYml0cmF0ZVwiKS5ub3ROdWxsKCksXG4gIGF1ZGlvUXVhbGl0eTogaW50ZWdlcihcImF1ZGlvX3F1YWxpdHlcIikubm90TnVsbCgpLFxuICBpc0FjdGl2ZTogYm9vbGVhbihcImlzX2FjdGl2ZVwiKS5kZWZhdWx0KGZhbHNlKSxcbn0pO1xuXG5leHBvcnQgY29uc3Qgc3RyZWFtU3RhdHVzID0gcGdUYWJsZShcInN0cmVhbV9zdGF0dXNcIiwge1xuICBpZDogc2VyaWFsKFwiaWRcIikucHJpbWFyeUtleSgpLFxuICBzdGF0dXM6IHRleHQoXCJzdGF0dXNcIikubm90TnVsbCgpLCAvLyAnbGl2ZScsICdvZmZsaW5lJywgJ3N0YXJ0aW5nJywgJ2Vycm9yJ1xuICB2aWV3ZXJDb3VudDogaW50ZWdlcihcInZpZXdlcl9jb3VudFwiKS5kZWZhdWx0KDApLFxuICB1cHRpbWU6IHRleHQoXCJ1cHRpbWVcIikuZGVmYXVsdChcIjAwOjAwOjAwXCIpLFxuICBjdXJyZW50VmlkZW9JZDogaW50ZWdlcihcImN1cnJlbnRfdmlkZW9faWRcIiksXG4gIHN0YXJ0ZWRBdDogdGltZXN0YW1wKFwic3RhcnRlZF9hdFwiKSxcbiAgbG9vcFBsYXlsaXN0OiBib29sZWFuKFwibG9vcF9wbGF5bGlzdFwiKS5kZWZhdWx0KGZhbHNlKSxcbn0pO1xuXG5leHBvcnQgY29uc3Qgc3lzdGVtQ29uZmlncyA9IHBnVGFibGUoXCJzeXN0ZW1fY29uZmlnc1wiLCB7XG4gIGlkOiBzZXJpYWwoXCJpZFwiKS5wcmltYXJ5S2V5KCksXG4gIHJ0bXBQb3J0OiBpbnRlZ2VyKFwicnRtcF9wb3J0XCIpLmRlZmF1bHQoMTkzNSksXG4gIHdlYlBvcnQ6IGludGVnZXIoXCJ3ZWJfcG9ydFwiKS5kZWZhdWx0KDUwMDApLFxuICBkYkhvc3Q6IHRleHQoXCJkYl9ob3N0XCIpLmRlZmF1bHQoXCJsb2NhbGhvc3RcIiksXG4gIGRiUG9ydDogaW50ZWdlcihcImRiX3BvcnRcIikuZGVmYXVsdCg1NDMyKSxcbiAgZGJOYW1lOiB0ZXh0KFwiZGJfbmFtZVwiKS5kZWZhdWx0KFwic3RyZWFtaW5nX2RiXCIpLFxuICBkYlVzZXI6IHRleHQoXCJkYl91c2VyXCIpLmRlZmF1bHQoXCJcIiksXG4gIGRiUGFzc3dvcmQ6IHRleHQoXCJkYl9wYXNzd29yZFwiKS5kZWZhdWx0KFwiXCIpLFxuICB1c2VFeHRlcm5hbERiOiBib29sZWFuKFwidXNlX2V4dGVybmFsX2RiXCIpLmRlZmF1bHQoZmFsc2UpLFxuICB1cGRhdGVkQXQ6IHRpbWVzdGFtcChcInVwZGF0ZWRfYXRcIikuZGVmYXVsdE5vdygpLFxufSk7XG5cbmV4cG9ydCBjb25zdCBpbnNlcnRWaWRlb1NjaGVtYSA9IGNyZWF0ZUluc2VydFNjaGVtYSh2aWRlb3MpLm9taXQoe1xuICBpZDogdHJ1ZSxcbiAgdXBsb2FkZWRBdDogdHJ1ZSxcbn0pO1xuXG5leHBvcnQgY29uc3QgaW5zZXJ0U3RyZWFtQ29uZmlnU2NoZW1hID0gY3JlYXRlSW5zZXJ0U2NoZW1hKHN0cmVhbUNvbmZpZ3MpLm9taXQoe1xuICBpZDogdHJ1ZSxcbn0pO1xuXG5leHBvcnQgY29uc3QgaW5zZXJ0U3RyZWFtU3RhdHVzU2NoZW1hID0gY3JlYXRlSW5zZXJ0U2NoZW1hKHN0cmVhbVN0YXR1cykub21pdCh7XG4gIGlkOiB0cnVlLFxufSk7XG5cbmV4cG9ydCBjb25zdCBpbnNlcnRTeXN0ZW1Db25maWdTY2hlbWEgPSBjcmVhdGVJbnNlcnRTY2hlbWEoc3lzdGVtQ29uZmlncykub21pdCh7XG4gIGlkOiB0cnVlLFxuICB1cGRhdGVkQXQ6IHRydWUsXG59KTtcblxuZXhwb3J0IHR5cGUgSW5zZXJ0VmlkZW8gPSB6LmluZmVyPHR5cGVvZiBpbnNlcnRWaWRlb1NjaGVtYT47XG5leHBvcnQgdHlwZSBWaWRlbyA9IHR5cGVvZiB2aWRlb3MuJGluZmVyU2VsZWN0O1xuZXhwb3J0IHR5cGUgSW5zZXJ0U3RyZWFtQ29uZmlnID0gei5pbmZlcjx0eXBlb2YgaW5zZXJ0U3RyZWFtQ29uZmlnU2NoZW1hPjtcbmV4cG9ydCB0eXBlIFN0cmVhbUNvbmZpZyA9IHR5cGVvZiBzdHJlYW1Db25maWdzLiRpbmZlclNlbGVjdDtcbmV4cG9ydCB0eXBlIEluc2VydFN0cmVhbVN0YXR1cyA9IHouaW5mZXI8dHlwZW9mIGluc2VydFN0cmVhbVN0YXR1c1NjaGVtYT47XG5leHBvcnQgdHlwZSBTdHJlYW1TdGF0dXMgPSB0eXBlb2Ygc3RyZWFtU3RhdHVzLiRpbmZlclNlbGVjdDtcbmV4cG9ydCB0eXBlIEluc2VydFN5c3RlbUNvbmZpZyA9IHouaW5mZXI8dHlwZW9mIGluc2VydFN5c3RlbUNvbmZpZ1NjaGVtYT47XG5leHBvcnQgdHlwZSBTeXN0ZW1Db25maWcgPSB0eXBlb2Ygc3lzdGVtQ29uZmlncy4kaW5mZXJTZWxlY3Q7XG4iXSwKICAibWFwcGluZ3MiOiAiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxxQkFBbUU7QUFDbkUseUJBQW1DO0FBRzVCLE1BQU0sYUFBUyx3QkFBUSxVQUFVO0FBQUEsRUFDdEMsUUFBSSx1QkFBTyxJQUFJLEVBQUUsV0FBVztBQUFBLEVBQzVCLFdBQU8scUJBQUssT0FBTyxFQUFFLFFBQVE7QUFBQSxFQUM3QixjQUFVLHFCQUFLLFVBQVUsRUFBRSxRQUFRO0FBQUEsRUFDbkMsY0FBVSx3QkFBUSxXQUFXLEVBQUUsUUFBUTtBQUFBLEVBQ3ZDLGNBQVUscUJBQUssVUFBVSxFQUFFLFFBQVE7QUFBQSxFQUNuQyxrQkFBYyxxQkFBSyxlQUFlO0FBQUEsRUFDbEMsbUJBQWUsd0JBQVEsZ0JBQWdCLEVBQUUsUUFBUTtBQUFBLEVBQ2pELGdCQUFZLDBCQUFVLGFBQWEsRUFBRSxXQUFXO0FBQ2xELENBQUM7QUFFTSxNQUFNLG9CQUFnQix3QkFBUSxrQkFBa0I7QUFBQSxFQUNyRCxRQUFJLHVCQUFPLElBQUksRUFBRSxXQUFXO0FBQUEsRUFDNUIsY0FBVSxxQkFBSyxVQUFVLEVBQUUsUUFBUTtBQUFBLEVBQ25DLGVBQVcscUJBQUssWUFBWSxFQUFFLFFBQVE7QUFBQSxFQUN0QyxhQUFTLHFCQUFLLFVBQVU7QUFBQSxFQUN4QixnQkFBWSxxQkFBSyxZQUFZLEVBQUUsUUFBUTtBQUFBLEVBQ3ZDLGVBQVcsd0JBQVEsV0FBVyxFQUFFLFFBQVE7QUFBQSxFQUN4QyxhQUFTLHdCQUFRLFNBQVMsRUFBRSxRQUFRO0FBQUEsRUFDcEMsa0JBQWMsd0JBQVEsZUFBZSxFQUFFLFFBQVE7QUFBQSxFQUMvQyxjQUFVLHdCQUFRLFdBQVcsRUFBRSxRQUFRLEtBQUs7QUFDOUMsQ0FBQztBQUVNLE1BQU0sbUJBQWUsd0JBQVEsaUJBQWlCO0FBQUEsRUFDbkQsUUFBSSx1QkFBTyxJQUFJLEVBQUUsV0FBVztBQUFBLEVBQzVCLFlBQVEscUJBQUssUUFBUSxFQUFFLFFBQVE7QUFBQTtBQUFBLEVBQy9CLGlCQUFhLHdCQUFRLGNBQWMsRUFBRSxRQUFRLENBQUM7QUFBQSxFQUM5QyxZQUFRLHFCQUFLLFFBQVEsRUFBRSxRQUFRLFVBQVU7QUFBQSxFQUN6QyxvQkFBZ0Isd0JBQVEsa0JBQWtCO0FBQUEsRUFDMUMsZUFBVywwQkFBVSxZQUFZO0FBQUEsRUFDakMsa0JBQWMsd0JBQVEsZUFBZSxFQUFFLFFBQVEsS0FBSztBQUN0RCxDQUFDO0FBRU0sTUFBTSxvQkFBZ0Isd0JBQVEsa0JBQWtCO0FBQUEsRUFDckQsUUFBSSx1QkFBTyxJQUFJLEVBQUUsV0FBVztBQUFBLEVBQzVCLGNBQVUsd0JBQVEsV0FBVyxFQUFFLFFBQVEsSUFBSTtBQUFBLEVBQzNDLGFBQVMsd0JBQVEsVUFBVSxFQUFFLFFBQVEsR0FBSTtBQUFBLEVBQ3pDLFlBQVEscUJBQUssU0FBUyxFQUFFLFFBQVEsV0FBVztBQUFBLEVBQzNDLFlBQVEsd0JBQVEsU0FBUyxFQUFFLFFBQVEsSUFBSTtBQUFBLEVBQ3ZDLFlBQVEscUJBQUssU0FBUyxFQUFFLFFBQVEsY0FBYztBQUFBLEVBQzlDLFlBQVEscUJBQUssU0FBUyxFQUFFLFFBQVEsRUFBRTtBQUFBLEVBQ2xDLGdCQUFZLHFCQUFLLGFBQWEsRUFBRSxRQUFRLEVBQUU7QUFBQSxFQUMxQyxtQkFBZSx3QkFBUSxpQkFBaUIsRUFBRSxRQUFRLEtBQUs7QUFBQSxFQUN2RCxlQUFXLDBCQUFVLFlBQVksRUFBRSxXQUFXO0FBQ2hELENBQUM7QUFFTSxNQUFNLHdCQUFvQix1Q0FBbUIsTUFBTSxFQUFFLEtBQUs7QUFBQSxFQUMvRCxJQUFJO0FBQUEsRUFDSixZQUFZO0FBQ2QsQ0FBQztBQUVNLE1BQU0sK0JBQTJCLHVDQUFtQixhQUFhLEVBQUUsS0FBSztBQUFBLEVBQzdFLElBQUk7QUFDTixDQUFDO0FBRU0sTUFBTSwrQkFBMkIsdUNBQW1CLFlBQVksRUFBRSxLQUFLO0FBQUEsRUFDNUUsSUFBSTtBQUNOLENBQUM7QUFFTSxNQUFNLCtCQUEyQix1Q0FBbUIsYUFBYSxFQUFFLEtBQUs7QUFBQSxFQUM3RSxJQUFJO0FBQUEsRUFDSixXQUFXO0FBQ2IsQ0FBQzsiLAogICJuYW1lcyI6IFtdCn0K
+
+[⣷] Pulling schema from database...
+[✓] Pulling schema from database...
+[i] No changes detected
+Setting up directories...
+Starting nginx...
+Nginx configuration test failed, skipping nginx startup
+Starting Sa Plays Roblox Streamer application...
+Found application at dist/index.js
+Switching to streaming user...
+node:internal/errors:496
+    ErrorCaptureStackTrace(err);
+    ^
+
+TypeError [ERR_INVALID_ARG_TYPE]: The "paths[0]" argument must be of type string. Received undefined
+    at new NodeError (node:internal/errors:405:5)
+    at validateString (node:internal/validators:162:11)
+    at Object.resolve (node:path:1115:7)
+    at file:///app/dist/index.js:354:17
+    at ModuleJob.run (node:internal/modules/esm/module_job:195:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:337:24)
+    at async loadESM (node:internal/process/esm_loader:34:7)
+    at async handleMainPromise (node:internal/modules/run_main:106:12) {
+  code: 'ERR_INVALID_ARG_TYPE'
+}
+
+Node.js v18.20.8
+Starting Sa Plays Roblox Streamer...
+Running as root, will switch to app user later
+Waiting for database...
+postgres:5432 - accepting connections
+Database is ready
+Running database migrations...
+Using existing TypeScript drizzle config
+Running drizzle-kit push with config: ./drizzle.config.ts...
+Reading config file '/app/drizzle.config.ts'
+2025-07-19T07:54:07.728Z esbuild-register compiled /app/drizzle.config.ts
+2025-07-19T07:54:07.729Z esbuild-register const __esbuild_register_import_meta_url__ = require('url').pathToFileURL(__filename).href;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var drizzle_config_exports = {};
+__export(drizzle_config_exports, {
+  default: () => drizzle_config_default
+});
+module.exports = __toCommonJS(drizzle_config_exports);
+var import_drizzle_kit = require("drizzle-kit");
+if (!process.env.DATABASE_URL) {
+  throw new Error("DATABASE_URL, ensure the database is provisioned");
+}
+var drizzle_config_default = (0, import_drizzle_kit.defineConfig)({
+  out: "./migrations",
+  schema: "./shared/schema.ts",
+  dialect: "postgresql",
+  dbCredentials: {
+    url: process.env.DATABASE_URL
+  }
+});
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiL2FwcC9kcml6emxlLmNvbmZpZy50cyJdLAogICJzb3VyY2VzQ29udGVudCI6IFsiaW1wb3J0IHsgZGVmaW5lQ29uZmlnIH0gZnJvbSBcImRyaXp6bGUta2l0XCI7XG5cbmlmICghcHJvY2Vzcy5lbnYuREFUQUJBU0VfVVJMKSB7XG4gIHRocm93IG5ldyBFcnJvcihcIkRBVEFCQVNFX1VSTCwgZW5zdXJlIHRoZSBkYXRhYmFzZSBpcyBwcm92aXNpb25lZFwiKTtcbn1cblxuZXhwb3J0IGRlZmF1bHQgZGVmaW5lQ29uZmlnKHtcbiAgb3V0OiBcIi4vbWlncmF0aW9uc1wiLFxuICBzY2hlbWE6IFwiLi9zaGFyZWQvc2NoZW1hLnRzXCIsXG4gIGRpYWxlY3Q6IFwicG9zdGdyZXNxbFwiLFxuICBkYkNyZWRlbnRpYWxzOiB7XG4gICAgdXJsOiBwcm9jZXNzLmVudi5EQVRBQkFTRV9VUkwsXG4gIH0sXG59KTtcbiJdLAogICJtYXBwaW5ncyI6ICI7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSx5QkFBNkI7QUFFN0IsSUFBSSxDQUFDLFFBQVEsSUFBSSxjQUFjO0FBQzdCLFFBQU0sSUFBSSxNQUFNLGtEQUFrRDtBQUNwRTtBQUVBLElBQU8sNkJBQVEsaUNBQWE7QUFBQSxFQUMxQixLQUFLO0FBQUEsRUFDTCxRQUFRO0FBQUEsRUFDUixTQUFTO0FBQUEsRUFDVCxlQUFlO0FBQUEsSUFDYixLQUFLLFFBQVEsSUFBSTtBQUFBLEVBQ25CO0FBQ0YsQ0FBQzsiLAogICJuYW1lcyI6IFtdCn0K
+
+Using 'pg' driver for database querying
+2025-07-19T07:54:07.901Z esbuild-register compiled /app/shared/schema.ts
+2025-07-19T07:54:07.901Z esbuild-register const __esbuild_register_import_meta_url__ = require('url').pathToFileURL(__filename).href;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var schema_exports = {};
+__export(schema_exports, {
+  insertStreamConfigSchema: () => insertStreamConfigSchema,
+  insertStreamStatusSchema: () => insertStreamStatusSchema,
+  insertSystemConfigSchema: () => insertSystemConfigSchema,
+  insertVideoSchema: () => insertVideoSchema,
+  streamConfigs: () => streamConfigs,
+  streamStatus: () => streamStatus,
+  systemConfigs: () => systemConfigs,
+  videos: () => videos
+});
+module.exports = __toCommonJS(schema_exports);
+var import_pg_core = require("drizzle-orm/pg-core");
+var import_drizzle_zod = require("drizzle-zod");
+const videos = (0, import_pg_core.pgTable)("videos", {
+  id: (0, import_pg_core.serial)("id").primaryKey(),
+  title: (0, import_pg_core.text)("title").notNull(),
+  filename: (0, import_pg_core.text)("filename").notNull(),
+  fileSize: (0, import_pg_core.integer)("file_size").notNull(),
+  duration: (0, import_pg_core.text)("duration").notNull(),
+  thumbnailUrl: (0, import_pg_core.text)("thumbnail_url"),
+  playlistOrder: (0, import_pg_core.integer)("playlist_order").notNull(),
+  uploadedAt: (0, import_pg_core.timestamp)("uploaded_at").defaultNow()
+});
+const streamConfigs = (0, import_pg_core.pgTable)("stream_configs", {
+  id: (0, import_pg_core.serial)("id").primaryKey(),
+  platform: (0, import_pg_core.text)("platform").notNull(),
+  streamKey: (0, import_pg_core.text)("stream_key").notNull(),
+  rtmpUrl: (0, import_pg_core.text)("rtmp_url"),
+  resolution: (0, import_pg_core.text)("resolution").notNull(),
+  framerate: (0, import_pg_core.integer)("framerate").notNull(),
+  bitrate: (0, import_pg_core.integer)("bitrate").notNull(),
+  audioQuality: (0, import_pg_core.integer)("audio_quality").notNull(),
+  isActive: (0, import_pg_core.boolean)("is_active").default(false)
+});
+const streamStatus = (0, import_pg_core.pgTable)("stream_status", {
+  id: (0, import_pg_core.serial)("id").primaryKey(),
+  status: (0, import_pg_core.text)("status").notNull(),
+  // 'live', 'offline', 'starting', 'error'
+  viewerCount: (0, import_pg_core.integer)("viewer_count").default(0),
+  uptime: (0, import_pg_core.text)("uptime").default("00:00:00"),
+  currentVideoId: (0, import_pg_core.integer)("current_video_id"),
+  startedAt: (0, import_pg_core.timestamp)("started_at"),
+  loopPlaylist: (0, import_pg_core.boolean)("loop_playlist").default(false)
+});
+const systemConfigs = (0, import_pg_core.pgTable)("system_configs", {
+  id: (0, import_pg_core.serial)("id").primaryKey(),
+  rtmpPort: (0, import_pg_core.integer)("rtmp_port").default(1935),
+  webPort: (0, import_pg_core.integer)("web_port").default(5e3),
+  dbHost: (0, import_pg_core.text)("db_host").default("localhost"),
+  dbPort: (0, import_pg_core.integer)("db_port").default(5432),
+  dbName: (0, import_pg_core.text)("db_name").default("streaming_db"),
+  dbUser: (0, import_pg_core.text)("db_user").default(""),
+  dbPassword: (0, import_pg_core.text)("db_password").default(""),
+  useExternalDb: (0, import_pg_core.boolean)("use_external_db").default(false),
+  updatedAt: (0, import_pg_core.timestamp)("updated_at").defaultNow()
+});
+const insertVideoSchema = (0, import_drizzle_zod.createInsertSchema)(videos).omit({
+  id: true,
+  uploadedAt: true
+});
+const insertStreamConfigSchema = (0, import_drizzle_zod.createInsertSchema)(streamConfigs).omit({
+  id: true
+});
+const insertStreamStatusSchema = (0, import_drizzle_zod.createInsertSchema)(streamStatus).omit({
+  id: true
+});
+const insertSystemConfigSchema = (0, import_drizzle_zod.createInsertSchema)(systemConfigs).omit({
+  id: true,
+  updatedAt: true
+});
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiL2FwcC9zaGFyZWQvc2NoZW1hLnRzIl0sCiAgInNvdXJjZXNDb250ZW50IjogWyJpbXBvcnQgeyBwZ1RhYmxlLCB0ZXh0LCBzZXJpYWwsIGludGVnZXIsIGJvb2xlYW4sIHRpbWVzdGFtcCB9IGZyb20gXCJkcml6emxlLW9ybS9wZy1jb3JlXCI7XG5pbXBvcnQgeyBjcmVhdGVJbnNlcnRTY2hlbWEgfSBmcm9tIFwiZHJpenpsZS16b2RcIjtcbmltcG9ydCB7IHogfSBmcm9tIFwiem9kXCI7XG5cbmV4cG9ydCBjb25zdCB2aWRlb3MgPSBwZ1RhYmxlKFwidmlkZW9zXCIsIHtcbiAgaWQ6IHNlcmlhbChcImlkXCIpLnByaW1hcnlLZXkoKSxcbiAgdGl0bGU6IHRleHQoXCJ0aXRsZVwiKS5ub3ROdWxsKCksXG4gIGZpbGVuYW1lOiB0ZXh0KFwiZmlsZW5hbWVcIikubm90TnVsbCgpLFxuICBmaWxlU2l6ZTogaW50ZWdlcihcImZpbGVfc2l6ZVwiKS5ub3ROdWxsKCksXG4gIGR1cmF0aW9uOiB0ZXh0KFwiZHVyYXRpb25cIikubm90TnVsbCgpLFxuICB0aHVtYm5haWxVcmw6IHRleHQoXCJ0aHVtYm5haWxfdXJsXCIpLFxuICBwbGF5bGlzdE9yZGVyOiBpbnRlZ2VyKFwicGxheWxpc3Rfb3JkZXJcIikubm90TnVsbCgpLFxuICB1cGxvYWRlZEF0OiB0aW1lc3RhbXAoXCJ1cGxvYWRlZF9hdFwiKS5kZWZhdWx0Tm93KCksXG59KTtcblxuZXhwb3J0IGNvbnN0IHN0cmVhbUNvbmZpZ3MgPSBwZ1RhYmxlKFwic3RyZWFtX2NvbmZpZ3NcIiwge1xuICBpZDogc2VyaWFsKFwiaWRcIikucHJpbWFyeUtleSgpLFxuICBwbGF0Zm9ybTogdGV4dChcInBsYXRmb3JtXCIpLm5vdE51bGwoKSxcbiAgc3RyZWFtS2V5OiB0ZXh0KFwic3RyZWFtX2tleVwiKS5ub3ROdWxsKCksXG4gIHJ0bXBVcmw6IHRleHQoXCJydG1wX3VybFwiKSxcbiAgcmVzb2x1dGlvbjogdGV4dChcInJlc29sdXRpb25cIikubm90TnVsbCgpLFxuICBmcmFtZXJhdGU6IGludGVnZXIoXCJmcmFtZXJhdGVcIikubm90TnVsbCgpLFxuICBiaXRyYXRlOiBpbnRlZ2VyKFwiYml0cmF0ZVwiKS5ub3ROdWxsKCksXG4gIGF1ZGlvUXVhbGl0eTogaW50ZWdlcihcImF1ZGlvX3F1YWxpdHlcIikubm90TnVsbCgpLFxuICBpc0FjdGl2ZTogYm9vbGVhbihcImlzX2FjdGl2ZVwiKS5kZWZhdWx0KGZhbHNlKSxcbn0pO1xuXG5leHBvcnQgY29uc3Qgc3RyZWFtU3RhdHVzID0gcGdUYWJsZShcInN0cmVhbV9zdGF0dXNcIiwge1xuICBpZDogc2VyaWFsKFwiaWRcIikucHJpbWFyeUtleSgpLFxuICBzdGF0dXM6IHRleHQoXCJzdGF0dXNcIikubm90TnVsbCgpLCAvLyAnbGl2ZScsICdvZmZsaW5lJywgJ3N0YXJ0aW5nJywgJ2Vycm9yJ1xuICB2aWV3ZXJDb3VudDogaW50ZWdlcihcInZpZXdlcl9jb3VudFwiKS5kZWZhdWx0KDApLFxuICB1cHRpbWU6IHRleHQoXCJ1cHRpbWVcIikuZGVmYXVsdChcIjAwOjAwOjAwXCIpLFxuICBjdXJyZW50VmlkZW9JZDogaW50ZWdlcihcImN1cnJlbnRfdmlkZW9faWRcIiksXG4gIHN0YXJ0ZWRBdDogdGltZXN0YW1wKFwic3RhcnRlZF9hdFwiKSxcbiAgbG9vcFBsYXlsaXN0OiBib29sZWFuKFwibG9vcF9wbGF5bGlzdFwiKS5kZWZhdWx0KGZhbHNlKSxcbn0pO1xuXG5leHBvcnQgY29uc3Qgc3lzdGVtQ29uZmlncyA9IHBnVGFibGUoXCJzeXN0ZW1fY29uZmlnc1wiLCB7XG4gIGlkOiBzZXJpYWwoXCJpZFwiKS5wcmltYXJ5S2V5KCksXG4gIHJ0bXBQb3J0OiBpbnRlZ2VyKFwicnRtcF9wb3J0XCIpLmRlZmF1bHQoMTkzNSksXG4gIHdlYlBvcnQ6IGludGVnZXIoXCJ3ZWJfcG9ydFwiKS5kZWZhdWx0KDUwMDApLFxuICBkYkhvc3Q6IHRleHQoXCJkYl9ob3N0XCIpLmRlZmF1bHQoXCJsb2NhbGhvc3RcIiksXG4gIGRiUG9ydDogaW50ZWdlcihcImRiX3BvcnRcIikuZGVmYXVsdCg1NDMyKSxcbiAgZGJOYW1lOiB0ZXh0KFwiZGJfbmFtZVwiKS5kZWZhdWx0KFwic3RyZWFtaW5nX2RiXCIpLFxuICBkYlVzZXI6IHRleHQoXCJkYl91c2VyXCIpLmRlZmF1bHQoXCJcIiksXG4gIGRiUGFzc3dvcmQ6IHRleHQoXCJkYl9wYXNzd29yZFwiKS5kZWZhdWx0KFwiXCIpLFxuICB1c2VFeHRlcm5hbERiOiBib29sZWFuKFwidXNlX2V4dGVybmFsX2RiXCIpLmRlZmF1bHQoZmFsc2UpLFxuICB1cGRhdGVkQXQ6IHRpbWVzdGFtcChcInVwZGF0ZWRfYXRcIikuZGVmYXVsdE5vdygpLFxufSk7XG5cbmV4cG9ydCBjb25zdCBpbnNlcnRWaWRlb1NjaGVtYSA9IGNyZWF0ZUluc2VydFNjaGVtYSh2aWRlb3MpLm9taXQoe1xuICBpZDogdHJ1ZSxcbiAgdXBsb2FkZWRBdDogdHJ1ZSxcbn0pO1xuXG5leHBvcnQgY29uc3QgaW5zZXJ0U3RyZWFtQ29uZmlnU2NoZW1hID0gY3JlYXRlSW5zZXJ0U2NoZW1hKHN0cmVhbUNvbmZpZ3MpLm9taXQoe1xuICBpZDogdHJ1ZSxcbn0pO1xuXG5leHBvcnQgY29uc3QgaW5zZXJ0U3RyZWFtU3RhdHVzU2NoZW1hID0gY3JlYXRlSW5zZXJ0U2NoZW1hKHN0cmVhbVN0YXR1cykub21pdCh7XG4gIGlkOiB0cnVlLFxufSk7XG5cbmV4cG9ydCBjb25zdCBpbnNlcnRTeXN0ZW1Db25maWdTY2hlbWEgPSBjcmVhdGVJbnNlcnRTY2hlbWEoc3lzdGVtQ29uZmlncykub21pdCh7XG4gIGlkOiB0cnVlLFxuICB1cGRhdGVkQXQ6IHRydWUsXG59KTtcblxuZXhwb3J0IHR5cGUgSW5zZXJ0VmlkZW8gPSB6LmluZmVyPHR5cGVvZiBpbnNlcnRWaWRlb1NjaGVtYT47XG5leHBvcnQgdHlwZSBWaWRlbyA9IHR5cGVvZiB2aWRlb3MuJGluZmVyU2VsZWN0O1xuZXhwb3J0IHR5cGUgSW5zZXJ0U3RyZWFtQ29uZmlnID0gei5pbmZlcjx0eXBlb2YgaW5zZXJ0U3RyZWFtQ29uZmlnU2NoZW1hPjtcbmV4cG9ydCB0eXBlIFN0cmVhbUNvbmZpZyA9IHR5cGVvZiBzdHJlYW1Db25maWdzLiRpbmZlclNlbGVjdDtcbmV4cG9ydCB0eXBlIEluc2VydFN0cmVhbVN0YXR1cyA9IHouaW5mZXI8dHlwZW9mIGluc2VydFN0cmVhbVN0YXR1c1NjaGVtYT47XG5leHBvcnQgdHlwZSBTdHJlYW1TdGF0dXMgPSB0eXBlb2Ygc3RyZWFtU3RhdHVzLiRpbmZlclNlbGVjdDtcbmV4cG9ydCB0eXBlIEluc2VydFN5c3RlbUNvbmZpZyA9IHouaW5mZXI8dHlwZW9mIGluc2VydFN5c3RlbUNvbmZpZ1NjaGVtYT47XG5leHBvcnQgdHlwZSBTeXN0ZW1Db25maWcgPSB0eXBlb2Ygc3lzdGVtQ29uZmlncy4kaW5mZXJTZWxlY3Q7XG4iXSwKICAibWFwcGluZ3MiOiAiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxxQkFBbUU7QUFDbkUseUJBQW1DO0FBRzVCLE1BQU0sYUFBUyx3QkFBUSxVQUFVO0FBQUEsRUFDdEMsUUFBSSx1QkFBTyxJQUFJLEVBQUUsV0FBVztBQUFBLEVBQzVCLFdBQU8scUJBQUssT0FBTyxFQUFFLFFBQVE7QUFBQSxFQUM3QixjQUFVLHFCQUFLLFVBQVUsRUFBRSxRQUFRO0FBQUEsRUFDbkMsY0FBVSx3QkFBUSxXQUFXLEVBQUUsUUFBUTtBQUFBLEVBQ3ZDLGNBQVUscUJBQUssVUFBVSxFQUFFLFFBQVE7QUFBQSxFQUNuQyxrQkFBYyxxQkFBSyxlQUFlO0FBQUEsRUFDbEMsbUJBQWUsd0JBQVEsZ0JBQWdCLEVBQUUsUUFBUTtBQUFBLEVBQ2pELGdCQUFZLDBCQUFVLGFBQWEsRUFBRSxXQUFXO0FBQ2xELENBQUM7QUFFTSxNQUFNLG9CQUFnQix3QkFBUSxrQkFBa0I7QUFBQSxFQUNyRCxRQUFJLHVCQUFPLElBQUksRUFBRSxXQUFXO0FBQUEsRUFDNUIsY0FBVSxxQkFBSyxVQUFVLEVBQUUsUUFBUTtBQUFBLEVBQ25DLGVBQVcscUJBQUssWUFBWSxFQUFFLFFBQVE7QUFBQSxFQUN0QyxhQUFTLHFCQUFLLFVBQVU7QUFBQSxFQUN4QixnQkFBWSxxQkFBSyxZQUFZLEVBQUUsUUFBUTtBQUFBLEVBQ3ZDLGVBQVcsd0JBQVEsV0FBVyxFQUFFLFFBQVE7QUFBQSxFQUN4QyxhQUFTLHdCQUFRLFNBQVMsRUFBRSxRQUFRO0FBQUEsRUFDcEMsa0JBQWMsd0JBQVEsZUFBZSxFQUFFLFFBQVE7QUFBQSxFQUMvQyxjQUFVLHdCQUFRLFdBQVcsRUFBRSxRQUFRLEtBQUs7QUFDOUMsQ0FBQztBQUVNLE1BQU0sbUJBQWUsd0JBQVEsaUJBQWlCO0FBQUEsRUFDbkQsUUFBSSx1QkFBTyxJQUFJLEVBQUUsV0FBVztBQUFBLEVBQzVCLFlBQVEscUJBQUssUUFBUSxFQUFFLFFBQVE7QUFBQTtBQUFBLEVBQy9CLGlCQUFhLHdCQUFRLGNBQWMsRUFBRSxRQUFRLENBQUM7QUFBQSxFQUM5QyxZQUFRLHFCQUFLLFFBQVEsRUFBRSxRQUFRLFVBQVU7QUFBQSxFQUN6QyxvQkFBZ0Isd0JBQVEsa0JBQWtCO0FBQUEsRUFDMUMsZUFBVywwQkFBVSxZQUFZO0FBQUEsRUFDakMsa0JBQWMsd0JBQVEsZUFBZSxFQUFFLFFBQVEsS0FBSztBQUN0RCxDQUFDO0FBRU0sTUFBTSxvQkFBZ0Isd0JBQVEsa0JBQWtCO0FBQUEsRUFDckQsUUFBSSx1QkFBTyxJQUFJLEVBQUUsV0FBVztBQUFBLEVBQzVCLGNBQVUsd0JBQVEsV0FBVyxFQUFFLFFBQVEsSUFBSTtBQUFBLEVBQzNDLGFBQVMsd0JBQVEsVUFBVSxFQUFFLFFBQVEsR0FBSTtBQUFBLEVBQ3pDLFlBQVEscUJBQUssU0FBUyxFQUFFLFFBQVEsV0FBVztBQUFBLEVBQzNDLFlBQVEsd0JBQVEsU0FBUyxFQUFFLFFBQVEsSUFBSTtBQUFBLEVBQ3ZDLFlBQVEscUJBQUssU0FBUyxFQUFFLFFBQVEsY0FBYztBQUFBLEVBQzlDLFlBQVEscUJBQUssU0FBUyxFQUFFLFFBQVEsRUFBRTtBQUFBLEVBQ2xDLGdCQUFZLHFCQUFLLGFBQWEsRUFBRSxRQUFRLEVBQUU7QUFBQSxFQUMxQyxtQkFBZSx3QkFBUSxpQkFBaUIsRUFBRSxRQUFRLEtBQUs7QUFBQSxFQUN2RCxlQUFXLDBCQUFVLFlBQVksRUFBRSxXQUFXO0FBQ2hELENBQUM7QUFFTSxNQUFNLHdCQUFvQix1Q0FBbUIsTUFBTSxFQUFFLEtBQUs7QUFBQSxFQUMvRCxJQUFJO0FBQUEsRUFDSixZQUFZO0FBQ2QsQ0FBQztBQUVNLE1BQU0sK0JBQTJCLHVDQUFtQixhQUFhLEVBQUUsS0FBSztBQUFBLEVBQzdFLElBQUk7QUFDTixDQUFDO0FBRU0sTUFBTSwrQkFBMkIsdUNBQW1CLFlBQVksRUFBRSxLQUFLO0FBQUEsRUFDNUUsSUFBSTtBQUNOLENBQUM7QUFFTSxNQUFNLCtCQUEyQix1Q0FBbUIsYUFBYSxFQUFFLEtBQUs7QUFBQSxFQUM3RSxJQUFJO0FBQUEsRUFDSixXQUFXO0FBQ2IsQ0FBQzsiLAogICJuYW1lcyI6IFtdCn0K
+
+[⣷] Pulling schema from database...
+[✓] Pulling schema from database...
+[i] No changes detected
+Setting up directories...
+Starting nginx...
+Nginx configuration test failed, skipping nginx startup
+Starting Sa Plays Roblox Streamer application...
+Found application at dist/index.js
+Switching to streaming user...
+node:internal/errors:496
+    ErrorCaptureStackTrace(err);
+    ^
+
+TypeError [ERR_INVALID_ARG_TYPE]: The "paths[0]" argument must be of type string. Received undefined
+    at new NodeError (node:internal/errors:405:5)
+    at validateString (node:internal/validators:162:11)
+    at Object.resolve (node:path:1115:7)
+    at file:///app/dist/index.js:354:17
+    at ModuleJob.run (node:internal/modules/esm/module_job:195:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:337:24)
+    at async loadESM (node:internal/process/esm_loader:34:7)
+    at async handleMainPromise (node:internal/modules/run_main:106:12) {
+  code: 'ERR_INVALID_ARG_TYPE'
+}
+
+Node.js v18.20.8
+Starting Sa Plays Roblox Streamer...
+Running as root, will switch to app user later
+Waiting for database...
+postgres:5432 - accepting connections
+Database is ready
+Running database migrations...
+Using existing TypeScript drizzle config
+Running drizzle-kit push with config: ./drizzle.config.ts...
+Reading config file '/app/drizzle.config.ts'
+2025-07-19T07:54:17.425Z esbuild-register compiled /app/drizzle.config.ts
+2025-07-19T07:54:17.425Z esbuild-register const __esbuild_register_import_meta_url__ = require('url').pathToFileURL(__filename).href;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var drizzle_config_exports = {};
+__export(drizzle_config_exports, {
+  default: () => drizzle_config_default
+});
+module.exports = __toCommonJS(drizzle_config_exports);
+var import_drizzle_kit = require("drizzle-kit");
+if (!process.env.DATABASE_URL) {
+  throw new Error("DATABASE_URL, ensure the database is provisioned");
+}
+var drizzle_config_default = (0, import_drizzle_kit.defineConfig)({
+  out: "./migrations",
+  schema: "./shared/schema.ts",
+  dialect: "postgresql",
+  dbCredentials: {
+    url: process.env.DATABASE_URL
+  }
+});
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiL2FwcC9kcml6emxlLmNvbmZpZy50cyJdLAogICJzb3VyY2VzQ29udGVudCI6IFsiaW1wb3J0IHsgZGVmaW5lQ29uZmlnIH0gZnJvbSBcImRyaXp6bGUta2l0XCI7XG5cbmlmICghcHJvY2Vzcy5lbnYuREFUQUJBU0VfVVJMKSB7XG4gIHRocm93IG5ldyBFcnJvcihcIkRBVEFCQVNFX1VSTCwgZW5zdXJlIHRoZSBkYXRhYmFzZSBpcyBwcm92aXNpb25lZFwiKTtcbn1cblxuZXhwb3J0IGRlZmF1bHQgZGVmaW5lQ29uZmlnKHtcbiAgb3V0OiBcIi4vbWlncmF0aW9uc1wiLFxuICBzY2hlbWE6IFwiLi9zaGFyZWQvc2NoZW1hLnRzXCIsXG4gIGRpYWxlY3Q6IFwicG9zdGdyZXNxbFwiLFxuICBkYkNyZWRlbnRpYWxzOiB7XG4gICAgdXJsOiBwcm9jZXNzLmVudi5EQVRBQkFTRV9VUkwsXG4gIH0sXG59KTtcbiJdLAogICJtYXBwaW5ncyI6ICI7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSx5QkFBNkI7QUFFN0IsSUFBSSxDQUFDLFFBQVEsSUFBSSxjQUFjO0FBQzdCLFFBQU0sSUFBSSxNQUFNLGtEQUFrRDtBQUNwRTtBQUVBLElBQU8sNkJBQVEsaUNBQWE7QUFBQSxFQUMxQixLQUFLO0FBQUEsRUFDTCxRQUFRO0FBQUEsRUFDUixTQUFTO0FBQUEsRUFDVCxlQUFlO0FBQUEsSUFDYixLQUFLLFFBQVEsSUFBSTtBQUFBLEVBQ25CO0FBQ0YsQ0FBQzsiLAogICJuYW1lcyI6IFtdCn0K
+
+Using 'pg' driver for database querying
+2025-07-19T07:54:17.600Z esbuild-register compiled /app/shared/schema.ts
+2025-07-19T07:54:17.600Z esbuild-register const __esbuild_register_import_meta_url__ = require('url').pathToFileURL(__filename).href;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var schema_exports = {};
+__export(schema_exports, {
+  insertStreamConfigSchema: () => insertStreamConfigSchema,
+  insertStreamStatusSchema: () => insertStreamStatusSchema,
+  insertSystemConfigSchema: () => insertSystemConfigSchema,
+  insertVideoSchema: () => insertVideoSchema,
+  streamConfigs: () => streamConfigs,
+  streamStatus: () => streamStatus,
+  systemConfigs: () => systemConfigs,
+  videos: () => videos
+});
+module.exports = __toCommonJS(schema_exports);
+var import_pg_core = require("drizzle-orm/pg-core");
+var import_drizzle_zod = require("drizzle-zod");
+const videos = (0, import_pg_core.pgTable)("videos", {
+  id: (0, import_pg_core.serial)("id").primaryKey(),
+  title: (0, import_pg_core.text)("title").notNull(),
+  filename: (0, import_pg_core.text)("filename").notNull(),
+  fileSize: (0, import_pg_core.integer)("file_size").notNull(),
+  duration: (0, import_pg_core.text)("duration").notNull(),
+  thumbnailUrl: (0, import_pg_core.text)("thumbnail_url"),
+  playlistOrder: (0, import_pg_core.integer)("playlist_order").notNull(),
+  uploadedAt: (0, import_pg_core.timestamp)("uploaded_at").defaultNow()
+});
+const streamConfigs = (0, import_pg_core.pgTable)("stream_configs", {
+  id: (0, import_pg_core.serial)("id").primaryKey(),
+  platform: (0, import_pg_core.text)("platform").notNull(),
+  streamKey: (0, import_pg_core.text)("stream_key").notNull(),
+  rtmpUrl: (0, import_pg_core.text)("rtmp_url"),
+  resolution: (0, import_pg_core.text)("resolution").notNull(),
+  framerate: (0, import_pg_core.integer)("framerate").notNull(),
+  bitrate: (0, import_pg_core.integer)("bitrate").notNull(),
+  audioQuality: (0, import_pg_core.integer)("audio_quality").notNull(),
+  isActive: (0, import_pg_core.boolean)("is_active").default(false)
+});
+const streamStatus = (0, import_pg_core.pgTable)("stream_status", {
+  id: (0, import_pg_core.serial)("id").primaryKey(),
+  status: (0, import_pg_core.text)("status").notNull(),
+  // 'live', 'offline', 'starting', 'error'
+  viewerCount: (0, import_pg_core.integer)("viewer_count").default(0),
+  uptime: (0, import_pg_core.text)("uptime").default("00:00:00"),
+  currentVideoId: (0, import_pg_core.integer)("current_video_id"),
+  startedAt: (0, import_pg_core.timestamp)("started_at"),
+  loopPlaylist: (0, import_pg_core.boolean)("loop_playlist").default(false)
+});
+const systemConfigs = (0, import_pg_core.pgTable)("system_configs", {
+  id: (0, import_pg_core.serial)("id").primaryKey(),
+  rtmpPort: (0, import_pg_core.integer)("rtmp_port").default(1935),
+  webPort: (0, import_pg_core.integer)("web_port").default(5e3),
+  dbHost: (0, import_pg_core.text)("db_host").default("localhost"),
+  dbPort: (0, import_pg_core.integer)("db_port").default(5432),
+  dbName: (0, import_pg_core.text)("db_name").default("streaming_db"),
+  dbUser: (0, import_pg_core.text)("db_user").default(""),
+  dbPassword: (0, import_pg_core.text)("db_password").default(""),
+  useExternalDb: (0, import_pg_core.boolean)("use_external_db").default(false),
+  updatedAt: (0, import_pg_core.timestamp)("updated_at").defaultNow()
+});
+const insertVideoSchema = (0, import_drizzle_zod.createInsertSchema)(videos).omit({
+  id: true,
+  uploadedAt: true
+});
+const insertStreamConfigSchema = (0, import_drizzle_zod.createInsertSchema)(streamConfigs).omit({
+  id: true
+});
+const insertStreamStatusSchema = (0, import_drizzle_zod.createInsertSchema)(streamStatus).omit({
+  id: true
+});
+const insertSystemConfigSchema = (0, import_drizzle_zod.createInsertSchema)(systemConfigs).omit({
+  id: true,
+  updatedAt: true
+});
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiL2FwcC9zaGFyZWQvc2NoZW1hLnRzIl0sCiAgInNvdXJjZXNDb250ZW50IjogWyJpbXBvcnQgeyBwZ1RhYmxlLCB0ZXh0LCBzZXJpYWwsIGludGVnZXIsIGJvb2xlYW4sIHRpbWVzdGFtcCB9IGZyb20gXCJkcml6emxlLW9ybS9wZy1jb3JlXCI7XG5pbXBvcnQgeyBjcmVhdGVJbnNlcnRTY2hlbWEgfSBmcm9tIFwiZHJpenpsZS16b2RcIjtcbmltcG9ydCB7IHogfSBmcm9tIFwiem9kXCI7XG5cbmV4cG9ydCBjb25zdCB2aWRlb3MgPSBwZ1RhYmxlKFwidmlkZW9zXCIsIHtcbiAgaWQ6IHNlcmlhbChcImlkXCIpLnByaW1hcnlLZXkoKSxcbiAgdGl0bGU6IHRleHQoXCJ0aXRsZVwiKS5ub3ROdWxsKCksXG4gIGZpbGVuYW1lOiB0ZXh0KFwiZmlsZW5hbWVcIikubm90TnVsbCgpLFxuICBmaWxlU2l6ZTogaW50ZWdlcihcImZpbGVfc2l6ZVwiKS5ub3ROdWxsKCksXG4gIGR1cmF0aW9uOiB0ZXh0KFwiZHVyYXRpb25cIikubm90TnVsbCgpLFxuICB0aHVtYm5haWxVcmw6IHRleHQoXCJ0aHVtYm5haWxfdXJsXCIpLFxuICBwbGF5bGlzdE9yZGVyOiBpbnRlZ2VyKFwicGxheWxpc3Rfb3JkZXJcIikubm90TnVsbCgpLFxuICB1cGxvYWRlZEF0OiB0aW1lc3RhbXAoXCJ1cGxvYWRlZF9hdFwiKS5kZWZhdWx0Tm93KCksXG59KTtcblxuZXhwb3J0IGNvbnN0IHN0cmVhbUNvbmZpZ3MgPSBwZ1RhYmxlKFwic3RyZWFtX2NvbmZpZ3NcIiwge1xuICBpZDogc2VyaWFsKFwiaWRcIikucHJpbWFyeUtleSgpLFxuICBwbGF0Zm9ybTogdGV4dChcInBsYXRmb3JtXCIpLm5vdE51bGwoKSxcbiAgc3RyZWFtS2V5OiB0ZXh0KFwic3RyZWFtX2tleVwiKS5ub3ROdWxsKCksXG4gIHJ0bXBVcmw6IHRleHQoXCJydG1wX3VybFwiKSxcbiAgcmVzb2x1dGlvbjogdGV4dChcInJlc29sdXRpb25cIikubm90TnVsbCgpLFxuICBmcmFtZXJhdGU6IGludGVnZXIoXCJmcmFtZXJhdGVcIikubm90TnVsbCgpLFxuICBiaXRyYXRlOiBpbnRlZ2VyKFwiYml0cmF0ZVwiKS5ub3ROdWxsKCksXG4gIGF1ZGlvUXVhbGl0eTogaW50ZWdlcihcImF1ZGlvX3F1YWxpdHlcIikubm90TnVsbCgpLFxuICBpc0FjdGl2ZTogYm9vbGVhbihcImlzX2FjdGl2ZVwiKS5kZWZhdWx0KGZhbHNlKSxcbn0pO1xuXG5leHBvcnQgY29uc3Qgc3RyZWFtU3RhdHVzID0gcGdUYWJsZShcInN0cmVhbV9zdGF0dXNcIiwge1xuICBpZDogc2VyaWFsKFwiaWRcIikucHJpbWFyeUtleSgpLFxuICBzdGF0dXM6IHRleHQoXCJzdGF0dXNcIikubm90TnVsbCgpLCAvLyAnbGl2ZScsICdvZmZsaW5lJywgJ3N0YXJ0aW5nJywgJ2Vycm9yJ1xuICB2aWV3ZXJDb3VudDogaW50ZWdlcihcInZpZXdlcl9jb3VudFwiKS5kZWZhdWx0KDApLFxuICB1cHRpbWU6IHRleHQoXCJ1cHRpbWVcIikuZGVmYXVsdChcIjAwOjAwOjAwXCIpLFxuICBjdXJyZW50VmlkZW9JZDogaW50ZWdlcihcImN1cnJlbnRfdmlkZW9faWRcIiksXG4gIHN0YXJ0ZWRBdDogdGltZXN0YW1wKFwic3RhcnRlZF9hdFwiKSxcbiAgbG9vcFBsYXlsaXN0OiBib29sZWFuKFwibG9vcF9wbGF5bGlzdFwiKS5kZWZhdWx0KGZhbHNlKSxcbn0pO1xuXG5leHBvcnQgY29uc3Qgc3lzdGVtQ29uZmlncyA9IHBnVGFibGUoXCJzeXN0ZW1fY29uZmlnc1wiLCB7XG4gIGlkOiBzZXJpYWwoXCJpZFwiKS5wcmltYXJ5S2V5KCksXG4gIHJ0bXBQb3J0OiBpbnRlZ2VyKFwicnRtcF9wb3J0XCIpLmRlZmF1bHQoMTkzNSksXG4gIHdlYlBvcnQ6IGludGVnZXIoXCJ3ZWJfcG9ydFwiKS5kZWZhdWx0KDUwMDApLFxuICBkYkhvc3Q6IHRleHQoXCJkYl9ob3N0XCIpLmRlZmF1bHQoXCJsb2NhbGhvc3RcIiksXG4gIGRiUG9ydDogaW50ZWdlcihcImRiX3BvcnRcIikuZGVmYXVsdCg1NDMyKSxcbiAgZGJOYW1lOiB0ZXh0KFwiZGJfbmFtZVwiKS5kZWZhdWx0KFwic3RyZWFtaW5nX2RiXCIpLFxuICBkYlVzZXI6IHRleHQoXCJkYl91c2VyXCIpLmRlZmF1bHQoXCJcIiksXG4gIGRiUGFzc3dvcmQ6IHRleHQoXCJkYl9wYXNzd29yZFwiKS5kZWZhdWx0KFwiXCIpLFxuICB1c2VFeHRlcm5hbERiOiBib29sZWFuKFwidXNlX2V4dGVybmFsX2RiXCIpLmRlZmF1bHQoZmFsc2UpLFxuICB1cGRhdGVkQXQ6IHRpbWVzdGFtcChcInVwZGF0ZWRfYXRcIikuZGVmYXVsdE5vdygpLFxufSk7XG5cbmV4cG9ydCBjb25zdCBpbnNlcnRWaWRlb1NjaGVtYSA9IGNyZWF0ZUluc2VydFNjaGVtYSh2aWRlb3MpLm9taXQoe1xuICBpZDogdHJ1ZSxcbiAgdXBsb2FkZWRBdDogdHJ1ZSxcbn0pO1xuXG5leHBvcnQgY29uc3QgaW5zZXJ0U3RyZWFtQ29uZmlnU2NoZW1hID0gY3JlYXRlSW5zZXJ0U2NoZW1hKHN0cmVhbUNvbmZpZ3MpLm9taXQoe1xuICBpZDogdHJ1ZSxcbn0pO1xuXG5leHBvcnQgY29uc3QgaW5zZXJ0U3RyZWFtU3RhdHVzU2NoZW1hID0gY3JlYXRlSW5zZXJ0U2NoZW1hKHN0cmVhbVN0YXR1cykub21pdCh7XG4gIGlkOiB0cnVlLFxufSk7XG5cbmV4cG9ydCBjb25zdCBpbnNlcnRTeXN0ZW1Db25maWdTY2hlbWEgPSBjcmVhdGVJbnNlcnRTY2hlbWEoc3lzdGVtQ29uZmlncykub21pdCh7XG4gIGlkOiB0cnVlLFxuICB1cGRhdGVkQXQ6IHRydWUsXG59KTtcblxuZXhwb3J0IHR5cGUgSW5zZXJ0VmlkZW8gPSB6LmluZmVyPHR5cGVvZiBpbnNlcnRWaWRlb1NjaGVtYT47XG5leHBvcnQgdHlwZSBWaWRlbyA9IHR5cGVvZiB2aWRlb3MuJGluZmVyU2VsZWN0O1xuZXhwb3J0IHR5cGUgSW5zZXJ0U3RyZWFtQ29uZmlnID0gei5pbmZlcjx0eXBlb2YgaW5zZXJ0U3RyZWFtQ29uZmlnU2NoZW1hPjtcbmV4cG9ydCB0eXBlIFN0cmVhbUNvbmZpZyA9IHR5cGVvZiBzdHJlYW1Db25maWdzLiRpbmZlclNlbGVjdDtcbmV4cG9ydCB0eXBlIEluc2VydFN0cmVhbVN0YXR1cyA9IHouaW5mZXI8dHlwZW9mIGluc2VydFN0cmVhbVN0YXR1c1NjaGVtYT47XG5leHBvcnQgdHlwZSBTdHJlYW1TdGF0dXMgPSB0eXBlb2Ygc3RyZWFtU3RhdHVzLiRpbmZlclNlbGVjdDtcbmV4cG9ydCB0eXBlIEluc2VydFN5c3RlbUNvbmZpZyA9IHouaW5mZXI8dHlwZW9mIGluc2VydFN5c3RlbUNvbmZpZ1NjaGVtYT47XG5leHBvcnQgdHlwZSBTeXN0ZW1Db25maWcgPSB0eXBlb2Ygc3lzdGVtQ29uZmlncy4kaW5mZXJTZWxlY3Q7XG4iXSwKICAibWFwcGluZ3MiOiAiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxxQkFBbUU7QUFDbkUseUJBQW1DO0FBRzVCLE1BQU0sYUFBUyx3QkFBUSxVQUFVO0FBQUEsRUFDdEMsUUFBSSx1QkFBTyxJQUFJLEVBQUUsV0FBVztBQUFBLEVBQzVCLFdBQU8scUJBQUssT0FBTyxFQUFFLFFBQVE7QUFBQSxFQUM3QixjQUFVLHFCQUFLLFVBQVUsRUFBRSxRQUFRO0FBQUEsRUFDbkMsY0FBVSx3QkFBUSxXQUFXLEVBQUUsUUFBUTtBQUFBLEVBQ3ZDLGNBQVUscUJBQUssVUFBVSxFQUFFLFFBQVE7QUFBQSxFQUNuQyxrQkFBYyxxQkFBSyxlQUFlO0FBQUEsRUFDbEMsbUJBQWUsd0JBQVEsZ0JBQWdCLEVBQUUsUUFBUTtBQUFBLEVBQ2pELGdCQUFZLDBCQUFVLGFBQWEsRUFBRSxXQUFXO0FBQ2xELENBQUM7QUFFTSxNQUFNLG9CQUFnQix3QkFBUSxrQkFBa0I7QUFBQSxFQUNyRCxRQUFJLHVCQUFPLElBQUksRUFBRSxXQUFXO0FBQUEsRUFDNUIsY0FBVSxxQkFBSyxVQUFVLEVBQUUsUUFBUTtBQUFBLEVBQ25DLGVBQVcscUJBQUssWUFBWSxFQUFFLFFBQVE7QUFBQSxFQUN0QyxhQUFTLHFCQUFLLFVBQVU7QUFBQSxFQUN4QixnQkFBWSxxQkFBSyxZQUFZLEVBQUUsUUFBUTtBQUFBLEVBQ3ZDLGVBQVcsd0JBQVEsV0FBVyxFQUFFLFFBQVE7QUFBQSxFQUN4QyxhQUFTLHdCQUFRLFNBQVMsRUFBRSxRQUFRO0FBQUEsRUFDcEMsa0JBQWMsd0JBQVEsZUFBZSxFQUFFLFFBQVE7QUFBQSxFQUMvQyxjQUFVLHdCQUFRLFdBQVcsRUFBRSxRQUFRLEtBQUs7QUFDOUMsQ0FBQztBQUVNLE1BQU0sbUJBQWUsd0JBQVEsaUJBQWlCO0FBQUEsRUFDbkQsUUFBSSx1QkFBTyxJQUFJLEVBQUUsV0FBVztBQUFBLEVBQzVCLFlBQVEscUJBQUssUUFBUSxFQUFFLFFBQVE7QUFBQTtBQUFBLEVBQy9CLGlCQUFhLHdCQUFRLGNBQWMsRUFBRSxRQUFRLENBQUM7QUFBQSxFQUM5QyxZQUFRLHFCQUFLLFFBQVEsRUFBRSxRQUFRLFVBQVU7QUFBQSxFQUN6QyxvQkFBZ0Isd0JBQVEsa0JBQWtCO0FBQUEsRUFDMUMsZUFBVywwQkFBVSxZQUFZO0FBQUEsRUFDakMsa0JBQWMsd0JBQVEsZUFBZSxFQUFFLFFBQVEsS0FBSztBQUN0RCxDQUFDO0FBRU0sTUFBTSxvQkFBZ0Isd0JBQVEsa0JBQWtCO0FBQUEsRUFDckQsUUFBSSx1QkFBTyxJQUFJLEVBQUUsV0FBVztBQUFBLEVBQzVCLGNBQVUsd0JBQVEsV0FBVyxFQUFFLFFBQVEsSUFBSTtBQUFBLEVBQzNDLGFBQVMsd0JBQVEsVUFBVSxFQUFFLFFBQVEsR0FBSTtBQUFBLEVBQ3pDLFlBQVEscUJBQUssU0FBUyxFQUFFLFFBQVEsV0FBVztBQUFBLEVBQzNDLFlBQVEsd0JBQVEsU0FBUyxFQUFFLFFBQVEsSUFBSTtBQUFBLEVBQ3ZDLFlBQVEscUJBQUssU0FBUyxFQUFFLFFBQVEsY0FBYztBQUFBLEVBQzlDLFlBQVEscUJBQUssU0FBUyxFQUFFLFFBQVEsRUFBRTtBQUFBLEVBQ2xDLGdCQUFZLHFCQUFLLGFBQWEsRUFBRSxRQUFRLEVBQUU7QUFBQSxFQUMxQyxtQkFBZSx3QkFBUSxpQkFBaUIsRUFBRSxRQUFRLEtBQUs7QUFBQSxFQUN2RCxlQUFXLDBCQUFVLFlBQVksRUFBRSxXQUFXO0FBQ2hELENBQUM7QUFFTSxNQUFNLHdCQUFvQix1Q0FBbUIsTUFBTSxFQUFFLEtBQUs7QUFBQSxFQUMvRCxJQUFJO0FBQUEsRUFDSixZQUFZO0FBQ2QsQ0FBQztBQUVNLE1BQU0sK0JBQTJCLHVDQUFtQixhQUFhLEVBQUUsS0FBSztBQUFBLEVBQzdFLElBQUk7QUFDTixDQUFDO0FBRU0sTUFBTSwrQkFBMkIsdUNBQW1CLFlBQVksRUFBRSxLQUFLO0FBQUEsRUFDNUUsSUFBSTtBQUNOLENBQUM7QUFFTSxNQUFNLCtCQUEyQix1Q0FBbUIsYUFBYSxFQUFFLEtBQUs7QUFBQSxFQUM3RSxJQUFJO0FBQUEsRUFDSixXQUFXO0FBQ2IsQ0FBQzsiLAogICJuYW1lcyI6IFtdCn0K
+
+[⣷] Pulling schema from database...
+[✓] Pulling schema from database...
+[i] No changes detected
+Setting up directories...
+Starting nginx...
+Nginx configuration test failed, skipping nginx startup
+Starting Sa Plays Roblox Streamer application...
+Found application at dist/index.js
+Switching to streaming user...
+node:internal/errors:496
+    ErrorCaptureStackTrace(err);
+    ^
+
+TypeError [ERR_INVALID_ARG_TYPE]: The "paths[0]" argument must be of type string. Received undefined
+    at new NodeError (node:internal/errors:405:5)
+    at validateString (node:internal/validators:162:11)
+    at Object.resolve (node:path:1115:7)
+    at file:///app/dist/index.js:354:17
+    at ModuleJob.run (node:internal/modules/esm/module_job:195:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:337:24)
+    at async loadESM (node:internal/process/esm_loader:34:7)
+    at async handleMainPromise (node:internal/modules/run_main:106:12) {
+  code: 'ERR_INVALID_ARG_TYPE'
+}
+
+Node.js v18.20.8
+Starting Sa Plays Roblox Streamer...
+Running as root, will switch to app user later
+Waiting for database...
+postgres:5432 - accepting connections
+Database is ready
+Running database migrations...
+Using existing TypeScript drizzle config
+Running drizzle-kit push with config: ./drizzle.config.ts...
+Reading config file '/app/drizzle.config.ts'
+2025-07-19T07:54:33.525Z esbuild-register compiled /app/drizzle.config.ts
+2025-07-19T07:54:33.525Z esbuild-register const __esbuild_register_import_meta_url__ = require('url').pathToFileURL(__filename).href;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var drizzle_config_exports = {};
+__export(drizzle_config_exports, {
+  default: () => drizzle_config_default
+});
+module.exports = __toCommonJS(drizzle_config_exports);
+var import_drizzle_kit = require("drizzle-kit");
+if (!process.env.DATABASE_URL) {
+  throw new Error("DATABASE_URL, ensure the database is provisioned");
+}
+var drizzle_config_default = (0, import_drizzle_kit.defineConfig)({
+  out: "./migrations",
+  schema: "./shared/schema.ts",
+  dialect: "postgresql",
+  dbCredentials: {
+    url: process.env.DATABASE_URL
+  }
+});
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiL2FwcC9kcml6emxlLmNvbmZpZy50cyJdLAogICJzb3VyY2VzQ29udGVudCI6IFsiaW1wb3J0IHsgZGVmaW5lQ29uZmlnIH0gZnJvbSBcImRyaXp6bGUta2l0XCI7XG5cbmlmICghcHJvY2Vzcy5lbnYuREFUQUJBU0VfVVJMKSB7XG4gIHRocm93IG5ldyBFcnJvcihcIkRBVEFCQVNFX1VSTCwgZW5zdXJlIHRoZSBkYXRhYmFzZSBpcyBwcm92aXNpb25lZFwiKTtcbn1cblxuZXhwb3J0IGRlZmF1bHQgZGVmaW5lQ29uZmlnKHtcbiAgb3V0OiBcIi4vbWlncmF0aW9uc1wiLFxuICBzY2hlbWE6IFwiLi9zaGFyZWQvc2NoZW1hLnRzXCIsXG4gIGRpYWxlY3Q6IFwicG9zdGdyZXNxbFwiLFxuICBkYkNyZWRlbnRpYWxzOiB7XG4gICAgdXJsOiBwcm9jZXNzLmVudi5EQVRBQkFTRV9VUkwsXG4gIH0sXG59KTtcbiJdLAogICJtYXBwaW5ncyI6ICI7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSx5QkFBNkI7QUFFN0IsSUFBSSxDQUFDLFFBQVEsSUFBSSxjQUFjO0FBQzdCLFFBQU0sSUFBSSxNQUFNLGtEQUFrRDtBQUNwRTtBQUVBLElBQU8sNkJBQVEsaUNBQWE7QUFBQSxFQUMxQixLQUFLO0FBQUEsRUFDTCxRQUFRO0FBQUEsRUFDUixTQUFTO0FBQUEsRUFDVCxlQUFlO0FBQUEsSUFDYixLQUFLLFFBQVEsSUFBSTtBQUFBLEVBQ25CO0FBQ0YsQ0FBQzsiLAogICJuYW1lcyI6IFtdCn0K
+
+Using 'pg' driver for database querying
+2025-07-19T07:54:33.707Z esbuild-register compiled /app/shared/schema.ts
+2025-07-19T07:54:33.707Z esbuild-register const __esbuild_register_import_meta_url__ = require('url').pathToFileURL(__filename).href;
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var schema_exports = {};
+__export(schema_exports, {
+  insertStreamConfigSchema: () => insertStreamConfigSchema,
+  insertStreamStatusSchema: () => insertStreamStatusSchema,
+  insertSystemConfigSchema: () => insertSystemConfigSchema,
+  insertVideoSchema: () => insertVideoSchema,
+  streamConfigs: () => streamConfigs,
+  streamStatus: () => streamStatus,
+  systemConfigs: () => systemConfigs,
+  videos: () => videos
+});
+module.exports = __toCommonJS(schema_exports);
+var import_pg_core = require("drizzle-orm/pg-core");
+var import_drizzle_zod = require("drizzle-zod");
+const videos = (0, import_pg_core.pgTable)("videos", {
+  id: (0, import_pg_core.serial)("id").primaryKey(),
+  title: (0, import_pg_core.text)("title").notNull(),
+  filename: (0, import_pg_core.text)("filename").notNull(),
+  fileSize: (0, import_pg_core.integer)("file_size").notNull(),
+  duration: (0, import_pg_core.text)("duration").notNull(),
+  thumbnailUrl: (0, import_pg_core.text)("thumbnail_url"),
+  playlistOrder: (0, import_pg_core.integer)("playlist_order").notNull(),
+  uploadedAt: (0, import_pg_core.timestamp)("uploaded_at").defaultNow()
+});
+const streamConfigs = (0, import_pg_core.pgTable)("stream_configs", {
+  id: (0, import_pg_core.serial)("id").primaryKey(),
+  platform: (0, import_pg_core.text)("platform").notNull(),
+  streamKey: (0, import_pg_core.text)("stream_key").notNull(),
+  rtmpUrl: (0, import_pg_core.text)("rtmp_url"),
+  resolution: (0, import_pg_core.text)("resolution").notNull(),
+  framerate: (0, import_pg_core.integer)("framerate").notNull(),
+  bitrate: (0, import_pg_core.integer)("bitrate").notNull(),
+  audioQuality: (0, import_pg_core.integer)("audio_quality").notNull(),
+  isActive: (0, import_pg_core.boolean)("is_active").default(false)
+});
+const streamStatus = (0, import_pg_core.pgTable)("stream_status", {
+  id: (0, import_pg_core.serial)("id").primaryKey(),
+  status: (0, import_pg_core.text)("status").notNull(),
+  // 'live', 'offline', 'starting', 'error'
+  viewerCount: (0, import_pg_core.integer)("viewer_count").default(0),
+  uptime: (0, import_pg_core.text)("uptime").default("00:00:00"),
+  currentVideoId: (0, import_pg_core.integer)("current_video_id"),
+  startedAt: (0, import_pg_core.timestamp)("started_at"),
+  loopPlaylist: (0, import_pg_core.boolean)("loop_playlist").default(false)
+});
+const systemConfigs = (0, import_pg_core.pgTable)("system_configs", {
+  id: (0, import_pg_core.serial)("id").primaryKey(),
+  rtmpPort: (0, import_pg_core.integer)("rtmp_port").default(1935),
+  webPort: (0, import_pg_core.integer)("web_port").default(5e3),
+  dbHost: (0, import_pg_core.text)("db_host").default("localhost"),
+  dbPort: (0, import_pg_core.integer)("db_port").default(5432),
+  dbName: (0, import_pg_core.text)("db_name").default("streaming_db"),
+  dbUser: (0, import_pg_core.text)("db_user").default(""),
+  dbPassword: (0, import_pg_core.text)("db_password").default(""),
+  useExternalDb: (0, import_pg_core.boolean)("use_external_db").default(false),
+  updatedAt: (0, import_pg_core.timestamp)("updated_at").defaultNow()
+});
+const insertVideoSchema = (0, import_drizzle_zod.createInsertSchema)(videos).omit({
+  id: true,
+  uploadedAt: true
+});
+const insertStreamConfigSchema = (0, import_drizzle_zod.createInsertSchema)(streamConfigs).omit({
+  id: true
+});
+const insertStreamStatusSchema = (0, import_drizzle_zod.createInsertSchema)(streamStatus).omit({
+  id: true
+});
+const insertSystemConfigSchema = (0, import_drizzle_zod.createInsertSchema)(systemConfigs).omit({
+  id: true,
+  updatedAt: true
+});
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiL2FwcC9zaGFyZWQvc2NoZW1hLnRzIl0sCiAgInNvdXJjZXNDb250ZW50IjogWyJpbXBvcnQgeyBwZ1RhYmxlLCB0ZXh0LCBzZXJpYWwsIGludGVnZXIsIGJvb2xlYW4sIHRpbWVzdGFtcCB9IGZyb20gXCJkcml6emxlLW9ybS9wZy1jb3JlXCI7XG5pbXBvcnQgeyBjcmVhdGVJbnNlcnRTY2hlbWEgfSBmcm9tIFwiZHJpenpsZS16b2RcIjtcbmltcG9ydCB7IHogfSBmcm9tIFwiem9kXCI7XG5cbmV4cG9ydCBjb25zdCB2aWRlb3MgPSBwZ1RhYmxlKFwidmlkZW9zXCIsIHtcbiAgaWQ6IHNlcmlhbChcImlkXCIpLnByaW1hcnlLZXkoKSxcbiAgdGl0bGU6IHRleHQoXCJ0aXRsZVwiKS5ub3ROdWxsKCksXG4gIGZpbGVuYW1lOiB0ZXh0KFwiZmlsZW5hbWVcIikubm90TnVsbCgpLFxuICBmaWxlU2l6ZTogaW50ZWdlcihcImZpbGVfc2l6ZVwiKS5ub3ROdWxsKCksXG4gIGR1cmF0aW9uOiB0ZXh0KFwiZHVyYXRpb25cIikubm90TnVsbCgpLFxuICB0aHVtYm5haWxVcmw6IHRleHQoXCJ0aHVtYm5haWxfdXJsXCIpLFxuICBwbGF5bGlzdE9yZGVyOiBpbnRlZ2VyKFwicGxheWxpc3Rfb3JkZXJcIikubm90TnVsbCgpLFxuICB1cGxvYWRlZEF0OiB0aW1lc3RhbXAoXCJ1cGxvYWRlZF9hdFwiKS5kZWZhdWx0Tm93KCksXG59KTtcblxuZXhwb3J0IGNvbnN0IHN0cmVhbUNvbmZpZ3MgPSBwZ1RhYmxlKFwic3RyZWFtX2NvbmZpZ3NcIiwge1xuICBpZDogc2VyaWFsKFwiaWRcIikucHJpbWFyeUtleSgpLFxuICBwbGF0Zm9ybTogdGV4dChcInBsYXRmb3JtXCIpLm5vdE51bGwoKSxcbiAgc3RyZWFtS2V5OiB0ZXh0KFwic3RyZWFtX2tleVwiKS5ub3ROdWxsKCksXG4gIHJ0bXBVcmw6IHRleHQoXCJydG1wX3VybFwiKSxcbiAgcmVzb2x1dGlvbjogdGV4dChcInJlc29sdXRpb25cIikubm90TnVsbCgpLFxuICBmcmFtZXJhdGU6IGludGVnZXIoXCJmcmFtZXJhdGVcIikubm90TnVsbCgpLFxuICBiaXRyYXRlOiBpbnRlZ2VyKFwiYml0cmF0ZVwiKS5ub3ROdWxsKCksXG4gIGF1ZGlvUXVhbGl0eTogaW50ZWdlcihcImF1ZGlvX3F1YWxpdHlcIikubm90TnVsbCgpLFxuICBpc0FjdGl2ZTogYm9vbGVhbihcImlzX2FjdGl2ZVwiKS5kZWZhdWx0KGZhbHNlKSxcbn0pO1xuXG5leHBvcnQgY29uc3Qgc3RyZWFtU3RhdHVzID0gcGdUYWJsZShcInN0cmVhbV9zdGF0dXNcIiwge1xuICBpZDogc2VyaWFsKFwiaWRcIikucHJpbWFyeUtleSgpLFxuICBzdGF0dXM6IHRleHQoXCJzdGF0dXNcIikubm90TnVsbCgpLCAvLyAnbGl2ZScsICdvZmZsaW5lJywgJ3N0YXJ0aW5nJywgJ2Vycm9yJ1xuICB2aWV3ZXJDb3VudDogaW50ZWdlcihcInZpZXdlcl9jb3VudFwiKS5kZWZhdWx0KDApLFxuICB1cHRpbWU6IHRleHQoXCJ1cHRpbWVcIikuZGVmYXVsdChcIjAwOjAwOjAwXCIpLFxuICBjdXJyZW50VmlkZW9JZDogaW50ZWdlcihcImN1cnJlbnRfdmlkZW9faWRcIiksXG4gIHN0YXJ0ZWRBdDogdGltZXN0YW1wKFwic3RhcnRlZF9hdFwiKSxcbiAgbG9vcFBsYXlsaXN0OiBib29sZWFuKFwibG9vcF9wbGF5bGlzdFwiKS5kZWZhdWx0KGZhbHNlKSxcbn0pO1xuXG5leHBvcnQgY29uc3Qgc3lzdGVtQ29uZmlncyA9IHBnVGFibGUoXCJzeXN0ZW1fY29uZmlnc1wiLCB7XG4gIGlkOiBzZXJpYWwoXCJpZFwiKS5wcmltYXJ5S2V5KCksXG4gIHJ0bXBQb3J0OiBpbnRlZ2VyKFwicnRtcF9wb3J0XCIpLmRlZmF1bHQoMTkzNSksXG4gIHdlYlBvcnQ6IGludGVnZXIoXCJ3ZWJfcG9ydFwiKS5kZWZhdWx0KDUwMDApLFxuICBkYkhvc3Q6IHRleHQoXCJkYl9ob3N0XCIpLmRlZmF1bHQoXCJsb2NhbGhvc3RcIiksXG4gIGRiUG9ydDogaW50ZWdlcihcImRiX3BvcnRcIikuZGVmYXVsdCg1NDMyKSxcbiAgZGJOYW1lOiB0ZXh0KFwiZGJfbmFtZVwiKS5kZWZhdWx0KFwic3RyZWFtaW5nX2RiXCIpLFxuICBkYlVzZXI6IHRleHQoXCJkYl91c2VyXCIpLmRlZmF1bHQoXCJcIiksXG4gIGRiUGFzc3dvcmQ6IHRleHQoXCJkYl9wYXNzd29yZFwiKS5kZWZhdWx0KFwiXCIpLFxuICB1c2VFeHRlcm5hbERiOiBib29sZWFuKFwidXNlX2V4dGVybmFsX2RiXCIpLmRlZmF1bHQoZmFsc2UpLFxuICB1cGRhdGVkQXQ6IHRpbWVzdGFtcChcInVwZGF0ZWRfYXRcIikuZGVmYXVsdE5vdygpLFxufSk7XG5cbmV4cG9ydCBjb25zdCBpbnNlcnRWaWRlb1NjaGVtYSA9IGNyZWF0ZUluc2VydFNjaGVtYSh2aWRlb3MpLm9taXQoe1xuICBpZDogdHJ1ZSxcbiAgdXBsb2FkZWRBdDogdHJ1ZSxcbn0pO1xuXG5leHBvcnQgY29uc3QgaW5zZXJ0U3RyZWFtQ29uZmlnU2NoZW1hID0gY3JlYXRlSW5zZXJ0U2NoZW1hKHN0cmVhbUNvbmZpZ3MpLm9taXQoe1xuICBpZDogdHJ1ZSxcbn0pO1xuXG5leHBvcnQgY29uc3QgaW5zZXJ0U3RyZWFtU3RhdHVzU2NoZW1hID0gY3JlYXRlSW5zZXJ0U2NoZW1hKHN0cmVhbVN0YXR1cykub21pdCh7XG4gIGlkOiB0cnVlLFxufSk7XG5cbmV4cG9ydCBjb25zdCBpbnNlcnRTeXN0ZW1Db25maWdTY2hlbWEgPSBjcmVhdGVJbnNlcnRTY2hlbWEoc3lzdGVtQ29uZmlncykub21pdCh7XG4gIGlkOiB0cnVlLFxuICB1cGRhdGVkQXQ6IHRydWUsXG59KTtcblxuZXhwb3J0IHR5cGUgSW5zZXJ0VmlkZW8gPSB6LmluZmVyPHR5cGVvZiBpbnNlcnRWaWRlb1NjaGVtYT47XG5leHBvcnQgdHlwZSBWaWRlbyA9IHR5cGVvZiB2aWRlb3MuJGluZmVyU2VsZWN0O1xuZXhwb3J0IHR5cGUgSW5zZXJ0U3RyZWFtQ29uZmlnID0gei5pbmZlcjx0eXBlb2YgaW5zZXJ0U3RyZWFtQ29uZmlnU2NoZW1hPjtcbmV4cG9ydCB0eXBlIFN0cmVhbUNvbmZpZyA9IHR5cGVvZiBzdHJlYW1Db25maWdzLiRpbmZlclNlbGVjdDtcbmV4cG9ydCB0eXBlIEluc2VydFN0cmVhbVN0YXR1cyA9IHouaW5mZXI8dHlwZW9mIGluc2VydFN0cmVhbVN0YXR1c1NjaGVtYT47XG5leHBvcnQgdHlwZSBTdHJlYW1TdGF0dXMgPSB0eXBlb2Ygc3RyZWFtU3RhdHVzLiRpbmZlclNlbGVjdDtcbmV4cG9ydCB0eXBlIEluc2VydFN5c3RlbUNvbmZpZyA9IHouaW5mZXI8dHlwZW9mIGluc2VydFN5c3RlbUNvbmZpZ1NjaGVtYT47XG5leHBvcnQgdHlwZSBTeXN0ZW1Db25maWcgPSB0eXBlb2Ygc3lzdGVtQ29uZmlncy4kaW5mZXJTZWxlY3Q7XG4iXSwKICAibWFwcGluZ3MiOiAiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxxQkFBbUU7QUFDbkUseUJBQW1DO0FBRzVCLE1BQU0sYUFBUyx3QkFBUSxVQUFVO0FBQUEsRUFDdEMsUUFBSSx1QkFBTyxJQUFJLEVBQUUsV0FBVztBQUFBLEVBQzVCLFdBQU8scUJBQUssT0FBTyxFQUFFLFFBQVE7QUFBQSxFQUM3QixjQUFVLHFCQUFLLFVBQVUsRUFBRSxRQUFRO0FBQUEsRUFDbkMsY0FBVSx3QkFBUSxXQUFXLEVBQUUsUUFBUTtBQUFBLEVBQ3ZDLGNBQVUscUJBQUssVUFBVSxFQUFFLFFBQVE7QUFBQSxFQUNuQyxrQkFBYyxxQkFBSyxlQUFlO0FBQUEsRUFDbEMsbUJBQWUsd0JBQVEsZ0JBQWdCLEVBQUUsUUFBUTtBQUFBLEVBQ2pELGdCQUFZLDBCQUFVLGFBQWEsRUFBRSxXQUFXO0FBQ2xELENBQUM7QUFFTSxNQUFNLG9CQUFnQix3QkFBUSxrQkFBa0I7QUFBQSxFQUNyRCxRQUFJLHVCQUFPLElBQUksRUFBRSxXQUFXO0FBQUEsRUFDNUIsY0FBVSxxQkFBSyxVQUFVLEVBQUUsUUFBUTtBQUFBLEVBQ25DLGVBQVcscUJBQUssWUFBWSxFQUFFLFFBQVE7QUFBQSxFQUN0QyxhQUFTLHFCQUFLLFVBQVU7QUFBQSxFQUN4QixnQkFBWSxxQkFBSyxZQUFZLEVBQUUsUUFBUTtBQUFBLEVBQ3ZDLGVBQVcsd0JBQVEsV0FBVyxFQUFFLFFBQVE7QUFBQSxFQUN4QyxhQUFTLHdCQUFRLFNBQVMsRUFBRSxRQUFRO0FBQUEsRUFDcEMsa0JBQWMsd0JBQVEsZUFBZSxFQUFFLFFBQVE7QUFBQSxFQUMvQyxjQUFVLHdCQUFRLFdBQVcsRUFBRSxRQUFRLEtBQUs7QUFDOUMsQ0FBQztBQUVNLE1BQU0sbUJBQWUsd0JBQVEsaUJBQWlCO0FBQUEsRUFDbkQsUUFBSSx1QkFBTyxJQUFJLEVBQUUsV0FBVztBQUFBLEVBQzVCLFlBQVEscUJBQUssUUFBUSxFQUFFLFFBQVE7QUFBQTtBQUFBLEVBQy9CLGlCQUFhLHdCQUFRLGNBQWMsRUFBRSxRQUFRLENBQUM7QUFBQSxFQUM5QyxZQUFRLHFCQUFLLFFBQVEsRUFBRSxRQUFRLFVBQVU7QUFBQSxFQUN6QyxvQkFBZ0Isd0JBQVEsa0JBQWtCO0FBQUEsRUFDMUMsZUFBVywwQkFBVSxZQUFZO0FBQUEsRUFDakMsa0JBQWMsd0JBQVEsZUFBZSxFQUFFLFFBQVEsS0FBSztBQUN0RCxDQUFDO0FBRU0sTUFBTSxvQkFBZ0Isd0JBQVEsa0JBQWtCO0FBQUEsRUFDckQsUUFBSSx1QkFBTyxJQUFJLEVBQUUsV0FBVztBQUFBLEVBQzVCLGNBQVUsd0JBQVEsV0FBVyxFQUFFLFFBQVEsSUFBSTtBQUFBLEVBQzNDLGFBQVMsd0JBQVEsVUFBVSxFQUFFLFFBQVEsR0FBSTtBQUFBLEVBQ3pDLFlBQVEscUJBQUssU0FBUyxFQUFFLFFBQVEsV0FBVztBQUFBLEVBQzNDLFlBQVEsd0JBQVEsU0FBUyxFQUFFLFFBQVEsSUFBSTtBQUFBLEVBQ3ZDLFlBQVEscUJBQUssU0FBUyxFQUFFLFFBQVEsY0FBYztBQUFBLEVBQzlDLFlBQVEscUJBQUssU0FBUyxFQUFFLFFBQVEsRUFBRTtBQUFBLEVBQ2xDLGdCQUFZLHFCQUFLLGFBQWEsRUFBRSxRQUFRLEVBQUU7QUFBQSxFQUMxQyxtQkFBZSx3QkFBUSxpQkFBaUIsRUFBRSxRQUFRLEtBQUs7QUFBQSxFQUN2RCxlQUFXLDBCQUFVLFlBQVksRUFBRSxXQUFXO0FBQ2hELENBQUM7QUFFTSxNQUFNLHdCQUFvQix1Q0FBbUIsTUFBTSxFQUFFLEtBQUs7QUFBQSxFQUMvRCxJQUFJO0FBQUEsRUFDSixZQUFZO0FBQ2QsQ0FBQztBQUVNLE1BQU0sK0JBQTJCLHVDQUFtQixhQUFhLEVBQUUsS0FBSztBQUFBLEVBQzdFLElBQUk7QUFDTixDQUFDO0FBRU0sTUFBTSwrQkFBMkIsdUNBQW1CLFlBQVksRUFBRSxLQUFLO0FBQUEsRUFDNUUsSUFBSTtBQUNOLENBQUM7QUFFTSxNQUFNLCtCQUEyQix1Q0FBbUIsYUFBYSxFQUFFLEtBQUs7QUFBQSxFQUM3RSxJQUFJO0FBQUEsRUFDSixXQUFXO0FBQ2IsQ0FBQzsiLAogICJuYW1lcyI6IFtdCn0K
+
+[⣷] Pulling schema from database...
+[✓] Pulling schema from database...
+[i] No changes detected
+Setting up directories...
+Starting nginx...
+Nginx configuration test failed, skipping nginx startup
+Starting Sa Plays Roblox Streamer application...
+Found application at dist/index.js
+Switching to streaming user...
+node:internal/errors:496
+    ErrorCaptureStackTrace(err);
+    ^
+
+TypeError [ERR_INVALID_ARG_TYPE]: The "paths[0]" argument must be of type string. Received undefined
+    at new NodeError (node:internal/errors:405:5)
+    at validateString (node:internal/validators:162:11)
+    at Object.resolve (node:path:1115:7)
+    at file:///app/dist/index.js:354:17
+    at ModuleJob.run (node:internal/modules/esm/module_job:195:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:337:24)
+    at async loadESM (node:internal/process/esm_loader:34:7)
+    at async handleMainPromise (node:internal/modules/run_main:106:12) {
+  code: 'ERR_INVALID_ARG_TYPE'
+}
+
+Node.js v18.20.8

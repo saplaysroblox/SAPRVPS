@@ -25,7 +25,33 @@ COPY shared/ ./shared/
 
 # Build application
 RUN npm run build
-RUN ls -la dist/
+
+# Debug: Check what was built
+RUN echo "Build output:" && ls -la dist/ && echo "Contents:" && find dist/ -type f -name "*.js" | head -10
+
+# Create a simple production server wrapper that handles path resolution
+RUN cat > server.mjs << 'EOF'
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import fs from 'fs';
+
+// Polyfill import.meta for compiled output
+global.importMeta = {
+  dirname: process.cwd(),
+  url: `file://${process.cwd()}/dist/index.js`
+};
+
+// Set up environment
+process.env.NODE_ENV = 'production';
+
+// Import and run the server
+try {
+  await import('./dist/index.js');
+} catch (error) {
+  console.error('Failed to start server:', error);
+  process.exit(1);
+}
+EOF
 
 # Production stage
 FROM node:18-alpine AS production
@@ -51,13 +77,16 @@ RUN chown -R streaming:streaming /app/uploads /app/backups /var/www/html/hls
 
 WORKDIR /app
 
-# Copy built application
+# Copy built application and dependencies
 COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/server.mjs ./server.mjs
 COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/drizzle.config.ts ./
 COPY --from=builder /app/tsconfig.json ./
 COPY --from=builder /app/shared ./shared
+
+# Install production dependencies only
+RUN npm ci --only=production --no-optional
 
 # Copy nginx configuration
 COPY nginx.conf /etc/nginx/nginx.conf

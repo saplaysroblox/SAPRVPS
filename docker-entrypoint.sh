@@ -72,10 +72,21 @@ else
     export DRIZZLE_CONFIG="./drizzle.config.ts"
 fi
 
-# Install TypeScript if not available (for drizzle-kit)
+# Install TypeScript and drizzle-kit if not available
 if ! command -v tsx &> /dev/null; then
     echo "Installing tsx for TypeScript execution..."
     npm install -g tsx
+fi
+
+if ! command -v drizzle-kit &> /dev/null; then
+    echo "Installing drizzle-kit..."
+    npm install -g drizzle-kit
+fi
+
+# Ensure all dependencies are installed
+if [ ! -d "node_modules" ]; then
+    echo "Installing Node.js dependencies..."
+    npm ci --only=production --no-optional
 fi
 
 # Run migrations with proper path
@@ -126,25 +137,46 @@ echo "Starting Sa Plays Roblox Streamer application..."
 cd /app
 
 # Check if the built application exists
-if [ -f "dist/index.js" ]; then
+echo "Checking for built application files..."
+ls -la dist/ 2>/dev/null || echo "dist/ directory not found"
+
+# Use the wrapper script for better compatibility
+if [ -f "server.mjs" ] && [ -f "dist/index.js" ]; then
+    echo "Using production server wrapper: server.mjs"
+    SERVER_FILE="server.mjs"
+elif [ -f "dist/index.js" ]; then
     echo "Found application at dist/index.js"
     SERVER_FILE="dist/index.js"
 elif [ -f "dist/server/index.js" ]; then
-    echo "Found application at dist/server/index.js"
+    echo "Found application at dist/server/index.js" 
     SERVER_FILE="dist/server/index.js"
 else
     echo "ERROR: Built application not found"
-    echo "Checking available files:"
-    ls -la dist/ 2>/dev/null || echo "dist/ directory not found"
-    ls -la dist/server/ 2>/dev/null || echo "dist/server/ directory not found"
+    echo "Available files in dist/:"
+    find dist/ -name "*.js" 2>/dev/null || echo "No JavaScript files found"
     echo "Cannot find built application, exiting..."
     exit 1
 fi
 
+# Check if file is actually executable
+if [ ! -s "$SERVER_FILE" ]; then
+    echo "ERROR: Server file $SERVER_FILE is empty or not readable"
+    exit 1
+fi
+
+echo "Using server file: $SERVER_FILE"
+
+# Debug the server file before running
+echo "Debugging server file: $SERVER_FILE"
+head -20 "$SERVER_FILE" 2>/dev/null || echo "Cannot read server file"
+
+# Set NODE_ENV for production
+export NODE_ENV=production
+
 # Ensure we're running as the correct user
 if [ "$(id -u)" = "0" ]; then
     echo "Switching to streaming user..."
-    exec su-exec streaming node "$SERVER_FILE"
+    exec su-exec streaming node --experimental-modules "$SERVER_FILE"
 else
-    exec node "$SERVER_FILE"
+    exec node --experimental-modules "$SERVER_FILE"
 fi
