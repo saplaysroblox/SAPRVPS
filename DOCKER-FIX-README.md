@@ -41,6 +41,17 @@
 - Added ?sslmode=disable to DATABASE_URL in docker-compose
 - Enhanced connection detection for localhost, 127.0.0.1, and container hostnames
 
+### 7. Missing API Endpoints
+**Problem**: Frontend trying to access multiple endpoints that don't exist in server-standalone.js
+**Solution**:
+- Added /api/stream/set-current endpoint to handle setting current video for streaming
+- Added /api/stream/restart endpoint for stream restart functionality
+- Added /api/stream/loop/enable and /api/stream/loop/disable endpoints for 24x7 playlist loop
+- Added /api/videos/reorder endpoint for drag-and-drop playlist reordering
+- Added POST /api/system-config endpoint for saving system configuration
+- Added database management endpoints: /api/database/install, /api/database/backup, /api/database/restore
+- All endpoints provide proper error handling and validation
+
 ## Updated Files
 
 1. **Dockerfile.standalone**: 
