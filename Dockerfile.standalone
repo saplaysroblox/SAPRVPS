@@ -47,12 +47,14 @@ RUN npm install --only=production
 COPY --from=builder /app/dist/public ./public
 COPY --from=builder /app/server ./server
 COPY --from=builder /app/shared ./shared
-COPY --from=builder /app/uploads ./uploads
 COPY docker-entrypoint-standalone.sh ./docker-entrypoint.sh
 
-# Create required directories
-RUN mkdir -p /app/backups /var/www/html/hls && \
-    chown -R streaming:streaming /app
+# Create uploads directory (will be populated at runtime)
+RUN mkdir -p ./uploads
+
+# Create required directories and set permissions
+RUN mkdir -p /app/backups /app/uploads /var/www/html/hls && \
+    chown -R streaming:streaming /app /var/www/html/hls
 
 # Configure nginx
 COPY nginx-standalone.conf /etc/nginx/nginx.conf
