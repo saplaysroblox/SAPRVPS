@@ -1,0 +1,32 @@
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+var drizzle_config_exports = {};
+__export(drizzle_config_exports, {
+  default: () => drizzle_config_default
+});
+module.exports = __toCommonJS(drizzle_config_exports);
+var import_drizzle_kit = require("drizzle-kit");
+if (!process.env.DATABASE_URL) {
+  throw new Error("DATABASE_URL, ensure the database is provisioned");
+}
+var drizzle_config_default = (0, import_drizzle_kit.defineConfig)({
+  out: "./migrations",
+  schema: "./shared/schema.ts",
+  dialect: "postgresql",
+  dbCredentials: {
+    url: process.env.DATABASE_URL
+  }
+});
+//# sourceMappingURL=data:application/json;base64,ewogICJ2ZXJzaW9uIjogMywKICAic291cmNlcyI6IFsiL2FwcC9kcml6emxlLmNvbmZpZy50cyJdLAogICJzb3VyY2VzQ29udGVudCI6IFsiaW1wb3J0IHsgZGVmaW5lQ29uZmlnIH0gZnJvbSBcImRyaXp6bGUta2l0XCI7XG5cbmlmICghcHJvY2Vzcy5lbnYuREFUQUJBU0VfVVJMKSB7XG4gIHRocm93IG5ldyBFcnJvcihcIkRBVEFCQVNFX1VSTCwgZW5zdXJlIHRoZSBkYXRhYmFzZSBpcyBwcm92aXNpb25lZFwiKTtcbn1cblxuZXhwb3J0IGRlZmF1bHQgZGVmaW5lQ29uZmlnKHtcbiAgb3V0OiBcIi4vbWlncmF0aW9uc1wiLFxuICBzY2hlbWE6IFwiLi9zaGFyZWQvc2NoZW1hLnRzXCIsXG4gIGRpYWxlY3Q6IFwicG9zdGdyZXNxbFwiLFxuICBkYkNyZWRlbnRpYWxzOiB7XG4gICAgdXJsOiBwcm9jZXNzLmVudi5EQVRBQkFTRV9VUkwsXG4gIH0sXG59KTtcbiJdLAogICJtYXBwaW5ncyI6ICI7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSx5QkFBNkI7QUFFN0IsSUFBSSxDQUFDLFFBQVEsSUFBSSxjQUFjO0FBQzdCLFFBQU0sSUFBSSxNQUFNLGtEQUFrRDtBQUNwRTtBQUVBLElBQU8sNkJBQVEsaUNBQWE7QUFBQSxFQUMxQixLQUFLO0FBQUEsRUFDTCxRQUFRO0FBQUEsRUFDUixTQUFTO0FBQUEsRUFDVCxlQUFlO0FBQUEsSUFDYixLQUFLLFFBQVEsSUFBSTtBQUFBLEVBQ25CO0FBQ0YsQ0FBQzsiLAogICJuYW1lcyI6IFtdCn0K
+Error  No schema files found for path config ['./shared/schema.ts']
+Error  If path represents a file - please make sure to use .ts or other extension in the path

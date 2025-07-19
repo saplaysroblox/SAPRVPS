@@ -1,0 +1,75 @@
+version: '3.8'
+
+services:
+  # PostgreSQL database with Sa Plays Roblox Streamer credentials
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: neondb
+      POSTGRES_USER: neondb_owner
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-npg_lt4QRoXDb8Pf}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U neondb_owner -d neondb"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+    networks:
+      - sa-plays-network
+
+  # Sa Plays Roblox Streamer Application
+  sa-plays-streamer:
+    build: .
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgresql://neondb_owner:${POSTGRES_PASSWORD:-npg_lt4QRoXDb8Pf}@postgres:5432/neondb
+      PORT: 5000
+      PGHOST: postgres
+      PGPORT: 5432
+      PGUSER: neondb_owner
+      PGDATABASE: neondb
+      PGPASSWORD: ${POSTGRES_PASSWORD:-npg_lt4QRoXDb8Pf}
+    ports:
+      - "5000:5000"
+      - "80:80"
+      - "1935:1935"
+    volumes:
+      - uploads_data:/app/uploads
+      - hls_data:/var/www/html/hls
+      - backups_data:/app/backups
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - sa-plays-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/api/videos"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Redis for caching (optional)
+  redis:
+    image: redis:7-alpine
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+    networks:
+      - sa-plays-network
+
+networks:
+  sa-plays-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  uploads_data:
+  hls_data:
+  backups_data:
+  redis_data:

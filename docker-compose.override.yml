@@ -1,0 +1,40 @@
+# Docker Compose Override for Development
+# This file provides additional configuration for development environments
+
+version: '3.8'
+
+services:
+  sa-plays-streamer:
+    environment:
+      - NODE_ENV=production
+      - DEBUG=*
+    volumes:
+      # Mount source code for development (optional)
+      - ./uploads:/app/uploads
+      - ./backups:/app/backups
+    ports:
+      # Additional port mappings for development
+      - "5000:5000"  # Web application
+      - "8080:80"    # Nginx HTTP
+      - "1935:1935"  # RTMP streaming
+    command: ["/docker-entrypoint.sh"]
+
+  postgres:
+    environment:
+      - POSTGRES_PASSWORD=npg_lt4QRoXDb8Pf
+    ports:
+      - "5432:5432"  # PostgreSQL
+    volumes:
+      # Optional: mount local data directory
+      - ./data/postgres:/var/lib/postgresql/data
+
+  # Development utilities
+  adminer:
+    image: adminer
+    restart: unless-stopped
+    ports:
+      - "8081:8080"
+    networks:
+      - sa-plays-network
+    depends_on:
+      - postgres
