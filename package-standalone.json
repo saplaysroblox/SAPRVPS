@@ -5,7 +5,8 @@
   "main": "server-standalone.js",
   "scripts": {
     "start": "node server-standalone.js",
-    "build:client": "vite build client --outDir dist/public"
+    "build:client": "npm run build",
+    "build": "vite build client --outDir dist/public"
   },
   "dependencies": {
     "express": "^4.21.1",

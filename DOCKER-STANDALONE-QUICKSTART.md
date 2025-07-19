@@ -32,7 +32,7 @@ open http://localhost:5000
 ./test-standalone.sh
 
 # Or manually:
-vite build client --outDir dist/public
+npm run build
 NODE_ENV=production node server-standalone.js
 ```
 

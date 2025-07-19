@@ -6,7 +6,7 @@ echo "=========================================="
 
 # Build frontend first
 echo "Step 1: Building frontend..."
-vite build client --outDir dist/public
+npm run build
 
 if [ $? -ne 0 ]; then
     echo "❌ Frontend build failed"
