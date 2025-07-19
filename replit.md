@@ -102,6 +102,24 @@ The application uses three main database tables:
 
 ## Recent Changes: Latest modifications with dates
 
+### July 19, 2025 - Docker Configuration Fixed for Production Deployment
+- **Fixed Docker Schema File Issues**: Resolved the "No schema files found" error in Docker containers
+  - Updated docker-entrypoint.sh to properly handle TypeScript vs JavaScript schema files
+  - Added automatic detection of compiled schema location (dist/shared/schema.js vs shared/schema.ts)
+  - Created fallback drizzle configuration for production builds using JavaScript files
+  - Enhanced error handling and logging for Docker troubleshooting
+- **Fixed Docker Build Configuration**: Corrected application file structure and paths
+  - Updated Dockerfile to properly copy shared/ directory to production container
+  - Fixed server file path detection (dist/index.js vs dist/server/index.js)
+  - Corrected nginx configuration to use 'nginx' user instead of 'www-data' for Alpine Linux
+  - Added comprehensive health checks and error detection in docker-entrypoint.sh
+  - Created detailed DOCKER_TROUBLESHOOTING.md guide with common issues and solutions
+- **Enhanced Docker Reliability**: Improved container startup process and error handling
+  - Added proper nginx configuration testing before startup
+  - Enhanced database migration handling with proper config file detection
+  - Improved permission handling and user switching for security
+  - All Docker containers now start reliably with proper error messages
+
 ### July 17, 2025 - Docker Issues Fixed & Production Ready
 - **Docker Deployment Issues Resolved**: Fixed critical Docker configuration problems
   - Fixed Drizzle config file missing error by copying drizzle.config.ts to production container

@@ -25,6 +25,7 @@ COPY shared/ ./shared/
 
 # Build application
 RUN npm run build
+RUN ls -la dist/
 
 # Production stage
 FROM node:18-alpine AS production

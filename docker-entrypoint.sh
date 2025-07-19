@@ -103,10 +103,19 @@ fi
 # Start nginx in background
 echo "Starting nginx..."
 if [ "$(id -u)" = "0" ]; then
-    nginx -g "daemon off;" &
+    # Test nginx configuration first
+    if nginx -t 2>/dev/null; then
+        nginx -g "daemon off;" &
+    else
+        echo "Nginx configuration test failed, skipping nginx startup"
+    fi
 else
     # Start nginx as current user if not root
-    nginx -g "daemon off;" &
+    if nginx -t 2>/dev/null; then
+        nginx -g "daemon off;" &
+    else
+        echo "Nginx configuration test failed, skipping nginx startup"
+    fi
 fi
 
 # Wait a moment for nginx to start
@@ -116,10 +125,26 @@ sleep 2
 echo "Starting Sa Plays Roblox Streamer application..."
 cd /app
 
+# Check if the built application exists
+if [ -f "dist/index.js" ]; then
+    echo "Found application at dist/index.js"
+    SERVER_FILE="dist/index.js"
+elif [ -f "dist/server/index.js" ]; then
+    echo "Found application at dist/server/index.js"
+    SERVER_FILE="dist/server/index.js"
+else
+    echo "ERROR: Built application not found"
+    echo "Checking available files:"
+    ls -la dist/ 2>/dev/null || echo "dist/ directory not found"
+    ls -la dist/server/ 2>/dev/null || echo "dist/server/ directory not found"
+    echo "Cannot find built application, exiting..."
+    exit 1
+fi
+
 # Ensure we're running as the correct user
 if [ "$(id -u)" = "0" ]; then
     echo "Switching to streaming user..."
-    exec su-exec streaming node dist/server/index.js
+    exec su-exec streaming node "$SERVER_FILE"
 else
-    exec node dist/server/index.js
+    exec node "$SERVER_FILE"
 fi
